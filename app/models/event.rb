@@ -6,5 +6,5 @@ class Event < ActiveRecord::Base
 	
 	validates :description, :presence => true, :length => {:maximum => 140}
 	validates :user_id, :presence => true
-	validates :event_title, :presence => true, :length => {:maximum => 20}
+	validates :event_title, :presence => true, :length => {:maximum => 50}
 end
