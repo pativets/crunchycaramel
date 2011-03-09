@@ -16,6 +16,11 @@ ActiveRecord::Schema.define(:version => 20110222195224) do
     t.string   "description"
     t.string   "event_title"
     t.integer  "user_id"
+    t.string   "event_type"
+    t.integer  "price"
+    t.integer  "occurence"
+    t.datetime "start"
+    t.datetime "end"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
