@@ -19853,3 +19853,49 @@ Rendered layouts/_header.html.erb (22.8ms)
 Rendered layouts/_footer.html.erb (1.2ms)
 Rendered pages/home.html.erb within layouts/application (39.7ms)
 Completed 200 OK in 116ms (Views: 44.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at Wed Mar 09 13:32:39 -0500 2011
+  Processing by PagesController#home as HTML
+  [1m[35mEvent Load (0.4ms)[0m  SELECT "events".* FROM "events"
+Rendered shared/_feed.html.erb (0.3ms)
+Rendered shared/_feed.html.erb (0.3ms)
+Rendered shared/_feed.html.erb (0.3ms)
+Rendered shared/_feed.html.erb (0.3ms)
+Rendered layouts/_stylesheets.html.erb (2.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered layouts/_header.html.erb (22.3ms)
+Rendered layouts/_footer.html.erb (1.6ms)
+Rendered pages/home.html.erb within layouts/application (40.0ms)
+Completed 200 OK in 55ms (Views: 45.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at Wed Mar 09 13:35:07 -0500 2011
+  Processing by PagesController#home as HTML
+  [1m[35mEvent Load (0.4ms)[0m  SELECT "events".* FROM "events"
+Rendered shared/_feed.html.erb (0.3ms)
+Rendered shared/_feed.html.erb (0.3ms)
+Rendered shared/_feed.html.erb (0.3ms)
+Rendered shared/_feed.html.erb (0.3ms)
+Rendered layouts/_stylesheets.html.erb (1.8ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered layouts/_header.html.erb (77.8ms)
+Rendered layouts/_footer.html.erb (1.3ms)
+Rendered pages/home.html.erb within layouts/application (95.2ms)
+Completed 200 OK in 110ms (Views: 100.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/addevent" for 127.0.0.1 at Wed Mar 09 13:35:09 -0500 2011
+  Processing by EventsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_shared__event_form_html_erb___1823038241_2174969680_2061630 at /Users/pativet/RailsProjects/timeline/app/views/shared/_event_form.html.erb:1)
+Rendered shared/_error_messages.html.erb (0.6ms)
+Rendered shared/_event_form.html.erb (33.3ms)
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "events" WHERE ("events".user_id = 1)
+Rendered shared/_user_info.html.erb (4.0ms)
+Rendered layouts/_stylesheets.html.erb (2.0ms)
+Rendered layouts/_header.html.erb (3.4ms)
+Rendered layouts/_footer.html.erb (1.1ms)
+Rendered events/new.html.erb within layouts/application (53.5ms)
+Completed 200 OK in 148ms (Views: 57.9ms | ActiveRecord: 0.9ms)
