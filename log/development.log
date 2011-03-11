@@ -19899,3 +19899,1942 @@ Rendered layouts/_header.html.erb (3.4ms)
 Rendered layouts/_footer.html.erb (1.1ms)
 Rendered events/new.html.erb within layouts/application (53.5ms)
 Completed 200 OK in 148ms (Views: 57.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at Wed Mar 09 13:39:10 -0500 2011
+  Processing by PagesController#home as HTML
+  [1m[36mEvent Load (0.5ms)[0m  [1mSELECT "events".* FROM "events"[0m
+Rendered shared/_feed.html.erb (0.4ms)
+Rendered shared/_feed.html.erb (0.3ms)
+Rendered shared/_feed.html.erb (0.3ms)
+Rendered shared/_feed.html.erb (0.3ms)
+Rendered layouts/_stylesheets.html.erb (1.8ms)
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered layouts/_header.html.erb (27.4ms)
+Rendered layouts/_footer.html.erb (1.3ms)
+Rendered pages/home.html.erb within layouts/application (44.9ms)
+Completed 200 OK in 61ms (Views: 50.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/addevent" for 127.0.0.1 at Wed Mar 09 13:39:12 -0500 2011
+  Processing by EventsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_shared__event_form_html_erb___1823038241_2173628000_2061630 at /Users/pativet/RailsProjects/timeline/app/views/shared/_event_form.html.erb:1)
+Rendered shared/_error_messages.html.erb (0.7ms)
+Rendered shared/_event_form.html.erb (36.2ms)
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "events" WHERE ("events".user_id = 1)
+Rendered shared/_user_info.html.erb (66.6ms)
+Rendered layouts/_stylesheets.html.erb (1.9ms)
+Rendered layouts/_header.html.erb (3.4ms)
+Rendered layouts/_footer.html.erb (1.1ms)
+Rendered events/new.html.erb within layouts/application (119.9ms)
+Completed 200 OK in 151ms (Views: 124.8ms | ActiveRecord: 0.8ms)
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateEvents (20110222195224)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.7ms)[0m  [1mDROP TABLE "events"[0m
+  [1m[35mAREL (0.1ms)[0m  DELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20110222195224'
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("users")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_users_on_email')[0m
+  [1m[36mSQL (2.4ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateUsers (20110215203207)
+Migrating to AddEmailUniquenessIndex (20110215231553)
+Migrating to AddPasswordToUsers (20110216173352)
+Migrating to AddSaltToUsers (20110216174147)
+Migrating to AddAdminToUsers (20110216225447)
+Migrating to CreateEvents (20110222195224)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.5ms)[0m  [1mCREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "description" varchar(255), "event_title" varchar(255), "user_id" integer, "event_type" varchar(255), "price" integer, "occurence" integer, "start" datetime, "end" datetime, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("events")
+  [1m[36mSQL (0.1ms)[0m  [1mCREATE INDEX "index_events_on_user_id" ON "events" ("user_id")[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110222195224')
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("events")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_events_on_user_id')[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("users")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_users_on_email')[0m
+
+
+Started GET "/" for 127.0.0.1 at Wed Mar 09 13:42:14 -0500 2011
+  Processing by PagesController#home as HTML
+  [1m[36mEvent Load (0.4ms)[0m  [1mSELECT "events".* FROM "events"[0m
+Rendered shared/_feed.html.erb (0.3ms)
+Rendered shared/_feed.html.erb (0.4ms)
+Rendered shared/_feed.html.erb (0.4ms)
+Rendered shared/_feed.html.erb (0.4ms)
+Rendered layouts/_stylesheets.html.erb (2.3ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered layouts/_header.html.erb (23.0ms)
+Rendered layouts/_footer.html.erb (1.2ms)
+Rendered pages/home.html.erb within layouts/application (42.3ms)
+Completed 200 OK in 117ms (Views: 48.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/addevent" for 127.0.0.1 at Wed Mar 09 13:42:15 -0500 2011
+  Processing by EventsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_shared__event_form_html_erb___1823038241_2173548420_2061630 at /Users/pativet/RailsProjects/timeline/app/views/shared/_event_form.html.erb:1)
+Rendered shared/_error_messages.html.erb (0.6ms)
+Rendered shared/_event_form.html.erb (13.1ms)
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "events" WHERE ("events".user_id = 1)
+Rendered shared/_user_info.html.erb (5.2ms)
+Rendered layouts/_stylesheets.html.erb (2.1ms)
+Rendered layouts/_header.html.erb (3.8ms)
+Rendered layouts/_footer.html.erb (1.4ms)
+Rendered events/new.html.erb within layouts/application (37.2ms)
+Completed 200 OK in 71ms (Views: 43.3ms | ActiveRecord: 0.6ms)
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.5ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateEvents (20110222195224)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.7ms)[0m  [1mDROP TABLE "events"[0m
+  [1m[35mAREL (0.1ms)[0m  DELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20110222195224'
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("users")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_users_on_email')[0m
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.6ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateUsers (20110215203207)
+Migrating to AddEmailUniquenessIndex (20110215231553)
+Migrating to AddPasswordToUsers (20110216173352)
+Migrating to AddSaltToUsers (20110216174147)
+Migrating to AddAdminToUsers (20110216225447)
+Migrating to CreateEvents (20110222195224)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.5ms)[0m  [1mCREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "description" varchar(255), "event_title" varchar(255), "user_id" integer, "event_type" varchar(255), "price" integer, "occurence" integer, "start" datetime, "end" datetime, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("events")
+  [1m[36mSQL (0.1ms)[0m  [1mCREATE INDEX "index_events_on_user_id" ON "events" ("user_id")[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110222195224')
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (1.8ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("events")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_events_on_user_id')[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("users")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_users_on_email')[0m
+
+
+Started GET "/" for 127.0.0.1 at Wed Mar 09 13:45:30 -0500 2011
+  Processing by PagesController#home as HTML
+  [1m[36mEvent Load (0.5ms)[0m  [1mSELECT "events".* FROM "events"[0m
+Rendered shared/_feed.html.erb (0.3ms)
+Rendered shared/_feed.html.erb (0.3ms)
+Rendered shared/_feed.html.erb (0.3ms)
+Rendered shared/_feed.html.erb (0.3ms)
+Rendered layouts/_stylesheets.html.erb (2.2ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered layouts/_header.html.erb (22.8ms)
+Rendered layouts/_footer.html.erb (64.3ms)
+Rendered pages/home.html.erb within layouts/application (104.3ms)
+Completed 200 OK in 120ms (Views: 110.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/addevent" for 127.0.0.1 at Wed Mar 09 13:45:31 -0500 2011
+  Processing by EventsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_shared__event_form_html_erb___1823038241_2175108660_2061630 at /Users/pativet/RailsProjects/timeline/app/views/shared/_event_form.html.erb:1)
+Rendered shared/_error_messages.html.erb (0.6ms)
+Rendered shared/_event_form.html.erb (21.7ms)
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "events" WHERE ("events".user_id = 1)[0m
+Rendered shared/_user_info.html.erb (3.7ms)
+Rendered layouts/_stylesheets.html.erb (1.8ms)
+Rendered layouts/_header.html.erb (3.4ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered events/new.html.erb within layouts/application (41.6ms)
+Completed 200 OK in 136ms (Views: 46.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at Wed Mar 09 13:46:10 -0500 2011
+  Processing by PagesController#home as HTML
+  [1m[35mEvent Load (0.4ms)[0m  SELECT "events".* FROM "events"
+Rendered shared/_feed.html.erb (0.3ms)
+Rendered shared/_feed.html.erb (0.3ms)
+Rendered shared/_feed.html.erb (0.3ms)
+Rendered shared/_feed.html.erb (0.3ms)
+Rendered layouts/_stylesheets.html.erb (1.8ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered layouts/_header.html.erb (22.5ms)
+Rendered layouts/_footer.html.erb (1.3ms)
+Rendered pages/home.html.erb within layouts/application (38.6ms)
+Completed 200 OK in 52ms (Views: 43.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/addevent" for 127.0.0.1 at Wed Mar 09 13:46:11 -0500 2011
+  Processing by EventsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_shared__event_form_html_erb___1823038241_2173388440_2061630 at /Users/pativet/RailsProjects/timeline/app/views/shared/_event_form.html.erb:1)
+Rendered shared/_error_messages.html.erb (0.6ms)
+Rendered shared/_event_form.html.erb (20.5ms)
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "events" WHERE ("events".user_id = 1)
+Rendered shared/_user_info.html.erb (4.2ms)
+Rendered layouts/_stylesheets.html.erb (1.9ms)
+Rendered layouts/_header.html.erb (3.4ms)
+Rendered layouts/_footer.html.erb (1.3ms)
+Rendered events/new.html.erb within layouts/application (41.0ms)
+Completed 200 OK in 72ms (Views: 45.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at Wed Mar 09 13:46:22 -0500 2011
+  Processing by PagesController#home as HTML
+  [1m[36mEvent Load (0.5ms)[0m  [1mSELECT "events".* FROM "events"[0m
+Rendered shared/_feed.html.erb (0.3ms)
+Rendered shared/_feed.html.erb (0.3ms)
+Rendered shared/_feed.html.erb (0.3ms)
+Rendered shared/_feed.html.erb (0.3ms)
+Rendered layouts/_stylesheets.html.erb (1.8ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered layouts/_header.html.erb (77.2ms)
+Rendered layouts/_footer.html.erb (1.1ms)
+Rendered pages/home.html.erb within layouts/application (93.3ms)
+Completed 200 OK in 108ms (Views: 98.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/addevent" for 127.0.0.1 at Wed Mar 09 13:46:24 -0500 2011
+  Processing by EventsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users"
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_shared__event_form_html_erb___1823038241_2174489560_2061630 at /Users/pativet/RailsProjects/timeline/app/views/shared/_event_form.html.erb:1)
+Rendered shared/_error_messages.html.erb (0.6ms)
+Rendered shared/_event_form.html.erb (23.5ms)
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "events" WHERE ("events".user_id = 1)[0m
+Rendered shared/_user_info.html.erb (4.0ms)
+Rendered layouts/_stylesheets.html.erb (2.0ms)
+Rendered layouts/_header.html.erb (3.8ms)
+Rendered layouts/_footer.html.erb (1.1ms)
+Rendered events/new.html.erb within layouts/application (44.2ms)
+Completed 200 OK in 147ms (Views: 48.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at Wed Mar 09 13:46:36 -0500 2011
+  Processing by PagesController#home as HTML
+  [1m[35mEvent Load (0.4ms)[0m  SELECT "events".* FROM "events"
+Rendered shared/_feed.html.erb (0.3ms)
+Rendered shared/_feed.html.erb (0.3ms)
+Rendered shared/_feed.html.erb (0.4ms)
+Rendered shared/_feed.html.erb (0.3ms)
+Rendered layouts/_stylesheets.html.erb (1.8ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered layouts/_header.html.erb (21.5ms)
+Rendered layouts/_footer.html.erb (1.2ms)
+Rendered pages/home.html.erb within layouts/application (38.3ms)
+Completed 200 OK in 52ms (Views: 43.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/addevent" for 127.0.0.1 at Wed Mar 09 13:46:37 -0500 2011
+  Processing by EventsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_shared__event_form_html_erb___1823038241_2173257740_2061630 at /Users/pativet/RailsProjects/timeline/app/views/shared/_event_form.html.erb:1)
+Rendered shared/_error_messages.html.erb (0.7ms)
+Rendered shared/_event_form.html.erb (90.3ms)
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "events" WHERE ("events".user_id = 1)
+Rendered shared/_user_info.html.erb (4.3ms)
+Rendered layouts/_stylesheets.html.erb (2.0ms)
+Rendered layouts/_header.html.erb (3.6ms)
+Rendered layouts/_footer.html.erb (1.2ms)
+Rendered events/new.html.erb within layouts/application (111.0ms)
+Completed 200 OK in 141ms (Views: 115.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at Wed Mar 09 13:46:56 -0500 2011
+  Processing by PagesController#home as HTML
+  [1m[36mEvent Load (0.4ms)[0m  [1mSELECT "events".* FROM "events"[0m
+Rendered shared/_feed.html.erb (0.3ms)
+Rendered shared/_feed.html.erb (0.3ms)
+Rendered shared/_feed.html.erb (0.3ms)
+Rendered shared/_feed.html.erb (0.3ms)
+Rendered layouts/_stylesheets.html.erb (1.9ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered layouts/_header.html.erb (20.9ms)
+Rendered layouts/_footer.html.erb (1.1ms)
+Rendered pages/home.html.erb within layouts/application (37.0ms)
+Completed 200 OK in 112ms (Views: 42.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/addevent" for 127.0.0.1 at Wed Mar 09 13:46:57 -0500 2011
+  Processing by EventsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_shared__event_form_html_erb___1823038241_2173599860_2061630 at /Users/pativet/RailsProjects/timeline/app/views/shared/_event_form.html.erb:1)
+Rendered shared/_error_messages.html.erb (0.6ms)
+Rendered shared/_event_form.html.erb (20.3ms)
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "events" WHERE ("events".user_id = 1)[0m
+Rendered shared/_user_info.html.erb (3.8ms)
+Rendered layouts/_stylesheets.html.erb (1.9ms)
+Rendered layouts/_header.html.erb (3.3ms)
+Rendered layouts/_footer.html.erb (1.1ms)
+Rendered events/new.html.erb within layouts/application (40.0ms)
+Completed 200 OK in 69ms (Views: 44.4ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at Wed Mar 09 13:47:30 -0500 2011
+  Processing by PagesController#home as HTML
+  [1m[35mEvent Load (0.4ms)[0m  SELECT "events".* FROM "events"
+Rendered shared/_feed.html.erb (0.3ms)
+Rendered shared/_feed.html.erb (0.3ms)
+Rendered shared/_feed.html.erb (0.4ms)
+Rendered shared/_feed.html.erb (0.4ms)
+Rendered layouts/_stylesheets.html.erb (2.3ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered layouts/_header.html.erb (80.9ms)
+Rendered layouts/_footer.html.erb (1.5ms)
+Rendered pages/home.html.erb within layouts/application (99.1ms)
+Completed 200 OK in 114ms (Views: 103.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/addevent" for 127.0.0.1 at Wed Mar 09 13:47:31 -0500 2011
+  Processing by EventsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_shared__event_form_html_erb___1823038241_2174930220_2061630 at /Users/pativet/RailsProjects/timeline/app/views/shared/_event_form.html.erb:1)
+Rendered shared/_error_messages.html.erb (0.6ms)
+Rendered shared/_event_form.html.erb (22.4ms)
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "events" WHERE ("events".user_id = 1)
+Rendered shared/_user_info.html.erb (4.0ms)
+Rendered layouts/_stylesheets.html.erb (1.8ms)
+Rendered layouts/_header.html.erb (3.4ms)
+Rendered layouts/_footer.html.erb (1.2ms)
+Rendered events/new.html.erb within layouts/application (42.3ms)
+Completed 200 OK in 140ms (Views: 46.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at Wed Mar 09 13:48:06 -0500 2011
+  Processing by PagesController#home as HTML
+  [1m[36mEvent Load (0.4ms)[0m  [1mSELECT "events".* FROM "events"[0m
+Rendered shared/_feed.html.erb (0.4ms)
+Rendered shared/_feed.html.erb (0.6ms)
+Rendered shared/_feed.html.erb (0.3ms)
+Rendered shared/_feed.html.erb (0.5ms)
+Rendered layouts/_stylesheets.html.erb (4.0ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered layouts/_header.html.erb (23.8ms)
+Rendered layouts/_footer.html.erb (1.3ms)
+Rendered pages/home.html.erb within layouts/application (44.7ms)
+Completed 200 OK in 59ms (Views: 49.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/addevent" for 127.0.0.1 at Wed Mar 09 13:48:07 -0500 2011
+  Processing by EventsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_shared__event_form_html_erb___1823038241_2173323620_2061630 at /Users/pativet/RailsProjects/timeline/app/views/shared/_event_form.html.erb:1)
+Rendered shared/_error_messages.html.erb (0.6ms)
+Rendered shared/_event_form.html.erb (20.5ms)
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "events" WHERE ("events".user_id = 1)[0m
+Rendered shared/_user_info.html.erb (3.9ms)
+Rendered layouts/_stylesheets.html.erb (1.9ms)
+Rendered layouts/_header.html.erb (4.5ms)
+Rendered layouts/_footer.html.erb (1.1ms)
+Rendered events/new.html.erb within layouts/application (41.6ms)
+Completed 200 OK in 73ms (Views: 46.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at Wed Mar 09 13:48:40 -0500 2011
+  Processing by PagesController#home as HTML
+  [1m[35mEvent Load (0.4ms)[0m  SELECT "events".* FROM "events"
+Rendered shared/_feed.html.erb (0.4ms)
+Rendered shared/_feed.html.erb (0.3ms)
+Rendered shared/_feed.html.erb (0.3ms)
+Rendered shared/_feed.html.erb (0.3ms)
+Rendered layouts/_stylesheets.html.erb (1.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered layouts/_header.html.erb (82.5ms)
+Rendered layouts/_footer.html.erb (1.2ms)
+Rendered pages/home.html.erb within layouts/application (99.1ms)
+Completed 200 OK in 112ms (Views: 103.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/addevent" for 127.0.0.1 at Wed Mar 09 13:48:41 -0500 2011
+  Processing by EventsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_shared__event_form_html_erb___1823038241_2174351440_2061630 at /Users/pativet/RailsProjects/timeline/app/views/shared/_event_form.html.erb:1)
+Rendered shared/_error_messages.html.erb (0.6ms)
+Rendered shared/_event_form.html.erb (33.4ms)
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "events" WHERE ("events".user_id = 1)
+Rendered shared/_user_info.html.erb (3.7ms)
+Rendered layouts/_stylesheets.html.erb (1.9ms)
+Rendered layouts/_header.html.erb (3.4ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered events/new.html.erb within layouts/application (52.9ms)
+Completed 200 OK in 83ms (Views: 57.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Mar 10 12:50:04 -0500 2011
+  Processing by PagesController#home as HTML
+  [1m[36mEvent Load (0.5ms)[0m  [1mSELECT "events".* FROM "events"[0m
+Rendered shared/_feed.html.erb (0.5ms)
+Rendered shared/_feed.html.erb (0.3ms)
+Rendered shared/_feed.html.erb (0.3ms)
+Rendered shared/_feed.html.erb (0.3ms)
+Rendered layouts/_stylesheets.html.erb (24.7ms)
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (14.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered layouts/_header.html.erb (82.1ms)
+Rendered layouts/_footer.html.erb (1.3ms)
+Rendered pages/home.html.erb within layouts/application (144.8ms)
+Completed 200 OK in 248ms (Views: 184.2ms | ActiveRecord: 15.2ms)
+
+
+Started GET "/addevent" for 127.0.0.1 at Thu Mar 10 12:50:08 -0500 2011
+  Processing by EventsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_shared__event_form_html_erb___1823038241_2173602200_2061630 at /Users/pativet/RailsProjects/timeline/app/views/shared/_event_form.html.erb:1)
+Rendered shared/_error_messages.html.erb (0.9ms)
+Rendered shared/_event_form.html.erb (200.7ms)
+  [1m[35mSQL (31.0ms)[0m  SELECT COUNT(*) FROM "events" WHERE ("events".user_id = 1)
+Rendered shared/_user_info.html.erb (91.6ms)
+Rendered layouts/_stylesheets.html.erb (2.0ms)
+Rendered layouts/_header.html.erb (3.6ms)
+Rendered layouts/_footer.html.erb (1.1ms)
+Rendered events/new.html.erb within layouts/application (333.8ms)
+Completed 200 OK in 364ms (Views: 308.3ms | ActiveRecord: 31.6ms)
+
+
+Started GET "/addevent" for 127.0.0.1 at Thu Mar 10 12:55:24 -0500 2011
+  Processing by EventsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_shared__event_form_html_erb___1823038241_2174408920_2061630 at /Users/pativet/RailsProjects/timeline/app/views/shared/_event_form.html.erb:1)
+Rendered shared/_error_messages.html.erb (0.6ms)
+Rendered shared/_event_form.html.erb (34.2ms)
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "events" WHERE ("events".user_id = 1)[0m
+Rendered shared/_user_info.html.erb (3.8ms)
+Rendered layouts/_stylesheets.html.erb (1.8ms)
+Rendered layouts/_header.html.erb (3.5ms)
+Rendered layouts/_footer.html.erb (1.3ms)
+Rendered events/new.html.erb within layouts/application (54.0ms)
+Completed 200 OK in 141ms (Views: 58.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Mar 10 12:56:55 -0500 2011
+  Processing by PagesController#home as HTML
+  [1m[35mEvent Load (0.4ms)[0m  SELECT "events".* FROM "events"
+Rendered shared/_feed.html.erb (0.3ms)
+Rendered shared/_feed.html.erb (0.3ms)
+Rendered shared/_feed.html.erb (0.3ms)
+Rendered shared/_feed.html.erb (0.4ms)
+Rendered layouts/_stylesheets.html.erb (1.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered layouts/_header.html.erb (23.3ms)
+Rendered layouts/_footer.html.erb (1.2ms)
+Rendered pages/home.html.erb within layouts/application (40.2ms)
+Completed 200 OK in 54ms (Views: 45.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/addevent" for 127.0.0.1 at Thu Mar 10 12:56:56 -0500 2011
+  Processing by EventsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_shared__event_form_html_erb___1823038241_2172945180_2061630 at /Users/pativet/RailsProjects/timeline/app/views/shared/_event_form.html.erb:1)
+Rendered shared/_error_messages.html.erb (0.6ms)
+Rendered shared/_event_form.html.erb (91.6ms)
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "events" WHERE ("events".user_id = 1)
+Rendered shared/_user_info.html.erb (3.8ms)
+Rendered layouts/_stylesheets.html.erb (1.8ms)
+Rendered layouts/_header.html.erb (3.4ms)
+Rendered layouts/_footer.html.erb (1.1ms)
+Rendered events/new.html.erb within layouts/application (111.2ms)
+Completed 200 OK in 142ms (Views: 115.5ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/addevent" for 127.0.0.1 at Thu Mar 10 12:57:17 -0500 2011
+  Processing by EventsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users"
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_shared__event_form_html_erb___1823038241_2173869380_2061630 at /Users/pativet/RailsProjects/timeline/app/views/shared/_event_form.html.erb:1)
+Rendered shared/_error_messages.html.erb (0.7ms)
+Rendered shared/_event_form.html.erb (38.2ms)
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "events" WHERE ("events".user_id = 1)[0m
+Rendered shared/_user_info.html.erb (4.2ms)
+Rendered layouts/_stylesheets.html.erb (1.8ms)
+Rendered layouts/_header.html.erb (3.8ms)
+Rendered layouts/_footer.html.erb (1.4ms)
+Rendered events/new.html.erb within layouts/application (60.1ms)
+Completed 200 OK in 91ms (Views: 64.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/addevent" for 127.0.0.1 at Thu Mar 10 12:58:20 -0500 2011
+  Processing by EventsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_shared__event_form_html_erb___1823038241_2173305040_2061630 at /Users/pativet/RailsProjects/timeline/app/views/shared/_event_form.html.erb:1)
+Rendered shared/_error_messages.html.erb (0.6ms)
+Rendered shared/_event_form.html.erb (95.5ms)
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "events" WHERE ("events".user_id = 1)
+Rendered shared/_user_info.html.erb (4.0ms)
+Rendered layouts/_stylesheets.html.erb (1.9ms)
+Rendered layouts/_header.html.erb (3.4ms)
+Rendered layouts/_footer.html.erb (1.3ms)
+Rendered events/new.html.erb within layouts/application (115.5ms)
+Completed 200 OK in 148ms (Views: 119.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/addevent" for 127.0.0.1 at Thu Mar 10 12:58:36 -0500 2011
+  Processing by EventsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_shared__event_form_html_erb___1823038241_2174433060_2061630 at /Users/pativet/RailsProjects/timeline/app/views/shared/_event_form.html.erb:1)
+Rendered shared/_error_messages.html.erb (0.8ms)
+Rendered shared/_event_form.html.erb (36.0ms)
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "events" WHERE ("events".user_id = 1)[0m
+Rendered shared/_user_info.html.erb (4.0ms)
+Rendered layouts/_stylesheets.html.erb (1.9ms)
+Rendered layouts/_header.html.erb (3.7ms)
+Rendered layouts/_footer.html.erb (1.1ms)
+Rendered events/new.html.erb within layouts/application (56.4ms)
+Completed 200 OK in 148ms (Views: 60.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/addevent" for 127.0.0.1 at Thu Mar 10 12:58:50 -0500 2011
+  Processing by EventsController#new as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_shared__event_form_html_erb___1823038241_2173464700_2061630 at /Users/pativet/RailsProjects/timeline/app/views/shared/_event_form.html.erb:1)
+Rendered shared/_error_messages.html.erb (0.6ms)
+Rendered shared/_event_form.html.erb (32.7ms)
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "events" WHERE ("events".user_id = 1)
+Rendered shared/_user_info.html.erb (3.8ms)
+Rendered layouts/_stylesheets.html.erb (1.8ms)
+Rendered layouts/_header.html.erb (3.3ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered events/new.html.erb within layouts/application (51.8ms)
+Completed 200 OK in 84ms (Views: 56.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/addevent" for 127.0.0.1 at Thu Mar 10 13:00:23 -0500 2011
+  Processing by EventsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users"
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_shared__event_form_html_erb___1823038241_2172726680_2061630 at /Users/pativet/RailsProjects/timeline/app/views/shared/_event_form.html.erb:1)
+Rendered shared/_error_messages.html.erb (0.6ms)
+Rendered shared/_event_form.html.erb (94.1ms)
+Rendered layouts/_stylesheets.html.erb (2.1ms)
+Rendered layouts/_header.html.erb (3.3ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered events/new.html.erb within layouts/application (108.4ms)
+Completed 200 OK in 139ms (Views: 113.0ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/1" for 127.0.0.1 at Thu Mar 10 13:00:30 -0500 2011
+  Processing by UsersController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mEvent Load (0.2ms)[0m  SELECT "events".* FROM "events" WHERE ("events".user_id = 1) LIMIT 30 OFFSET 0
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT COUNT(*) FROM "events" WHERE ("events".user_id = 1)[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT COUNT(*) FROM "events" WHERE ("events".user_id = 1)[0m
+Rendered layouts/_stylesheets.html.erb (1.9ms)
+Rendered layouts/_header.html.erb (3.3ms)
+Rendered layouts/_footer.html.erb (1.1ms)
+Rendered users/show.html.erb within layouts/application (18.0ms)
+Completed 200 OK in 50ms (Views: 23.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/addevent" for 127.0.0.1 at Thu Mar 10 13:00:32 -0500 2011
+  Processing by EventsController#new as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_shared__event_form_html_erb___1823038241_2173640060_2061630 at /Users/pativet/RailsProjects/timeline/app/views/shared/_event_form.html.erb:1)
+Rendered shared/_error_messages.html.erb (0.6ms)
+Rendered shared/_event_form.html.erb (33.0ms)
+Rendered layouts/_stylesheets.html.erb (1.9ms)
+Rendered layouts/_header.html.erb (3.6ms)
+Rendered layouts/_footer.html.erb (1.1ms)
+Rendered events/new.html.erb within layouts/application (47.8ms)
+Completed 200 OK in 79ms (Views: 52.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/addevent" for 127.0.0.1 at Thu Mar 10 13:02:09 -0500 2011
+  Processing by EventsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_shared__event_form_html_erb___1823038241_2173143200_2061630 at /Users/pativet/RailsProjects/timeline/app/views/shared/_event_form.html.erb:1)
+Rendered shared/_error_messages.html.erb (0.6ms)
+Rendered shared/_event_form.html.erb (90.3ms)
+Rendered layouts/_stylesheets.html.erb (2.0ms)
+Rendered layouts/_header.html.erb (3.8ms)
+Rendered layouts/_footer.html.erb (1.2ms)
+Rendered events/new.html.erb within layouts/application (105.7ms)
+Completed 200 OK in 136ms (Views: 110.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/addevent" for 127.0.0.1 at Thu Mar 10 13:02:10 -0500 2011
+  Processing by EventsController#new as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_shared__event_form_html_erb___1823038241_2174616700_2061630 at /Users/pativet/RailsProjects/timeline/app/views/shared/_event_form.html.erb:1)
+Rendered shared/_error_messages.html.erb (0.6ms)
+Rendered shared/_event_form.html.erb (34.1ms)
+Rendered layouts/_stylesheets.html.erb (1.8ms)
+Rendered layouts/_header.html.erb (3.7ms)
+Rendered layouts/_footer.html.erb (1.1ms)
+Rendered events/new.html.erb within layouts/application (48.7ms)
+Completed 200 OK in 140ms (Views: 53.4ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/addevent" for 127.0.0.1 at Thu Mar 10 13:02:21 -0500 2011
+  Processing by EventsController#new as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_shared__event_form_html_erb___1823038241_2173610380_2061630 at /Users/pativet/RailsProjects/timeline/app/views/shared/_event_form.html.erb:1)
+Rendered shared/_error_messages.html.erb (0.6ms)
+Rendered shared/_event_form.html.erb (34.2ms)
+Rendered layouts/_stylesheets.html.erb (1.8ms)
+Rendered layouts/_header.html.erb (3.4ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered events/new.html.erb within layouts/application (48.6ms)
+Completed 200 OK in 80ms (Views: 53.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/addevent" for 127.0.0.1 at Thu Mar 10 13:02:22 -0500 2011
+  Processing by EventsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_shared__event_form_html_erb___1823038241_2173129320_2061630 at /Users/pativet/RailsProjects/timeline/app/views/shared/_event_form.html.erb:1)
+Rendered shared/_error_messages.html.erb (0.6ms)
+Rendered shared/_event_form.html.erb (92.5ms)
+Rendered layouts/_stylesheets.html.erb (1.9ms)
+Rendered layouts/_header.html.erb (3.4ms)
+Rendered layouts/_footer.html.erb (1.1ms)
+Rendered events/new.html.erb within layouts/application (106.9ms)
+Completed 200 OK in 137ms (Views: 111.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/addevent" for 127.0.0.1 at Thu Mar 10 13:03:37 -0500 2011
+  Processing by EventsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_shared__event_form_html_erb___1823038241_2174504080_2061630 at /Users/pativet/RailsProjects/timeline/app/views/shared/_event_form.html.erb:1)
+Rendered shared/_error_messages.html.erb (0.6ms)
+Rendered shared/_event_form.html.erb (32.6ms)
+Rendered layouts/_stylesheets.html.erb (1.8ms)
+Rendered layouts/_header.html.erb (3.3ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered events/new.html.erb within layouts/application (46.5ms)
+Completed 200 OK in 138ms (Views: 51.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/addevent" for 127.0.0.1 at Thu Mar 10 13:03:38 -0500 2011
+  Processing by EventsController#new as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_shared__event_form_html_erb___1823038241_2173613500_2061630 at /Users/pativet/RailsProjects/timeline/app/views/shared/_event_form.html.erb:1)
+Rendered shared/_error_messages.html.erb (0.6ms)
+Rendered shared/_event_form.html.erb (32.5ms)
+Rendered layouts/_stylesheets.html.erb (1.8ms)
+Rendered layouts/_header.html.erb (3.6ms)
+Rendered layouts/_footer.html.erb (1.2ms)
+Rendered events/new.html.erb within layouts/application (47.4ms)
+Completed 200 OK in 77ms (Views: 52.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/addevent" for 127.0.0.1 at Thu Mar 10 13:04:18 -0500 2011
+  Processing by EventsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_shared__event_form_html_erb___1823038241_2173064220_2061630 at /Users/pativet/RailsProjects/timeline/app/views/shared/_event_form.html.erb:1)
+Rendered shared/_error_messages.html.erb (0.7ms)
+Rendered shared/_event_form.html.erb (91.4ms)
+Rendered layouts/_stylesheets.html.erb (1.9ms)
+Rendered layouts/_header.html.erb (3.5ms)
+Rendered layouts/_footer.html.erb (1.1ms)
+Rendered events/new.html.erb within layouts/application (106.0ms)
+Completed 200 OK in 138ms (Views: 110.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/addevent" for 127.0.0.1 at Thu Mar 10 13:04:20 -0500 2011
+  Processing by EventsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_shared__event_form_html_erb___1823038241_2174375740_2061630 at /Users/pativet/RailsProjects/timeline/app/views/shared/_event_form.html.erb:1)
+Rendered shared/_error_messages.html.erb (0.8ms)
+Rendered shared/_event_form.html.erb (34.2ms)
+Rendered layouts/_stylesheets.html.erb (1.8ms)
+Rendered layouts/_header.html.erb (3.3ms)
+Rendered layouts/_footer.html.erb (1.2ms)
+Rendered events/new.html.erb within layouts/application (48.4ms)
+Completed 200 OK in 138ms (Views: 53.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Mar 10 13:04:35 -0500 2011
+  Processing by PagesController#home as HTML
+  [1m[35mEvent Load (0.4ms)[0m  SELECT "events".* FROM "events"
+Rendered shared/_feed.html.erb (0.4ms)
+Rendered shared/_feed.html.erb (0.3ms)
+Rendered shared/_feed.html.erb (0.3ms)
+Rendered shared/_feed.html.erb (0.3ms)
+Rendered layouts/_stylesheets.html.erb (1.8ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered layouts/_header.html.erb (21.1ms)
+Rendered layouts/_footer.html.erb (1.3ms)
+Rendered pages/home.html.erb within layouts/application (37.7ms)
+Completed 200 OK in 52ms (Views: 42.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/addevent" for 127.0.0.1 at Thu Mar 10 13:04:37 -0500 2011
+  Processing by EventsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_shared__event_form_html_erb___1823038241_2173053660_2061630 at /Users/pativet/RailsProjects/timeline/app/views/shared/_event_form.html.erb:1)
+Rendered shared/_error_messages.html.erb (1.5ms)
+Rendered shared/_event_form.html.erb (114.2ms)
+Rendered layouts/_stylesheets.html.erb (2.3ms)
+Rendered layouts/_header.html.erb (5.0ms)
+Rendered layouts/_footer.html.erb (1.3ms)
+Rendered events/new.html.erb within layouts/application (132.3ms)
+Completed 200 OK in 162ms (Views: 136.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/addevent" for 127.0.0.1 at Thu Mar 10 13:10:16 -0500 2011
+  Processing by EventsController#new as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Rendered shared/_event_form.html.erb (40.2ms)
+Rendered events/new.html.erb within layouts/application (41.8ms)
+Completed   in 136ms
+
+ActionView::Template::Error (uninitialized constant ActiveSupport::CoreExtensions):
+    3: <%= form.input :event_title %>
+    4: <%= form.input :user %>    <!-- make as current user -->
+    5: <%= form.input :event_type, :as => :radio, :collection => ['Free', 'Cheap'] %>
+    6: <%= form.input :start, :as => :datepicker %>
+    7: <%= form.input :end %>
+    8: <%= form.input :price %>
+    9: <%= form.input :occurence, :as => :radio, :collection => ['One-Time', 'Daily', 'Monthly','Annual'] %>
+  config/initializers/formtastic.rb:6:in `datepicker_input'
+  app/views/shared/_event_form.html.erb:6:in `_app_views_shared__event_form_html_erb___1823038241_2174641020_2061630'
+  app/views/shared/_event_form.html.erb:1:in `_app_views_shared__event_form_html_erb___1823038241_2174641020_2061630'
+  app/views/events/new.html.erb:6:in `_app_views_events_new_html_erb__1040234566_2174673300_0'
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.6ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (12.6ms)
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (16.1ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateEvents (20110222195224)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.7ms)[0m  [1mDROP TABLE "events"[0m
+  [1m[35mAREL (0.1ms)[0m  DELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20110222195224'
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("users")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_users_on_email')[0m
+  [1m[36mSQL (0.7ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateUsers (20110215203207)
+Migrating to AddEmailUniquenessIndex (20110215231553)
+Migrating to AddPasswordToUsers (20110216173352)
+Migrating to AddSaltToUsers (20110216174147)
+Migrating to AddAdminToUsers (20110216225447)
+Migrating to CreateEvents (20110222195224)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.6ms)[0m  [1mCREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "description" varchar(255), "event_title" varchar(255), "user_id" integer, "event_type" varchar(255), "price" integer, "occurence" integer, "start" datetime, "end" datetime, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("events")
+  [1m[36mSQL (0.1ms)[0m  [1mCREATE INDEX "index_events_on_user_id" ON "events" ("user_id")[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110222195224')
+  [1m[36mSQL (0.9ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("events")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_events_on_user_id')[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("users")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_users_on_email')[0m
+
+
+Started GET "/addevent" for 127.0.0.1 at Thu Mar 10 13:13:10 -0500 2011
+  Processing by EventsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Rendered shared/_event_form.html.erb (15.3ms)
+Rendered events/new.html.erb within layouts/application (17.2ms)
+Completed   in 47ms
+
+ActionView::Template::Error (uninitialized constant ActiveSupport::CoreExtensions):
+    3: <%= form.input :event_title %>
+    4: <%= form.input :user %>    <!-- make as current user -->
+    5: <%= form.input :event_type, :as => :radio, :collection => ['Free', 'Cheap'] %>
+    6: <%= form.input :start, :as => :datepicker %>
+    7: <%= form.input :end %>
+    8: <%= form.input :price %>
+    9: <%= form.input :occurence, :as => :radio, :collection => ['One-Time', 'Daily', 'Monthly','Annual'] %>
+  config/initializers/formtastic.rb:6:in `datepicker_input'
+  app/views/shared/_event_form.html.erb:6:in `_app_views_shared__event_form_html_erb___1823038241_2171934000_2061630'
+  app/views/shared/_event_form.html.erb:1:in `_app_views_shared__event_form_html_erb___1823038241_2171934000_2061630'
+  app/views/events/new.html.erb:6:in `_app_views_events_new_html_erb__1040234566_2171942920_0'
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.9ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (12.2ms)
+
+
+Started GET "/addevent" for 127.0.0.1 at Thu Mar 10 13:13:13 -0500 2011
+  Processing by EventsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Rendered shared/_event_form.html.erb (15.7ms)
+Rendered events/new.html.erb within layouts/application (17.3ms)
+Completed   in 48ms
+
+ActionView::Template::Error (uninitialized constant ActiveSupport::CoreExtensions):
+    3: <%= form.input :event_title %>
+    4: <%= form.input :user %>    <!-- make as current user -->
+    5: <%= form.input :event_type, :as => :radio, :collection => ['Free', 'Cheap'] %>
+    6: <%= form.input :start, :as => :datepicker %>
+    7: <%= form.input :end %>
+    8: <%= form.input :price %>
+    9: <%= form.input :occurence, :as => :radio, :collection => ['One-Time', 'Daily', 'Monthly','Annual'] %>
+  config/initializers/formtastic.rb:6:in `datepicker_input'
+  app/views/shared/_event_form.html.erb:6:in `_app_views_shared__event_form_html_erb___1823038241_2172760800_2061630'
+  app/views/shared/_event_form.html.erb:1:in `_app_views_shared__event_form_html_erb___1823038241_2172760800_2061630'
+  app/views/events/new.html.erb:6:in `_app_views_events_new_html_erb__1040234566_2172771980_0'
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.0ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.8ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (11.4ms)
+
+
+Started GET "/addevent" for 127.0.0.1 at Thu Mar 10 13:13:48 -0500 2011
+  Processing by EventsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_shared__event_form_html_erb___1823038241_2174268880_2061630 at /Users/pativet/RailsProjects/timeline/app/views/shared/_event_form.html.erb:1)
+Rendered shared/_error_messages.html.erb (0.6ms)
+Rendered shared/_event_form.html.erb (35.1ms)
+Rendered layouts/_stylesheets.html.erb (2.0ms)
+Rendered layouts/_header.html.erb (3.5ms)
+Rendered layouts/_footer.html.erb (1.1ms)
+Rendered events/new.html.erb within layouts/application (50.9ms)
+Completed 200 OK in 80ms (Views: 55.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Mar 10 13:21:51 -0500 2011
+  Processing by PagesController#home as HTML
+  [1m[35mEvent Load (0.4ms)[0m  SELECT "events".* FROM "events"
+Rendered shared/_feed.html.erb (0.3ms)
+Rendered shared/_feed.html.erb (0.3ms)
+Rendered shared/_feed.html.erb (0.4ms)
+Rendered shared/_feed.html.erb (0.4ms)
+Rendered layouts/_stylesheets.html.erb (1.8ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered layouts/_header.html.erb (23.0ms)
+Rendered layouts/_footer.html.erb (1.2ms)
+Rendered pages/home.html.erb within layouts/application (40.1ms)
+Completed 200 OK in 54ms (Views: 45.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/addevent" for 127.0.0.1 at Thu Mar 10 13:21:53 -0500 2011
+  Processing by EventsController#new as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_shared__event_form_html_erb___1823038241_2173043920_2061630 at /Users/pativet/RailsProjects/timeline/app/views/shared/_event_form.html.erb:1)
+Rendered shared/_error_messages.html.erb (0.6ms)
+Rendered shared/_event_form.html.erb (91.7ms)
+Rendered layouts/_stylesheets.html.erb (1.9ms)
+Rendered layouts/_header.html.erb (3.9ms)
+Rendered layouts/_footer.html.erb (1.2ms)
+Rendered events/new.html.erb within layouts/application (107.1ms)
+Completed 200 OK in 137ms (Views: 111.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/addevent" for 127.0.0.1 at Thu Mar 10 13:22:22 -0500 2011
+  Processing by EventsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+Rendered shared/_event_form.html.erb (20.7ms)
+Rendered events/new.html.erb within layouts/application (22.7ms)
+Completed   in 130ms
+
+ActionView::Template::Error (uninitialized constant ActiveSupport::CoreExtensions):
+    3: <%= form.input :event_title %>
+    4: <%= form.input :user %>    <!-- make as current user? -->
+    5: <%= form.input :event_type, :as => :radio, :collection => ['Free', 'Cheap'] %>
+    6: <%= form.input :start, :as => :datepicker %>
+    7: <%= form.input :end %>
+    8: <%= form.input :price %>
+    9: <%= form.input :occurence, :as => :radio, :collection => ['One-Time', 'Daily', 'Monthly','Annual'] %>
+  config/initializers/formtastic.rb:6:in `datepicker_input'
+  app/views/shared/_event_form.html.erb:6:in `_app_views_shared__event_form_html_erb___1823038241_2174436260_2061630'
+  app/views/shared/_event_form.html.erb:1:in `_app_views_shared__event_form_html_erb___1823038241_2174436260_2061630'
+  app/views/events/new.html.erb:6:in `_app_views_events_new_html_erb__1040234566_2174471260_0'
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.9ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (11.8ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Mar 10 13:23:08 -0500 2011
+  Processing by PagesController#home as HTML
+  [1m[35mEvent Load (0.4ms)[0m  SELECT "events".* FROM "events"
+Rendered shared/_feed.html.erb (0.3ms)
+Rendered shared/_feed.html.erb (0.3ms)
+Rendered shared/_feed.html.erb (0.3ms)
+Rendered shared/_feed.html.erb (0.3ms)
+Rendered layouts/_stylesheets.html.erb (1.8ms)
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered layouts/_header.html.erb (99.7ms)
+Rendered layouts/_footer.html.erb (1.5ms)
+Rendered pages/home.html.erb within layouts/application (116.6ms)
+Completed 200 OK in 130ms (Views: 121.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/addevent" for 127.0.0.1 at Thu Mar 10 13:23:09 -0500 2011
+  Processing by EventsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+ERROR: compiling _app_views_shared__event_form_html_erb___1823038241_2174607760_2061630 RAISED compile error
+/Users/pativet/RailsProjects/timeline/app/views/shared/_event_form.html.erb:6: syntax error, unexpected '=', expecting ')'
+/Users/pativet/RailsProjects/timeline/app/views/shared/_event_form.html.erb:8: syntax error, unexpected '(', expecting ')'
+');@output_buffer.append= ( form.input :price );@output_b...
+                           ^
+Function body:           def _app_views_shared__event_form_html_erb___1823038241_2174607760_2061630(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "shared/_event_form";_old_output_buffer = @output_buffer;event_form = local_assigns[:event_form];;@output_buffer = ActionView::OutputBuffer.new;@output_buffer.append_if_string=  semantic_form_for @event do |form| 
+@output_buffer.safe_concat('
+');@output_buffer.append= ( form.input :event_title );@output_buffer.safe_concat('
+');@output_buffer.append= ( form.input :user );@output_buffer.safe_concat('    <!-- make as current user? -->
+');@output_buffer.append= ( form.input :event_type, :as => :radio, :collection => ['Free', 'Cheap'] );@output_buffer.safe_concat('
+');@output_buffer.append= ( form.input :start, :as =
+<%= form.input :end );@output_buffer.safe_concat('
+');@output_buffer.append= ( form.input :price );@output_buffer.safe_concat('
+');@output_buffer.append= ( form.input :occurence, :as => :radio, :collection => ['One-Time', 'Daily', 'Monthly','Annual'] );@output_buffer.safe_concat('
+');@output_buffer.append= ( form.input :description );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  ');@output_buffer.append= ( form.buttons );@output_buffer.safe_concat('
+'); end 
+@output_buffer.safe_concat('
+<!--
+');@output_buffer.append=  form_for @event do |f| @output_buffer.safe_concat('
+');@output_buffer.safe_concat('  ');@output_buffer.append= ( render 'shared/error_messages', :object => f.object );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  
+
+
+  <div class="field">
+	');@output_buffer.append= ( f.label :title );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('    ');@output_buffer.append= ( f.text_field :event_title );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+
+ <div class="field">
+	');@output_buffer.append= ( f.label :description );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('    ');@output_buffer.append= ( f.text_area :description );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+
+
+
+
+  <div class="actions">
+    ');@output_buffer.append= ( f.submit "Post!" );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+'); end 
+@output_buffer.safe_concat('
+-->');@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /Users/pativet/RailsProjects/timeline/app/views/shared/_event_form.html.erb:41:in `compile'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_view/template.rb:134:in `render'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:54:in `instrument'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_view/template.rb:127:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/partials.rb:333:in `render_partial'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/partials.rb:262:in `render'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/partials.rb:260:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/partials.rb:378:in `_render_partial'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:31:in `render'
+/Users/pativet/RailsProjects/timeline/app/views/events/new.html.erb:6:in `_app_views_events_new_html_erb__1040234566_2174619740_0'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_view/template.rb:135:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_view/template.rb:135:in `render'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:54:in `instrument'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_view/template.rb:127:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:59:in `_render_template'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:56:in `_render_template'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:26:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:114:in `_render_template'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:108:in `render_to_body'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:101:in `render_to_string'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:92:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/rendering.rb:17:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.3/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.3/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/Library/Ruby/Gems/1.8/gems/activerecord-3.0.3/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/base.rb:151:in `process_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/rendering.rb:11:in `process_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/callbacks.rb:18:in `process_action'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:435:in `_run__1242818292__process_action__943997142__callbacks'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:409:in `send'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:409:in `_run_process_action_callbacks'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:93:in `send'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:93:in `run_callbacks'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/base.rb:120:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:40:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal.rb:138:in `dispatch'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal.rb:178:in `action'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:62:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:27:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:148:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:93:in `recognize'
+/Library/Ruby/Gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:68:in `optimized_each'
+/Library/Ruby/Gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:92:in `recognize'
+/Library/Ruby/Gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:139:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:492:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/head.rb:14:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.1/lib/rack/methodoverride.rb:24:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/cookies.rb:295:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:32:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-3.0.3/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:12:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:31:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-3.0.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:353:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/callbacks.rb:46:in `call'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:415:in `_run_call_callbacks'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.1/lib/rack/sendfile.rb:107:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/show_exceptions.rb:46:in `call'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.3/lib/rails/rack/logger.rb:13:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.1/lib/rack/runtime.rb:17:in `call'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.3/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.1/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.1/lib/rack/lock.rb:11:in `synchronize'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.1/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/static.rb:30:in `call'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.3/lib/rails/application.rb:168:in `call'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.3/lib/rails/application.rb:77:in `send'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.3/lib/rails/application.rb:77:in `method_missing'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.3/lib/rails/rack/log_tailer.rb:14:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.1/lib/rack/content_length.rb:13:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.1/lib/rack/handler/webrick.rb:52:in `service'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.1/lib/rack/handler/webrick.rb:13:in `run'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.1/lib/rack/server.rb:213:in `start'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.3/lib/rails/commands/server.rb:65:in `start'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.3/lib/rails/commands.rb:30
+/Library/Ruby/Gems/1.8/gems/railties-3.0.3/lib/rails/commands.rb:27:in `tap'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.3/lib/rails/commands.rb:27
+script/rails:6:in `require'
+script/rails:6
+Rendered shared/_event_form.html.erb (1.2ms)
+Rendered events/new.html.erb within layouts/application (2.8ms)
+Completed   in 98ms
+
+ActionView::Template::Error (compile error
+/Users/pativet/RailsProjects/timeline/app/views/shared/_event_form.html.erb:6: syntax error, unexpected '=', expecting ')'
+/Users/pativet/RailsProjects/timeline/app/views/shared/_event_form.html.erb:8: syntax error, unexpected '(', expecting ')'
+');@output_buffer.append= ( form.input :price );@output_b...
+                           ^):
+    3: <%= form.input :event_title %>
+    4: <%= form.input :user %>    <!-- make as current user? -->
+    5: <%= form.input :event_type, :as => :radio, :collection => ['Free', 'Cheap'] %>
+    6: <%= form.input :start, :as =
+    7: <%= form.input :end %>
+    8: <%= form.input :price %>
+    9: <%= form.input :occurence, :as => :radio, :collection => ['One-Time', 'Daily', 'Monthly','Annual'] %>
+  app/views/shared/_event_form.html.erb:41:in `compile'
+  app/views/events/new.html.erb:6:in `_app_views_events_new_html_erb__1040234566_2174619740_0'
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.1ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.8ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (11.5ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Mar 10 13:23:38 -0500 2011
+  Processing by PagesController#home as HTML
+  [1m[36mEvent Load (0.4ms)[0m  [1mSELECT "events".* FROM "events"[0m
+Rendered shared/_feed.html.erb (0.3ms)
+Rendered shared/_feed.html.erb (0.4ms)
+Rendered shared/_feed.html.erb (0.4ms)
+Rendered shared/_feed.html.erb (0.5ms)
+Rendered layouts/_stylesheets.html.erb (1.9ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered layouts/_header.html.erb (23.1ms)
+Rendered layouts/_footer.html.erb (73.1ms)
+Rendered pages/home.html.erb within layouts/application (116.4ms)
+Completed 200 OK in 133ms (Views: 121.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/addevent" for 127.0.0.1 at Thu Mar 10 13:23:40 -0500 2011
+  Processing by EventsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_shared__event_form_html_erb___1823038241_2172836360_2061630 at /Users/pativet/RailsProjects/timeline/app/views/shared/_event_form.html.erb:1)
+Rendered shared/_error_messages.html.erb (0.6ms)
+Rendered shared/_event_form.html.erb (42.4ms)
+Rendered layouts/_stylesheets.html.erb (2.0ms)
+Rendered layouts/_header.html.erb (3.6ms)
+Rendered layouts/_footer.html.erb (1.2ms)
+Rendered events/new.html.erb within layouts/application (134.2ms)
+Completed 200 OK in 167ms (Views: 139.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Mar 10 18:59:52 -0500 2011
+  Processing by PagesController#home as HTML
+  [1m[36mEvent Load (0.4ms)[0m  [1mSELECT "events".* FROM "events"[0m
+Rendered shared/_feed.html.erb (0.3ms)
+Rendered shared/_feed.html.erb (0.3ms)
+Rendered shared/_feed.html.erb (0.3ms)
+Rendered shared/_feed.html.erb (0.3ms)
+Rendered layouts/_stylesheets.html.erb (1.8ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered layouts/_header.html.erb (21.4ms)
+Rendered layouts/_footer.html.erb (1.3ms)
+Rendered pages/home.html.erb within layouts/application (37.9ms)
+Completed 200 OK in 52ms (Views: 42.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/addevent" for 127.0.0.1 at Thu Mar 10 18:59:58 -0500 2011
+  Processing by EventsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_shared__event_form_html_erb___1823038241_2173363960_2061630 at /Users/pativet/RailsProjects/timeline/app/views/shared/_event_form.html.erb:1)
+Rendered shared/_error_messages.html.erb (0.6ms)
+Rendered shared/_event_form.html.erb (33.3ms)
+Rendered layouts/_stylesheets.html.erb (1.8ms)
+Rendered layouts/_header.html.erb (3.5ms)
+Rendered layouts/_footer.html.erb (1.1ms)
+Rendered events/new.html.erb within layouts/application (47.6ms)
+Completed 200 OK in 79ms (Views: 52.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Mar 10 19:11:54 -0500 2011
+  Processing by PagesController#home as HTML
+  [1m[36mEvent Load (0.5ms)[0m  [1mSELECT "events".* FROM "events"[0m
+Rendered shared/_feed.html.erb (0.3ms)
+Rendered shared/_feed.html.erb (0.4ms)
+Rendered shared/_feed.html.erb (0.3ms)
+Rendered shared/_feed.html.erb (0.3ms)
+Rendered layouts/_stylesheets.html.erb (1.9ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered layouts/_header.html.erb (78.5ms)
+Rendered layouts/_footer.html.erb (1.2ms)
+Rendered pages/home.html.erb within layouts/application (95.4ms)
+Completed 200 OK in 109ms (Views: 100.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/addevent" for 127.0.0.1 at Thu Mar 10 19:11:57 -0500 2011
+  Processing by EventsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_shared__event_form_html_erb___1823038241_2174881360_2061630 at /Users/pativet/RailsProjects/timeline/app/views/shared/_event_form.html.erb:1)
+Rendered shared/_error_messages.html.erb (0.6ms)
+Rendered shared/_event_form.html.erb (33.3ms)
+Rendered layouts/_stylesheets.html.erb (1.9ms)
+Rendered layouts/_header.html.erb (3.3ms)
+Rendered layouts/_footer.html.erb (1.1ms)
+Rendered events/new.html.erb within layouts/application (47.6ms)
+Completed 200 OK in 139ms (Views: 52.3ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Mar 10 19:22:36 -0500 2011
+  Processing by PagesController#home as HTML
+  [1m[36mEvent Load (0.4ms)[0m  [1mSELECT "events".* FROM "events"[0m
+Rendered shared/_feed.html.erb (0.3ms)
+Rendered shared/_feed.html.erb (0.4ms)
+Rendered shared/_feed.html.erb (0.4ms)
+Rendered shared/_feed.html.erb (0.4ms)
+Rendered layouts/_stylesheets.html.erb (1.9ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered layouts/_header.html.erb (23.8ms)
+Rendered layouts/_footer.html.erb (1.4ms)
+Rendered pages/home.html.erb within layouts/application (42.0ms)
+Completed 200 OK in 56ms (Views: 46.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/addevent" for 127.0.0.1 at Thu Mar 10 19:22:37 -0500 2011
+  Processing by EventsController#new as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+Rendered shared/_event_form.html.erb (34.8ms)
+Rendered events/new.html.erb within layouts/application (36.4ms)
+Completed   in 68ms
+
+ActionView::Template::Error (undefined method `check_box_input' for #<Formtastic::SemanticFormBuilder:0x1030caa18>):
+    6: <%= form.input :start %>
+    7: <%= form.input :end %>
+    8: <%= form.input :price %>
+    9: <%= form.input :occurence, :as => :check_box, :collection => ['One-Time', 'Daily', 'Monthly','Annual'] %>
+    10: <%= form.input :description %>
+    11:   <%= form.buttons %>
+    12: <% end %>
+  app/views/shared/_event_form.html.erb:9:in `_app_views_shared__event_form_html_erb___1823038241_2173304700_2061630'
+  app/views/shared/_event_form.html.erb:1:in `_app_views_shared__event_form_html_erb___1823038241_2173304700_2061630'
+  app/views/events/new.html.erb:6:in `_app_views_events_new_html_erb__1040234566_2173314260_0'
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.7ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (70.3ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Mar 10 19:23:10 -0500 2011
+  Processing by PagesController#home as HTML
+  [1m[36mEvent Load (0.4ms)[0m  [1mSELECT "events".* FROM "events"[0m
+Rendered shared/_feed.html.erb (0.3ms)
+Rendered shared/_feed.html.erb (0.3ms)
+Rendered shared/_feed.html.erb (0.3ms)
+Rendered shared/_feed.html.erb (0.3ms)
+Rendered layouts/_stylesheets.html.erb (2.0ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered layouts/_header.html.erb (21.5ms)
+Rendered layouts/_footer.html.erb (1.1ms)
+Rendered pages/home.html.erb within layouts/application (43.0ms)
+Completed 200 OK in 59ms (Views: 49.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/addevent" for 127.0.0.1 at Thu Mar 10 19:23:21 -0500 2011
+  Processing by EventsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users"
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_shared__event_form_html_erb___1823038241_2173167860_2061630 at /Users/pativet/RailsProjects/timeline/app/views/shared/_event_form.html.erb:1)
+Rendered shared/_error_messages.html.erb (0.6ms)
+Rendered shared/_event_form.html.erb (33.5ms)
+Rendered layouts/_stylesheets.html.erb (1.8ms)
+Rendered layouts/_header.html.erb (64.4ms)
+Rendered layouts/_footer.html.erb (1.2ms)
+Rendered events/new.html.erb within layouts/application (109.3ms)
+Completed 200 OK in 143ms (Views: 113.8ms | ActiveRecord: 0.6ms)
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateEvents (20110222195224)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.6ms)[0m  [1mDROP TABLE "events"[0m
+  [1m[35mAREL (0.1ms)[0m  DELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20110222195224'
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.1ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("users")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_users_on_email')[0m
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateUsers (20110215203207)
+Migrating to AddEmailUniquenessIndex (20110215231553)
+Migrating to AddPasswordToUsers (20110216173352)
+Migrating to AddSaltToUsers (20110216174147)
+Migrating to AddAdminToUsers (20110216225447)
+Migrating to CreateEvents (20110222195224)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to AddAdminToUsers (20110216225447)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.7ms)[0m  [1mCREATE TEMPORARY TABLE "altered_users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "email" varchar(255), "created_at" datetime, "updated_at" datetime, "encrypted_password" varchar(255), "salt" varchar(255), "admin" boolean DEFAULT 'f') [0m
+  [1m[35mSQL (0.2ms)[0m  PRAGMA index_list("users")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_users_on_email')[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("altered_users")
+  [1m[36mSQL (0.5ms)[0m  [1mCREATE UNIQUE INDEX "temp_index_altered_users_on_email" ON "altered_users" ("email")[0m
+  [1m[35mSQL (0.5ms)[0m  DROP TABLE "users"
+  [1m[36mSQL (0.2ms)[0m  [1mCREATE TABLE "users" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar(255), "email" varchar(255), "created_at" datetime, "updated_at" datetime, "encrypted_password" varchar(255), "salt" varchar(255)) [0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("altered_users")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('temp_index_altered_users_on_email')[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("users")
+  [1m[36mSQL (2.3ms)[0m  [1mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35mSQL (0.3ms)[0m  DROP TABLE "altered_users"
+  [1m[36mAREL (0.1ms)[0m  [1mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = '20110216225447'[0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("users")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_users_on_email')
+  [1m[36mSQL (0.5ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateUsers (20110215203207)
+Migrating to AddEmailUniquenessIndex (20110215231553)
+Migrating to AddPasswordToUsers (20110216173352)
+Migrating to AddSaltToUsers (20110216174147)
+Migrating to AddAdminToUsers (20110216225447)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.6ms)[0m  [1mALTER TABLE "users" ADD "admin" boolean DEFAULT 'f'[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110216225447')
+Migrating to CreateEvents (20110222195224)
+  [1m[36mSQL (0.6ms)[0m  [1mCREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "description" varchar(255), "event_title" varchar(255), "user_id" integer, "event_type" varchar(255), "price" integer, "occurence" integer, "start" datetime, "end" datetime, "created_at" datetime, "updated_at" datetime) [0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("events")
+  [1m[36mSQL (0.1ms)[0m  [1mCREATE INDEX "index_events_on_user_id" ON "events" ("user_id")[0m
+  [1m[35mSQL (0.1ms)[0m  INSERT INTO "schema_migrations" ("version") VALUES ('20110222195224')
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.2ms)[0m  SELECT "schema_migrations"."version" FROM "schema_migrations"
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("events")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_events_on_user_id')[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("users")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_users_on_email')[0m
+
+
+Started GET "/" for 127.0.0.1 at Thu Mar 10 19:53:23 -0500 2011
+  Processing by PagesController#home as HTML
+  [1m[36mEvent Load (0.5ms)[0m  [1mSELECT "events".* FROM "events"[0m
+Rendered shared/_feed.html.erb (0.4ms)
+Rendered shared/_feed.html.erb (0.4ms)
+Rendered shared/_feed.html.erb (0.5ms)
+Rendered shared/_feed.html.erb (0.5ms)
+Rendered layouts/_stylesheets.html.erb (2.0ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered layouts/_header.html.erb (97.6ms)
+Rendered layouts/_footer.html.erb (1.4ms)
+Rendered pages/home.html.erb within layouts/application (117.8ms)
+Completed 200 OK in 136ms (Views: 123.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/addevent" for 127.0.0.1 at Thu Mar 10 19:53:25 -0500 2011
+  Processing by EventsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_shared__event_form_html_erb___1823038241_2174286680_2061630 at /Users/pativet/RailsProjects/timeline/app/views/shared/_event_form.html.erb:1)
+Rendered shared/_error_messages.html.erb (0.6ms)
+Rendered shared/_event_form.html.erb (37.0ms)
+Rendered layouts/_stylesheets.html.erb (2.2ms)
+Rendered layouts/_header.html.erb (3.3ms)
+Rendered layouts/_footer.html.erb (1.1ms)
+Rendered events/new.html.erb within layouts/application (52.6ms)
+Completed 200 OK in 87ms (Views: 58.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Mar 10 19:59:45 -0500 2011
+  Processing by PagesController#home as HTML
+  [1m[36mEvent Load (0.5ms)[0m  [1mSELECT "events".* FROM "events"[0m
+Rendered shared/_feed.html.erb (0.3ms)
+Rendered shared/_feed.html.erb (0.3ms)
+Rendered shared/_feed.html.erb (0.4ms)
+Rendered shared/_feed.html.erb (0.3ms)
+Rendered layouts/_stylesheets.html.erb (1.8ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered layouts/_header.html.erb (20.9ms)
+Rendered layouts/_footer.html.erb (1.2ms)
+Rendered pages/home.html.erb within layouts/application (37.8ms)
+Completed 200 OK in 53ms (Views: 42.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/addevent" for 127.0.0.1 at Thu Mar 10 19:59:46 -0500 2011
+  Processing by EventsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_shared__event_form_html_erb___1823038241_2173043220_2061630 at /Users/pativet/RailsProjects/timeline/app/views/shared/_event_form.html.erb:1)
+Rendered shared/_error_messages.html.erb (0.6ms)
+Rendered shared/_event_form.html.erb (95.0ms)
+Rendered layouts/_stylesheets.html.erb (1.9ms)
+Rendered layouts/_header.html.erb (3.2ms)
+Rendered layouts/_footer.html.erb (1.1ms)
+Rendered events/new.html.erb within layouts/application (109.4ms)
+Completed 200 OK in 140ms (Views: 114.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Mar 10 20:04:37 -0500 2011
+  Processing by PagesController#home as HTML
+  [1m[36mEvent Load (0.5ms)[0m  [1mSELECT "events".* FROM "events"[0m
+Rendered shared/_feed.html.erb (0.4ms)
+Rendered shared/_feed.html.erb (78.6ms)
+Rendered shared/_feed.html.erb (0.5ms)
+Rendered shared/_feed.html.erb (0.7ms)
+Rendered layouts/_stylesheets.html.erb (2.0ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered layouts/_header.html.erb (27.1ms)
+Rendered layouts/_footer.html.erb (1.7ms)
+Rendered pages/home.html.erb within layouts/application (125.6ms)
+Completed 200 OK in 146ms (Views: 130.9ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/addevent" for 127.0.0.1 at Thu Mar 10 20:04:38 -0500 2011
+  Processing by EventsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+ERROR: compiling _app_views_shared__event_form_html_erb___1823038241_2173867960_2061630 RAISED compile error
+/Users/pativet/RailsProjects/timeline/app/views/shared/_event_form.html.erb:3: syntax error, unexpected ':', expecting ')'
+...ent_title, :label => "Title" :hint => "something very catchy...
+                              ^
+Function body:           def _app_views_shared__event_form_html_erb___1823038241_2173867960_2061630(local_assigns)
+            _old_virtual_path, @_virtual_path = @_virtual_path, "shared/_event_form";_old_output_buffer = @output_buffer;event_form = local_assigns[:event_form];;@output_buffer = ActionView::OutputBuffer.new;@output_buffer.append_if_string=  semantic_form_for @event do |form| 
+@output_buffer.safe_concat('
+');@output_buffer.append= ( form.input :event_title, :label => "Title" :hint => "something very catchy" );@output_buffer.safe_concat('
+');@output_buffer.append= ( form.input :user );@output_buffer.safe_concat('    <!-- make as current user? -->
+');@output_buffer.append= ( form.input :event_type, :as => :radio, :collection => ['Free', 'Cheap'] );@output_buffer.safe_concat('
+');@output_buffer.append= ( form.input :start );@output_buffer.safe_concat('
+');@output_buffer.append= ( form.input :end );@output_buffer.safe_concat('
+');@output_buffer.append= ( form.input :price );@output_buffer.safe_concat('
+');@output_buffer.append= ( form.input :occurence, :as => :check_boxes, :collection => ['One-Time', 'Daily', 'Monthly','Annual'] );@output_buffer.safe_concat('
+');@output_buffer.append= ( form.input :description );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  ');@output_buffer.append= ( form.buttons );@output_buffer.safe_concat('
+'); end 
+@output_buffer.safe_concat('
+<!--
+');@output_buffer.append=  form_for @event do |f| @output_buffer.safe_concat('
+');@output_buffer.safe_concat('  ');@output_buffer.append= ( render 'shared/error_messages', :object => f.object );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  
+
+
+  <div class="field">
+	');@output_buffer.append= ( f.label :title );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('    ');@output_buffer.append= ( f.text_field :event_title );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+
+ <div class="field">
+	');@output_buffer.append= ( f.label :description );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('    ');@output_buffer.append= ( f.text_area :description );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+
+
+
+
+  <div class="actions">
+    ');@output_buffer.append= ( f.submit "Post!" );@output_buffer.safe_concat('
+');@output_buffer.safe_concat('  </div>
+'); end 
+@output_buffer.safe_concat('
+-->');@output_buffer.to_s
+          ensure
+            @_virtual_path, @output_buffer = _old_virtual_path, _old_output_buffer
+          end
+Backtrace: /Users/pativet/RailsProjects/timeline/app/views/shared/_event_form.html.erb:41:in `compile'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_view/template.rb:134:in `render'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:54:in `instrument'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_view/template.rb:127:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/partials.rb:333:in `render_partial'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/partials.rb:262:in `render'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/partials.rb:260:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/partials.rb:378:in `_render_partial'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:31:in `render'
+/Users/pativet/RailsProjects/timeline/app/views/events/new.html.erb:6:in `_app_views_events_new_html_erb__1040234566_2173904680_0'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_view/template.rb:135:in `send'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_view/template.rb:135:in `render'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:54:in `instrument'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_view/template.rb:127:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:59:in `_render_template'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:56:in `_render_template'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_view/render/rendering.rb:26:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:114:in `_render_template'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:108:in `render_to_body'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/renderers.rb:47:in `render_to_body'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/compatibility.rb:55:in `render_to_body'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:101:in `render_to_string'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:92:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/rendering.rb:17:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.3/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:308:in `realtime'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.3/lib/active_support/core_ext/benchmark.rb:5:in `ms'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:40:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:78:in `cleanup_view_runtime'
+/Library/Ruby/Gems/1.8/gems/activerecord-3.0.3/lib/active_record/railties/controller_runtime.rb:15:in `cleanup_view_runtime'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:39:in `render'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/base.rb:151:in `process_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/rendering.rb:11:in `process_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/callbacks.rb:18:in `process_action'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:435:in `_run__1242818292__process_action__943997142__callbacks'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:409:in `send'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:409:in `_run_process_action_callbacks'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:93:in `send'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:93:in `run_callbacks'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/callbacks.rb:17:in `process_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.3/lib/active_support/notifications.rb:52:in `instrument'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/instrumentation.rb:29:in `process_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/rescue.rb:17:in `process_action'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/base.rb:120:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/abstract_controller/rendering.rb:40:in `process'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal.rb:138:in `dispatch'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal/rack_delegation.rb:14:in `dispatch'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_controller/metal.rb:178:in `action'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:62:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:62:in `dispatch'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:27:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:148:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:93:in `recognize'
+/Library/Ruby/Gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:68:in `optimized_each'
+/Library/Ruby/Gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/code_generation.rb:92:in `recognize'
+/Library/Ruby/Gems/1.8/gems/rack-mount-0.6.13/lib/rack/mount/route_set.rb:139:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/routing/route_set.rb:492:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/best_standards_support.rb:17:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/head.rb:14:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.1/lib/rack/methodoverride.rb:24:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/params_parser.rb:21:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/flash.rb:182:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/session/abstract_store.rb:149:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/cookies.rb:295:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:32:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-3.0.3/lib/active_record/connection_adapters/abstract/query_cache.rb:28:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:12:in `cache'
+/Library/Ruby/Gems/1.8/gems/activerecord-3.0.3/lib/active_record/query_cache.rb:31:in `call'
+/Library/Ruby/Gems/1.8/gems/activerecord-3.0.3/lib/active_record/connection_adapters/abstract/connection_pool.rb:353:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/callbacks.rb:46:in `call'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.3/lib/active_support/callbacks.rb:415:in `_run_call_callbacks'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/callbacks.rb:44:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.1/lib/rack/sendfile.rb:107:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/remote_ip.rb:48:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/show_exceptions.rb:46:in `call'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.3/lib/rails/rack/logger.rb:13:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.1/lib/rack/runtime.rb:17:in `call'
+/Library/Ruby/Gems/1.8/gems/activesupport-3.0.3/lib/active_support/cache/strategy/local_cache.rb:72:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.1/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.1/lib/rack/lock.rb:11:in `synchronize'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.1/lib/rack/lock.rb:11:in `call'
+/Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/static.rb:30:in `call'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.3/lib/rails/application.rb:168:in `call'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.3/lib/rails/application.rb:77:in `send'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.3/lib/rails/application.rb:77:in `method_missing'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.3/lib/rails/rack/log_tailer.rb:14:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.1/lib/rack/content_length.rb:13:in `call'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.1/lib/rack/handler/webrick.rb:52:in `service'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:104:in `service'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/httpserver.rb:65:in `run'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:173:in `start_thread'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:162:in `start_thread'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:95:in `start'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `each'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:92:in `start'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:23:in `start'
+/System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/webrick/server.rb:82:in `start'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.1/lib/rack/handler/webrick.rb:13:in `run'
+/Library/Ruby/Gems/1.8/gems/rack-1.2.1/lib/rack/server.rb:213:in `start'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.3/lib/rails/commands/server.rb:65:in `start'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.3/lib/rails/commands.rb:30
+/Library/Ruby/Gems/1.8/gems/railties-3.0.3/lib/rails/commands.rb:27:in `tap'
+/Library/Ruby/Gems/1.8/gems/railties-3.0.3/lib/rails/commands.rb:27
+script/rails:6:in `require'
+script/rails:6
+Rendered shared/_event_form.html.erb (1.3ms)
+Rendered events/new.html.erb within layouts/application (2.9ms)
+Completed   in 33ms
+
+ActionView::Template::Error (compile error
+/Users/pativet/RailsProjects/timeline/app/views/shared/_event_form.html.erb:3: syntax error, unexpected ':', expecting ')'
+...ent_title, :label => "Title" :hint => "something very catchy...
+                              ^):
+    1: <% semantic_form_for @event do |form| %>
+    2: 
+    3: <%= form.input :event_title, :label => "Title" :hint => "something very catchy" %>
+    4: <%= form.input :user %>    <!-- make as current user? -->
+    5: <%= form.input :event_type, :as => :radio, :collection => ['Free', 'Cheap'] %>
+    6: <%= form.input :start %>
+  app/views/shared/_event_form.html.erb:41:in `compile'
+  app/views/events/new.html.erb:6:in `_app_views_events_new_html_erb__1040234566_2173904680_0'
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.2ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (5.5ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (11.7ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Mar 10 20:04:47 -0500 2011
+  Processing by PagesController#home as HTML
+  [1m[35mEvent Load (0.4ms)[0m  SELECT "events".* FROM "events"
+Rendered shared/_feed.html.erb (0.4ms)
+Rendered shared/_feed.html.erb (0.5ms)
+Rendered shared/_feed.html.erb (0.4ms)
+Rendered shared/_feed.html.erb (0.4ms)
+Rendered layouts/_stylesheets.html.erb (2.8ms)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered layouts/_header.html.erb (97.6ms)
+Rendered layouts/_footer.html.erb (1.2ms)
+Rendered pages/home.html.erb within layouts/application (117.7ms)
+Completed 200 OK in 133ms (Views: 122.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/addevent" for 127.0.0.1 at Thu Mar 10 20:04:48 -0500 2011
+  Processing by EventsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_shared__event_form_html_erb___1823038241_2174796600_2061630 at /Users/pativet/RailsProjects/timeline/app/views/shared/_event_form.html.erb:1)
+Rendered shared/_error_messages.html.erb (0.9ms)
+Rendered shared/_event_form.html.erb (37.2ms)
+Rendered layouts/_stylesheets.html.erb (2.4ms)
+Rendered layouts/_header.html.erb (3.3ms)
+Rendered layouts/_footer.html.erb (1.1ms)
+Rendered events/new.html.erb within layouts/application (52.9ms)
+Completed 200 OK in 165ms (Views: 57.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Mar 10 20:04:59 -0500 2011
+  Processing by PagesController#home as HTML
+  [1m[35mEvent Load (0.4ms)[0m  SELECT "events".* FROM "events"
+Rendered shared/_feed.html.erb (0.4ms)
+Rendered shared/_feed.html.erb (0.4ms)
+Rendered shared/_feed.html.erb (0.4ms)
+Rendered shared/_feed.html.erb (0.4ms)
+Rendered layouts/_stylesheets.html.erb (1.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered layouts/_header.html.erb (23.1ms)
+Rendered layouts/_footer.html.erb (1.2ms)
+Rendered pages/home.html.erb within layouts/application (39.8ms)
+Completed 200 OK in 54ms (Views: 44.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/addevent" for 127.0.0.1 at Thu Mar 10 20:05:00 -0500 2011
+  Processing by EventsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_shared__event_form_html_erb___1823038241_2173257660_2061630 at /Users/pativet/RailsProjects/timeline/app/views/shared/_event_form.html.erb:1)
+Rendered shared/_error_messages.html.erb (0.6ms)
+Rendered shared/_event_form.html.erb (37.1ms)
+Rendered layouts/_stylesheets.html.erb (1.8ms)
+Rendered layouts/_header.html.erb (3.1ms)
+Rendered layouts/_footer.html.erb (1.1ms)
+Rendered events/new.html.erb within layouts/application (51.6ms)
+Completed 200 OK in 84ms (Views: 56.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Mar 10 20:05:14 -0500 2011
+  Processing by PagesController#home as HTML
+  [1m[35mEvent Load (0.4ms)[0m  SELECT "events".* FROM "events"
+Rendered shared/_feed.html.erb (0.4ms)
+Rendered shared/_feed.html.erb (0.3ms)
+Rendered shared/_feed.html.erb (0.3ms)
+Rendered shared/_feed.html.erb (0.3ms)
+Rendered layouts/_stylesheets.html.erb (2.0ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered layouts/_header.html.erb (84.1ms)
+Rendered layouts/_footer.html.erb (1.2ms)
+Rendered pages/home.html.erb within layouts/application (101.2ms)
+Completed 200 OK in 115ms (Views: 106.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/addevent" for 127.0.0.1 at Thu Mar 10 20:05:16 -0500 2011
+  Processing by EventsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_shared__event_form_html_erb___1823038241_2174778400_2061630 at /Users/pativet/RailsProjects/timeline/app/views/shared/_event_form.html.erb:1)
+Rendered shared/_error_messages.html.erb (0.6ms)
+Rendered shared/_event_form.html.erb (33.8ms)
+Rendered layouts/_stylesheets.html.erb (1.9ms)
+Rendered layouts/_header.html.erb (3.5ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered events/new.html.erb within layouts/application (48.8ms)
+Completed 200 OK in 153ms (Views: 54.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Mar 10 20:05:24 -0500 2011
+  Processing by PagesController#home as HTML
+  [1m[35mEvent Load (0.4ms)[0m  SELECT "events".* FROM "events"
+Rendered shared/_feed.html.erb (0.3ms)
+Rendered shared/_feed.html.erb (0.3ms)
+Rendered shared/_feed.html.erb (0.4ms)
+Rendered shared/_feed.html.erb (0.3ms)
+Rendered layouts/_stylesheets.html.erb (1.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered layouts/_header.html.erb (21.4ms)
+Rendered layouts/_footer.html.erb (1.2ms)
+Rendered pages/home.html.erb within layouts/application (38.4ms)
+Completed 200 OK in 55ms (Views: 43.7ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/addevent" for 127.0.0.1 at Thu Mar 10 20:05:25 -0500 2011
+  Processing by EventsController#new as HTML
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_shared__event_form_html_erb___1823038241_2173292540_2061630 at /Users/pativet/RailsProjects/timeline/app/views/shared/_event_form.html.erb:1)
+Rendered shared/_error_messages.html.erb (0.6ms)
+Rendered shared/_event_form.html.erb (33.4ms)
+Rendered layouts/_stylesheets.html.erb (1.8ms)
+Rendered layouts/_header.html.erb (3.5ms)
+Rendered layouts/_footer.html.erb (1.4ms)
+Rendered events/new.html.erb within layouts/application (48.5ms)
+Completed 200 OK in 80ms (Views: 53.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Mar 10 20:05:38 -0500 2011
+  Processing by PagesController#home as HTML
+  [1m[35mEvent Load (0.4ms)[0m  SELECT "events".* FROM "events"
+Rendered shared/_feed.html.erb (0.5ms)
+Rendered shared/_feed.html.erb (0.4ms)
+Rendered shared/_feed.html.erb (0.4ms)
+Rendered shared/_feed.html.erb (0.6ms)
+Rendered layouts/_stylesheets.html.erb (1.9ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered layouts/_header.html.erb (102.7ms)
+Rendered layouts/_footer.html.erb (1.4ms)
+Rendered pages/home.html.erb within layouts/application (122.3ms)
+Completed 200 OK in 143ms (Views: 130.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/addevent" for 127.0.0.1 at Thu Mar 10 20:05:39 -0500 2011
+  Processing by EventsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users"[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_shared__event_form_html_erb___1823038241_2174776200_2061630 at /Users/pativet/RailsProjects/timeline/app/views/shared/_event_form.html.erb:1)
+Rendered shared/_error_messages.html.erb (0.6ms)
+Rendered shared/_event_form.html.erb (35.0ms)
+Rendered layouts/_stylesheets.html.erb (1.9ms)
+Rendered layouts/_header.html.erb (3.2ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered events/new.html.erb within layouts/application (49.4ms)
+Completed 200 OK in 143ms (Views: 54.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Mar 10 23:11:13 -0500 2011
+  Processing by PagesController#home as HTML
+  [1m[35mEvent Load (0.4ms)[0m  SELECT "events".* FROM "events"
+Rendered shared/_feed.html.erb (0.3ms)
+Rendered shared/_feed.html.erb (0.3ms)
+Rendered shared/_feed.html.erb (0.3ms)
+Rendered shared/_feed.html.erb (0.3ms)
+Rendered layouts/_stylesheets.html.erb (2.2ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered layouts/_header.html.erb (23.3ms)
+Rendered layouts/_footer.html.erb (1.1ms)
+Rendered pages/home.html.erb within layouts/application (40.0ms)
+Completed 200 OK in 53ms (Views: 44.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Mar 10 23:24:18 -0500 2011
+  Processing by PagesController#home as HTML
+  [1m[36mEvent Load (0.5ms)[0m  [1mSELECT "events".* FROM "events"[0m
+Rendered shared/_feed.html.erb (0.3ms)
+Rendered shared/_feed.html.erb (0.3ms)
+Rendered shared/_feed.html.erb (0.3ms)
+Rendered shared/_feed.html.erb (0.4ms)
+Rendered layouts/_stylesheets.html.erb (1.9ms)
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+Rendered layouts/_header.html.erb (23.9ms)
+Rendered layouts/_footer.html.erb (1.2ms)
+Rendered pages/home.html.erb within layouts/application (40.7ms)
+Completed 200 OK in 57ms (Views: 45.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/addevent" for 127.0.0.1 at Thu Mar 10 23:24:19 -0500 2011
+  Processing by EventsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_shared__event_form_html_erb___1823038241_2173053120_2061630 at /Users/pativet/RailsProjects/timeline/app/views/shared/_event_form.html.erb:1)
+Rendered shared/_error_messages.html.erb (0.7ms)
+Rendered shared/_event_form.html.erb (93.2ms)
+Rendered layouts/_stylesheets.html.erb (2.0ms)
+Rendered layouts/_header.html.erb (3.4ms)
+Rendered layouts/_footer.html.erb (1.2ms)
+Rendered events/new.html.erb within layouts/application (108.6ms)
+Completed 200 OK in 141ms (Views: 113.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri Mar 11 13:10:26 -0500 2011
+  Processing by PagesController#home as HTML
+  [1m[36mEvent Load (21.7ms)[0m  [1mSELECT "events".* FROM "events"[0m
+Rendered shared/_feed.html.erb (0.5ms)
+Rendered shared/_feed.html.erb (0.3ms)
+Rendered shared/_feed.html.erb (0.3ms)
+Rendered shared/_feed.html.erb (0.3ms)
+Rendered layouts/_stylesheets.html.erb (2.0ms)
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered layouts/_header.html.erb (28.7ms)
+Rendered layouts/_footer.html.erb (1.2ms)
+Rendered pages/home.html.erb within layouts/application (71.6ms)
+Completed 200 OK in 163ms (Views: 93.1ms | ActiveRecord: 22.1ms)
+
+
+Started GET "/addevent" for 127.0.0.1 at Fri Mar 11 13:10:29 -0500 2011
+  Processing by EventsController#new as HTML
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+DEPRECATION WARNING: <% %> style block helpers are deprecated. Please use <%= %>. (called from _app_views_shared__event_form_html_erb___1823038241_2173631760_2060830 at /Users/pativet/RailsProjects/timeline/app/views/shared/_event_form.html.erb:1)
+Rendered shared/_error_messages.html.erb (0.6ms)
+Rendered shared/_event_form.html.erb (96.1ms)
+Rendered layouts/_stylesheets.html.erb (1.9ms)
+Rendered layouts/_header.html.erb (3.6ms)
+Rendered layouts/_footer.html.erb (1.4ms)
+Rendered events/new.html.erb within layouts/application (169.4ms)
+Completed 200 OK in 211ms (Views: 186.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at Fri Mar 11 13:10:37 -0500 2011
+  Processing by PagesController#home as HTML
+  [1m[35mEvent Load (0.4ms)[0m  SELECT "events".* FROM "events"
+Rendered shared/_feed.html.erb (0.3ms)
+Rendered shared/_feed.html.erb (0.5ms)
+Rendered shared/_feed.html.erb (0.4ms)
+Rendered shared/_feed.html.erb (0.5ms)
+Rendered layouts/_stylesheets.html.erb (2.1ms)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered layouts/_header.html.erb (24.7ms)
+Rendered layouts/_footer.html.erb (1.3ms)
+Rendered pages/home.html.erb within layouts/application (110.6ms)
+Completed 200 OK in 125ms (Views: 115.4ms | ActiveRecord: 0.7ms)

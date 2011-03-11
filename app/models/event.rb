@@ -10,6 +10,6 @@ class Event < ActiveRecord::Base
 	validates :event_type, :presence => true
 	validates :occurence, :presence => true
 
-  occurence = ['one-time', 'monthly']
+
 
 end

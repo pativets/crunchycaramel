@@ -1,7 +1,13 @@
 <% semantic_form_for @event do |form| %>
 
-  <%= form.inputs %>
-
+<%= form.input :event_title, :label => "Event Title", :hint => "something very catchy" %>
+<%= form.input :user %>    <!-- make as current user? -->
+<%= form.input :event_type, :label => "Event Type", :as => :radio, :collection => ['Free', 'Cheap'] %>
+<%= form.input :start %>
+<%= form.input :end %>
+<%= form.input :price %>
+<%= form.input :occurence, :as => :check_boxes, :collection => ['One-Time', 'Daily', 'Monthly','Annual'] %>
+<%= form.input :description %>
   <%= form.buttons %>
 <% end %>
 

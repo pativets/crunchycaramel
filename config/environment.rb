@@ -5,4 +5,4 @@ require File.expand_path('../application', __FILE__)
 Sample::Application.initialize!
 
 
-Formtastic::SemanticFormBuilder.send(:include, Formtastic::DatePicker)
+
