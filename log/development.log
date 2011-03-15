@@ -33542,7 +33542,635 @@ Rendered pages/home.html.erb within layouts/application (117.1ms)
 Completed 200 OK in 136ms (Views: 121.6ms | ActiveRecord: 1.0ms)
 =======
 Started GET "/" for 127.0.0.1 at 2011-03-15 16:59:33 -0400
+<<<<<<< HEAD
+
+
+Started GET "/" for 127.0.0.1 at 2011-03-15 17:07:35 -0400
+
+
+Started GET "/" for 127.0.0.1 at 2011-03-15 17:51:46 -0400
+
+
+Started GET "/" for 127.0.0.1 at 2011-03-15 18:01:40 -0400
+
+
+Started GET "/" for 127.0.0.1 at 2011-03-15 18:05:51 -0400
+  Processing by PagesController#home as HTML
+  [1m[36mEvent Load (28.2ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1
+Rendered shared/_feed_item.html.erb (183.3ms)
+Rendered shared/_feed1.html.erb (184.9ms)
+Rendered shared/_feed2.html.erb (0.3ms)
+Rendered shared/_feed3.html.erb (0.3ms)
+Rendered shared/_feed4.html.erb (0.3ms)
+Rendered layouts/_stylesheets.html.erb (1.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1
+Rendered layouts/_header.html.erb (2.5ms)
+Rendered layouts/_footer.html.erb (0.9ms)
+Rendered pages/home.html.erb within layouts/application (202.2ms)
+Completed 200 OK in 277ms (Views: 205.9ms | ActiveRecord: 29.0ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2011-03-15 18:06:30 -0400
+  Processing by PagesController#about as HTML
+Rendered layouts/_stylesheets.html.erb (1.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1
+Rendered layouts/_header.html.erb (57.3ms)
+Rendered layouts/_footer.html.erb (1.1ms)
+Rendered pages/about.html.erb within layouts/application (67.2ms)
+Completed 200 OK in 72ms (Views: 71.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2011-03-15 18:06:33 -0400
+  Processing by PagesController#about as HTML
+Rendered pages/about.html.erb within layouts/application (92.1ms)
+Completed   in 96ms
+
+ActionView::Template::Error (undefined local variable or method `light' for #<#<Class:0x00000101396b18>:0x00000101392040>):
+    10: <div class="profile_container">
+    11:   <div class="picture_left">
+    12:     <h3>Pativet Sathiensamrit</h3>
+    13:     <%= light %>
+    14:   </div>
+    15:   <div class="content">
+    16:     "I have always wanted to figure out how I can do the same tasks in different ways, and particularly, finding the best way. This is why the idea of TimeLine appealed to me, given there are so many others out there doing websites about events. When I am not coding I like to sing and do graphics design, and I have most of time been in charge of the graphics design aspect of team projects as well as posters for clubs and organizations that I am involved in."
+  app/views/pages/about.html.erb:13:in `_app_views_pages_about_html_erb___4074907851399978823_2157737500_2036674792606011913'
+
+Rendered /Users/joonhashin/.rvm/gems/ruby-1.9.2-p136@rails3tutorial/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_trace.erb (1.3ms)
+Rendered /Users/joonhashin/.rvm/gems/ruby-1.9.2-p136@rails3tutorial/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/_request_and_response.erb (3.0ms)
+Rendered /Users/joonhashin/.rvm/gems/ruby-1.9.2-p136@rails3tutorial/gems/actionpack-3.0.3/lib/action_dispatch/middleware/templates/rescues/template_error.erb within rescues/layout (38.0ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2011-03-15 18:07:44 -0400
+  Processing by PagesController#about as HTML
+Rendered layouts/_stylesheets.html.erb (1.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1
+Rendered layouts/_header.html.erb (34.3ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered pages/about.html.erb within layouts/application (43.4ms)
+Completed 200 OK in 48ms (Views: 47.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2011-03-15 18:08:43 -0400
+  Processing by PagesController#about as HTML
+Rendered layouts/_stylesheets.html.erb (1.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1
+Rendered layouts/_header.html.erb (61.0ms)
+Rendered layouts/_footer.html.erb (1.1ms)
+Rendered pages/about.html.erb within layouts/application (70.6ms)
+Completed 200 OK in 77ms (Views: 75.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-03-15 18:09:09 -0400
+  Processing by PagesController#home as HTML
+  [1m[36mEvent Load (0.8ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+Rendered shared/_feed_item.html.erb (86.2ms)
+Rendered shared/_feed1.html.erb (87.5ms)
+Rendered shared/_feed2.html.erb (0.3ms)
+Rendered shared/_feed3.html.erb (0.3ms)
+Rendered shared/_feed4.html.erb (0.3ms)
+Rendered layouts/_stylesheets.html.erb (1.7ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+Rendered layouts/_header.html.erb (2.9ms)
+Rendered layouts/_footer.html.erb (1.1ms)
+Rendered pages/home.html.erb within layouts/application (104.4ms)
+Completed 200 OK in 122ms (Views: 107.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/allevent" for 127.0.0.1 at 2011-03-15 18:09:10 -0400
+  Processing by EventsController#allevent as HTML
+  [1m[35mEvent Load (0.8ms)[0m  SELECT "events".* FROM "events"
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1
+Rendered shared/_feed_item.html.erb (87.6ms)
+Rendered shared/_feed.html.erb (89.0ms)
+Rendered layouts/_stylesheets.html.erb (1.7ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1
+Rendered layouts/_header.html.erb (2.6ms)
+Rendered layouts/_footer.html.erb (0.9ms)
+Rendered events/allevent.html.erb within layouts/application (101.4ms)
+Completed 200 OK in 148ms (Views: 105.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2011-03-15 18:09:12 -0400
+  Processing by PagesController#about as HTML
+Rendered layouts/_stylesheets.html.erb (1.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1
+Rendered layouts/_header.html.erb (26.6ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered pages/about.html.erb within layouts/application (35.4ms)
+Completed 200 OK in 40ms (Views: 39.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/careers" for 127.0.0.1 at 2011-03-15 18:09:31 -0400
+  Processing by PagesController#careers as HTML
+Rendered layouts/_stylesheets.html.erb (1.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1
+Rendered layouts/_header.html.erb (59.2ms)
+Rendered layouts/_footer.html.erb (1.1ms)
+Rendered pages/careers.html.erb within layouts/application (67.7ms)
+Completed 200 OK in 72ms (Views: 71.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/careers" for 127.0.0.1 at 2011-03-15 18:09:51 -0400
+  Processing by PagesController#careers as HTML
+Rendered layouts/_stylesheets.html.erb (1.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1
+Rendered layouts/_header.html.erb (27.6ms)
+Rendered layouts/_footer.html.erb (1.1ms)
+Rendered pages/careers.html.erb within layouts/application (36.9ms)
+Completed 200 OK in 41ms (Views: 40.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/careers" for 127.0.0.1 at 2011-03-15 18:10:21 -0400
+  Processing by PagesController#careers as HTML
+Rendered layouts/_stylesheets.html.erb (1.9ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1
+Rendered layouts/_header.html.erb (67.7ms)
+Rendered layouts/_footer.html.erb (1.1ms)
+Rendered pages/careers.html.erb within layouts/application (77.6ms)
+Completed 200 OK in 82ms (Views: 81.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/contact" for 127.0.0.1 at 2011-03-15 18:10:37 -0400
+  Processing by PagesController#contact as HTML
+Rendered layouts/_stylesheets.html.erb (1.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1
+Rendered layouts/_header.html.erb (25.6ms)
+Rendered layouts/_footer.html.erb (1.1ms)
+Rendered pages/contact.html.erb within layouts/application (34.1ms)
+Completed 200 OK in 39ms (Views: 38.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/contact" for 127.0.0.1 at 2011-03-15 18:10:49 -0400
+  Processing by PagesController#contact as HTML
+Rendered layouts/_stylesheets.html.erb (1.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1
+Rendered layouts/_header.html.erb (61.6ms)
+Rendered layouts/_footer.html.erb (3.0ms)
+Rendered pages/contact.html.erb within layouts/application (72.1ms)
+Completed 200 OK in 76ms (Views: 75.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/contact" for 127.0.0.1 at 2011-03-15 18:11:09 -0400
+  Processing by PagesController#contact as HTML
+Rendered layouts/_stylesheets.html.erb (1.7ms)
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1
+Rendered layouts/_header.html.erb (36.0ms)
+Rendered layouts/_footer.html.erb (1.3ms)
+Rendered pages/contact.html.erb within layouts/application (45.2ms)
+Completed 200 OK in 50ms (Views: 48.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/contact" for 127.0.0.1 at 2011-03-15 18:11:12 -0400
+  Processing by PagesController#contact as HTML
+Rendered layouts/_stylesheets.html.erb (3.2ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1
+Rendered layouts/_header.html.erb (58.2ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered pages/contact.html.erb within layouts/application (69.3ms)
+Completed 200 OK in 75ms (Views: 74.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/careers" for 127.0.0.1 at 2011-03-15 18:11:14 -0400
+  Processing by PagesController#careers as HTML
+Rendered layouts/_stylesheets.html.erb (1.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1
+Rendered layouts/_header.html.erb (27.3ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered pages/careers.html.erb within layouts/application (38.3ms)
+Completed 200 OK in 45ms (Views: 44.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2011-03-15 18:11:16 -0400
+  Processing by PagesController#about as HTML
+Rendered layouts/_stylesheets.html.erb (1.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1
+Rendered layouts/_header.html.erb (54.3ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered pages/about.html.erb within layouts/application (63.3ms)
+Completed 200 OK in 67ms (Views: 66.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2011-03-15 18:12:24 -0400
+  Processing by PagesController#about as HTML
+Rendered layouts/_stylesheets.html.erb (1.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1
+Rendered layouts/_header.html.erb (61.0ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered pages/about.html.erb within layouts/application (70.7ms)
+Completed 200 OK in 75ms (Views: 74.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/careers" for 127.0.0.1 at 2011-03-15 18:12:29 -0400
+  Processing by PagesController#careers as HTML
+Rendered layouts/_stylesheets.html.erb (1.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1
+Rendered layouts/_header.html.erb (27.4ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered pages/careers.html.erb within layouts/application (35.8ms)
+Completed 200 OK in 40ms (Views: 39.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/contact" for 127.0.0.1 at 2011-03-15 18:12:33 -0400
+  Processing by PagesController#contact as HTML
+Rendered layouts/_stylesheets.html.erb (1.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1
+Rendered layouts/_header.html.erb (55.7ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered pages/contact.html.erb within layouts/application (64.0ms)
+Completed 200 OK in 68ms (Views: 67.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2011-03-15 18:12:39 -0400
+  Processing by PagesController#about as HTML
+Rendered layouts/_stylesheets.html.erb (1.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1
+Rendered layouts/_header.html.erb (26.7ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered pages/about.html.erb within layouts/application (35.4ms)
+Completed 200 OK in 39ms (Views: 38.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2011-03-15 18:14:56 -0400
+  Processing by PagesController#about as HTML
+Rendered layouts/_stylesheets.html.erb (2.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1
+Rendered layouts/_header.html.erb (63.5ms)
+Rendered layouts/_footer.html.erb (1.1ms)
+Rendered pages/about.html.erb within layouts/application (74.4ms)
+Completed 200 OK in 81ms (Views: 80.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2011-03-15 18:16:23 -0400
+  Processing by PagesController#about as HTML
+Rendered layouts/_stylesheets.html.erb (1.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1
+Rendered layouts/_header.html.erb (30.1ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered pages/about.html.erb within layouts/application (39.2ms)
+Completed 200 OK in 46ms (Views: 45.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2011-03-15 18:17:01 -0400
+  Processing by PagesController#about as HTML
+Rendered layouts/_stylesheets.html.erb (2.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1
+Rendered layouts/_header.html.erb (26.8ms)
+Rendered layouts/_footer.html.erb (1.1ms)
+Rendered pages/about.html.erb within layouts/application (36.5ms)
+Completed 200 OK in 41ms (Views: 40.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2011-03-15 18:17:17 -0400
+  Processing by PagesController#about as HTML
+Rendered layouts/_stylesheets.html.erb (1.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1
+Rendered layouts/_header.html.erb (67.2ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered pages/about.html.erb within layouts/application (76.5ms)
+Completed 200 OK in 81ms (Views: 80.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/careers" for 127.0.0.1 at 2011-03-15 18:17:20 -0400
+  Processing by PagesController#careers as HTML
+Rendered layouts/_stylesheets.html.erb (2.1ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1
+Rendered layouts/_header.html.erb (26.8ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered pages/careers.html.erb within layouts/application (36.5ms)
+Completed 200 OK in 41ms (Views: 40.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2011-03-15 18:17:23 -0400
+  Processing by PagesController#about as HTML
+Rendered layouts/_stylesheets.html.erb (1.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1
+Rendered layouts/_header.html.erb (27.4ms)
+Rendered layouts/_footer.html.erb (1.1ms)
+Rendered pages/about.html.erb within layouts/application (36.3ms)
+Completed 200 OK in 41ms (Views: 40.1ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2011-03-15 18:17:32 -0400
+  Processing by PagesController#about as HTML
+Rendered layouts/_stylesheets.html.erb (1.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1
+Rendered layouts/_header.html.erb (29.6ms)
+Rendered layouts/_footer.html.erb (1.2ms)
+Rendered pages/about.html.erb within layouts/application (41.8ms)
+Completed 200 OK in 46ms (Views: 45.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2011-03-15 18:17:49 -0400
+  Processing by PagesController#about as HTML
+Rendered layouts/_stylesheets.html.erb (1.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1
+Rendered layouts/_header.html.erb (67.6ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered pages/about.html.erb within layouts/application (76.6ms)
+Completed 200 OK in 84ms (Views: 82.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2011-03-15 18:18:25 -0400
+  Processing by PagesController#about as HTML
+Rendered layouts/_stylesheets.html.erb (1.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1
+Rendered layouts/_header.html.erb (60.0ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered pages/about.html.erb within layouts/application (69.3ms)
+Completed 200 OK in 73ms (Views: 72.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2011-03-15 18:18:35 -0400
+  Processing by PagesController#about as HTML
+Rendered layouts/_stylesheets.html.erb (1.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1
+Rendered layouts/_header.html.erb (30.5ms)
+Rendered layouts/_footer.html.erb (1.1ms)
+Rendered pages/about.html.erb within layouts/application (40.7ms)
+Completed 200 OK in 45ms (Views: 44.7ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2011-03-15 18:18:52 -0400
+  Processing by PagesController#about as HTML
+Rendered layouts/_stylesheets.html.erb (1.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1
+Rendered layouts/_header.html.erb (55.8ms)
+Rendered layouts/_footer.html.erb (1.1ms)
+Rendered pages/about.html.erb within layouts/application (65.5ms)
+Completed 200 OK in 70ms (Views: 69.3ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2011-03-15 18:19:41 -0400
+  Processing by PagesController#about as HTML
+Rendered layouts/_stylesheets.html.erb (1.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1
+Rendered layouts/_header.html.erb (62.3ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered pages/about.html.erb within layouts/application (72.0ms)
+Completed 200 OK in 76ms (Views: 75.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2011-03-15 18:19:58 -0400
+  Processing by PagesController#about as HTML
+Rendered layouts/_stylesheets.html.erb (1.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1
+Rendered layouts/_header.html.erb (28.8ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered pages/about.html.erb within layouts/application (37.5ms)
+Completed 200 OK in 42ms (Views: 41.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2011-03-15 18:20:15 -0400
+  Processing by PagesController#about as HTML
+Rendered layouts/_stylesheets.html.erb (1.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1
+Rendered layouts/_header.html.erb (27.3ms)
+Rendered layouts/_footer.html.erb (1.1ms)
+Rendered pages/about.html.erb within layouts/application (36.2ms)
+Completed 200 OK in 43ms (Views: 39.9ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2011-03-15 18:20:34 -0400
+  Processing by PagesController#about as HTML
+Rendered layouts/_stylesheets.html.erb (1.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1
+Rendered layouts/_header.html.erb (59.1ms)
+Rendered layouts/_footer.html.erb (1.8ms)
+Rendered pages/about.html.erb within layouts/application (69.0ms)
+Completed 200 OK in 73ms (Views: 72.8ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2011-03-15 18:20:48 -0400
+  Processing by PagesController#about as HTML
+Rendered layouts/_stylesheets.html.erb (1.5ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1
+Rendered layouts/_header.html.erb (27.3ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered pages/about.html.erb within layouts/application (35.7ms)
+Completed 200 OK in 40ms (Views: 39.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/careers" for 127.0.0.1 at 2011-03-15 18:20:51 -0400
+  Processing by PagesController#careers as HTML
+Rendered layouts/_stylesheets.html.erb (1.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1
+Rendered layouts/_header.html.erb (28.2ms)
+Rendered layouts/_footer.html.erb (2.2ms)
+Rendered pages/careers.html.erb within layouts/application (37.9ms)
+Completed 200 OK in 42ms (Views: 41.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-03-15 18:20:53 -0400
+  Processing by PagesController#home as HTML
+  [1m[36mEvent Load (0.8ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+Rendered shared/_feed_item.html.erb (88.8ms)
+Rendered shared/_feed1.html.erb (90.3ms)
+Rendered shared/_feed2.html.erb (0.3ms)
+Rendered shared/_feed3.html.erb (0.2ms)
+Rendered shared/_feed4.html.erb (0.3ms)
+Rendered layouts/_stylesheets.html.erb (1.6ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+Rendered layouts/_header.html.erb (2.7ms)
+Rendered layouts/_footer.html.erb (1.1ms)
+Rendered pages/home.html.erb within layouts/application (106.2ms)
+Completed 200 OK in 125ms (Views: 109.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-03-15 18:21:21 -0400
+  Processing by PagesController#home as HTML
+  [1m[35mEvent Load (0.8ms)[0m  SELECT "events".* FROM "events"
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1
+Rendered shared/_feed_item.html.erb (87.6ms)
+Rendered shared/_feed1.html.erb (89.2ms)
+Rendered shared/_feed2.html.erb (0.3ms)
+Rendered shared/_feed3.html.erb (0.2ms)
+Rendered shared/_feed4.html.erb (0.2ms)
+Rendered layouts/_stylesheets.html.erb (1.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1
+Rendered layouts/_header.html.erb (2.5ms)
+Rendered layouts/_footer.html.erb (0.9ms)
+Rendered pages/home.html.erb within layouts/application (104.5ms)
+Completed 200 OK in 122ms (Views: 107.9ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2011-03-15 18:21:25 -0400
+  Processing by PagesController#about as HTML
+Rendered layouts/_stylesheets.html.erb (1.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1
+Rendered layouts/_header.html.erb (26.6ms)
+Rendered layouts/_footer.html.erb (1.1ms)
+Rendered pages/about.html.erb within layouts/application (35.8ms)
+Completed 200 OK in 40ms (Views: 39.4ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2011-03-15 18:21:33 -0400
+  Processing by PagesController#about as HTML
+Rendered layouts/_stylesheets.html.erb (1.6ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1
+Rendered layouts/_header.html.erb (26.9ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered pages/about.html.erb within layouts/application (35.5ms)
+Completed 200 OK in 40ms (Views: 39.0ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/about" for 127.0.0.1 at 2011-03-15 18:21:36 -0400
+  Processing by PagesController#about as HTML
+Rendered layouts/_stylesheets.html.erb (1.7ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1
+Rendered layouts/_header.html.erb (28.1ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered pages/about.html.erb within layouts/application (37.3ms)
+Completed 200 OK in 42ms (Views: 41.6ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-03-15 18:21:39 -0400
+  Processing by PagesController#home as HTML
+  [1m[36mEvent Load (0.8ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+Rendered shared/_feed_item.html.erb (90.7ms)
+Rendered shared/_feed1.html.erb (92.1ms)
+Rendered shared/_feed2.html.erb (0.4ms)
+Rendered shared/_feed3.html.erb (0.2ms)
+Rendered shared/_feed4.html.erb (0.2ms)
+Rendered layouts/_stylesheets.html.erb (1.6ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+Rendered layouts/_header.html.erb (2.7ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered pages/home.html.erb within layouts/application (109.9ms)
+Completed 200 OK in 130ms (Views: 113.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-03-15 18:22:05 -0400
+  Processing by PagesController#home as HTML
+  [1m[35mEvent Load (0.9ms)[0m  SELECT "events".* FROM "events"
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1
+Rendered shared/_feed_item.html.erb (99.7ms)
+Rendered shared/_feed1.html.erb (101.3ms)
+Rendered shared/_feed2.html.erb (0.4ms)
+Rendered shared/_feed3.html.erb (0.3ms)
+Rendered shared/_feed4.html.erb (0.3ms)
+Rendered layouts/_stylesheets.html.erb (1.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1
+Rendered layouts/_header.html.erb (2.6ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered pages/home.html.erb within layouts/application (117.6ms)
+Completed 200 OK in 139ms (Views: 121.4ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-03-15 18:22:29 -0400
+  Processing by PagesController#home as HTML
+  [1m[36mEvent Load (0.9ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+Rendered shared/_feed_item.html.erb (96.1ms)
+Rendered shared/_feed1.html.erb (97.6ms)
+Rendered shared/_feed2.html.erb (0.3ms)
+Rendered shared/_feed3.html.erb (0.2ms)
+Rendered shared/_feed4.html.erb (0.2ms)
+Rendered layouts/_stylesheets.html.erb (1.6ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+Rendered layouts/_header.html.erb (2.5ms)
+Rendered layouts/_footer.html.erb (1.0ms)
+Rendered pages/home.html.erb within layouts/application (113.5ms)
+Completed 200 OK in 133ms (Views: 117.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2011-03-15 18:22:34 -0400
+  Processing by PagesController#home as HTML
+  [1m[35mEvent Load (0.9ms)[0m  SELECT "events".* FROM "events"
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1
+Rendered shared/_feed_item.html.erb (94.8ms)
+Rendered shared/_feed1.html.erb (96.3ms)
+Rendered shared/_feed2.html.erb (0.4ms)
+Rendered shared/_feed3.html.erb (0.3ms)
+Rendered shared/_feed4.html.erb (0.2ms)
+Rendered layouts/_stylesheets.html.erb (1.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1
+Rendered layouts/_header.html.erb (2.7ms)
+Rendered layouts/_footer.html.erb (1.1ms)
+Rendered pages/home.html.erb within layouts/application (113.6ms)
+Completed 200 OK in 172ms (Views: 117.0ms | ActiveRecord: 1.4ms)
+=======
 >>>>>>> 98c6cb30889e3e9bb465e3512cd8e37b9357d37d
+<<<<<<< HEAD
 
 
 Started GET "/" for 127.0.0.1 at Tue Mar 15 18:39:35 -0400 2011
@@ -33600,3 +34228,6 @@ Rendered layouts/_header.html.erb (3.4ms)
 Rendered layouts/_footer.html.erb (1.1ms)
 Rendered pages/home.html.erb within layouts/application (58.3ms)
 Completed 200 OK in 140ms (Views: 63.4ms | ActiveRecord: 1.0ms)
+=======
+>>>>>>> 5ece53fa00dfd41c8f1cdd20e35a2971fcf36774
+>>>>>>> 6e36fe9c0c4cc57638f54f4a5f73ec127931a6c4
