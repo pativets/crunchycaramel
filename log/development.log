@@ -33543,3 +33543,60 @@ Completed 200 OK in 136ms (Views: 121.6ms | ActiveRecord: 1.0ms)
 =======
 Started GET "/" for 127.0.0.1 at 2011-03-15 16:59:33 -0400
 >>>>>>> 98c6cb30889e3e9bb465e3512cd8e37b9357d37d
+
+
+Started GET "/" for 127.0.0.1 at Tue Mar 15 18:39:35 -0400 2011
+  Processing by PagesController#home as HTML
+  [1m[36mEvent Load (0.8ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered shared/_feed_item.html.erb (46.8ms)
+Rendered shared/_feed1.html.erb (48.9ms)
+Rendered shared/_feed2.html.erb (0.3ms)
+Rendered shared/_feed3.html.erb (0.2ms)
+Rendered shared/_feed4.html.erb (0.2ms)
+Rendered layouts/_stylesheets.html.erb (1.9ms)
+Rendered layouts/_header.html.erb (3.6ms)
+Rendered layouts/_footer.html.erb (1.2ms)
+Rendered pages/home.html.erb within layouts/application (70.8ms)
+Completed 200 OK in 90ms (Views: 76.0ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Mar 15 18:40:35 -0400 2011
+  Processing by PagesController#home as HTML
+  [1m[35mEvent Load (0.7ms)[0m  SELECT "events".* FROM "events"
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered shared/_feed_item.html.erb (120.3ms)
+Rendered shared/_feed1.html.erb (122.1ms)
+Rendered shared/_feed2.html.erb (0.3ms)
+Rendered shared/_feed3.html.erb (0.2ms)
+Rendered shared/_feed4.html.erb (0.2ms)
+Rendered layouts/_stylesheets.html.erb (1.9ms)
+Rendered layouts/_header.html.erb (3.5ms)
+Rendered layouts/_footer.html.erb (1.1ms)
+Rendered pages/home.html.erb within layouts/application (142.7ms)
+Completed 200 OK in 167ms (Views: 150.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Tue Mar 15 18:40:35 -0400 2011
+  Processing by PagesController#home as HTML
+  [1m[35mEvent Load (0.7ms)[0m  SELECT "events".* FROM "events"
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+Rendered shared/_feed_item.html.erb (36.1ms)
+Rendered shared/_feed1.html.erb (38.2ms)
+Rendered shared/_feed2.html.erb (0.3ms)
+Rendered shared/_feed3.html.erb (0.2ms)
+Rendered shared/_feed4.html.erb (0.2ms)
+Rendered layouts/_stylesheets.html.erb (1.9ms)
+Rendered layouts/_header.html.erb (3.4ms)
+Rendered layouts/_footer.html.erb (1.1ms)
+Rendered pages/home.html.erb within layouts/application (58.3ms)
+Completed 200 OK in 140ms (Views: 63.4ms | ActiveRecord: 1.0ms)
