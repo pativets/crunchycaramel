@@ -3,7 +3,10 @@
 }
 
 body {
-  background: #eee;
+  background-color: #fff; 
+  background-image: url(/images/background.png);
+  background-repeat: repeat-x;
+  background-position: top;
 //f9d549
 }
 
@@ -14,7 +17,6 @@ header {
 
 header img {
   padding-top: 1em;
-
 }
 
 section {
