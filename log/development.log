@@ -33415,6 +33415,7 @@ Rendered pages/home.html.erb within layouts/application (56.2ms)
 Completed 200 OK in 73ms (Views: 60.9ms | ActiveRecord: 1.0ms)
 
 
+<<<<<<< HEAD
 Started GET "/" for 127.0.0.1 at Tue Mar 15 17:00:23 -0400 2011
   Processing by PagesController#home as HTML
   [1m[35mEvent Load (0.7ms)[0m  SELECT "events".* FROM "events"
@@ -33539,3 +33540,6 @@ Rendered layouts/_header.html.erb (3.4ms)
 Rendered layouts/_footer.html.erb (1.1ms)
 Rendered pages/home.html.erb within layouts/application (117.1ms)
 Completed 200 OK in 136ms (Views: 121.6ms | ActiveRecord: 1.0ms)
+=======
+Started GET "/" for 127.0.0.1 at 2011-03-15 16:59:33 -0400
+>>>>>>> 98c6cb30889e3e9bb465e3512cd8e37b9357d37d
