@@ -21,8 +21,9 @@ section {
   margin-top: 1em;
   font-size: 120%;
   padding: 20px;
-  background: #CD5C5C;
-//f9b42f
+  background: #F5FFFA;
+/*Bright Yellow F9B42F*/
+/*Dark Pink CD5C5C */
 }
 
 .free {
@@ -42,7 +43,15 @@ section {
 }
 
 section h1 {
-  font-size: 200%;
+	font-size: 210%;
+	font-weight: 300;
+	letter-spacing: -0.5px;
+	margin-bottom: 20px;
+}
+
+section h2 {
+	font-size: 150%;
+	margin-bottom: 0px;
 }
 
 /* Links */
@@ -287,3 +296,56 @@ form.new_event textarea {
   margin-bottom: 0;
 }
 
+/*Profile*/
+
+div.profile_container {
+  width: 100%;
+  min-height: 230px;
+/*  border: 2px solid gray;*/
+}
+
+.profile_container div.picture_right {
+  float: right;
+/*  border: 2px solid gray;*/
+  text-align: center;
+}
+
+.profile_container div.picture_left {
+  float: left;
+/*  border: 2px solid gray;*/
+  text-align: center;
+}
+
+.profile_container div.content {
+  padding-top: 30px;
+  height: 200px;
+  text-align: normal;
+  font-style: italic;
+/*  border: 2px solid gray;*/
+}
+
+/*Contact Map*/
+
+div.map_container {
+  width: 100%;
+  height: 290px;
+/*  border: 2px dotted gray;*/
+}
+
+.map_container #map {
+  margin-top: 16px;
+  margin-right: 20px;
+  width: 450px;
+  float: right;
+/*  border: 1px dotted gray;*/
+}
+
+.map_container #address, #email {
+/*  float: right;*/
+/*  margin-top: 16px;*/
+/*  margin-left: 13px;*/
+  padding: 10px 10px 10px 10px;
+  width: 150px;
+  min-height: 0px;
+/*  border: 1px dotted gray;*/
+}
