@@ -1,15 +1,21 @@
 .container {
-  width: 710px;
+  width: 750px;
 }
 
 body {
+<<<<<<< HEAD
   background-color: #fff; 
   background-image: url(/images/background.png);
   background-repeat: repeat-x;
   background-position: top;
 //f9d549
+=======
+/*Bright Yellow #F9D549*/
+/*Ivory #EEE*/
+/*  background: url('/images/background.png') repeat-x;*/
+  background: #221057;
+>>>>>>> 13604ebcbce833491e19cc4d550407d94e7cb777
 }
-
 
 header {
   padding-top: 10px;
@@ -20,12 +26,12 @@ header img {
 }
 
 section {
+  /*Bright Yellow F9B42F*/
+  /*Dark Pink CD5C5C */
   margin-top: 1em;
   font-size: 120%;
   padding: 20px;
   background: #F5FFFA;
-/*Bright Yellow F9B42F*/
-/*Dark Pink CD5C5C */
 }
 
 .free {
@@ -34,7 +40,6 @@ section {
   padding: 20px;
   padding-bottom: 0px;
 }
-
 
 .cheap {
  /* margin-top: 1em; */
@@ -56,6 +61,16 @@ section h2 {
 	margin-bottom: 0px;
 }
 
+section h3 {
+  font-size: 110%;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+b {
+	font-size: 105%;
+}
+
 /* Links */
 
 a {
@@ -67,9 +82,8 @@ a {
 a:hover {
   color: #069;
   text-decoration: underline;
+}
 
-}
-}
 
 a:visited {
   color: #069;
@@ -107,7 +121,7 @@ a.add_button1 {
 footer {
   text-align: center;
   margin-top: 10px;
-  width: 710px;
+  width: 750px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -123,7 +137,7 @@ nav {
 }
 
 nav {
- /* background-color: white;  */
+  background-color: #FFFFFF;  
   padding: 0 0.7em;
   white-space: nowrap;
 }
