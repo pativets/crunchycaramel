@@ -21,7 +21,8 @@ section {
   margin-top: 1em;
   font-size: 120%;
   padding: 20px;
-  background: #f9b42f;
+  background: #CD5C5C;
+//f9b42f
 }
 
 .free {
@@ -47,7 +48,7 @@ section h1 {
 /* Links */
 
 a {
-  color: #09c;
+  color: #eee;
   text-decoration: none;
 
 }
@@ -258,7 +259,7 @@ table.events tr td.event span.timestamp {
 table.events tr td.event span.general {
   display: block;
   font-size: 85%;
-  color: #666;
+  color: #000;
 }
 
 div.user_info img {

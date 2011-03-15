@@ -1,7 +1,7 @@
 module ApplicationHelper
 
 	def title
-		base_title = "TimeLine - Free and Cheap Events"
+		base_title = "GrateTimes - Free and cheap offers"
 		if @title.nil?
 			base_title
 		else
