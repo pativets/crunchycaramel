@@ -3,7 +3,8 @@
 }
 
 body {
-  background: #f9d549;
+  background: #eee;
+//f9d549
 }
 
 
@@ -251,6 +252,12 @@ table.events tr td.event {
 table.events tr td.event span.timestamp {
   display: block;
   font-size: 65%;
+  color: #666;
+}
+
+table.events tr td.event span.general {
+  display: block;
+  font-size: 85%;
   color: #666;
 }
 

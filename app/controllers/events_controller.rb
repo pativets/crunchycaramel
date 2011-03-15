@@ -13,6 +13,11 @@ class EventsController < ApplicationController
 		end
 	end
 	
+	def allevent
+	    @title = "All Posts"
+      @feed_items = Event.all.paginate(:page => params[:page])
+  end
+	
 	def new
 	  if signed_in?
   		@event = Event.new

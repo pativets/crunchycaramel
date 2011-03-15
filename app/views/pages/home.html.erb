@@ -9,38 +9,41 @@
     </div>
 </noscript>
 -->
+
 <h1><strong>free</strong></h1>
 <div class="coda-slider-wrapper">
 	<div class="coda-slider preload" id="coda-slider-1">
 		<div class="panel">
 			<div class="panel-wrapper">
 					<div class = "free round">
-					  	  	<%= render 'shared/feed' %>
-				<!--	 <%= link_to "View all", "#" %> -->
+					  	  	<%= render 'shared/feed1' %>
+					<% unless @feed_items.empty? %>
+						<%= link_to "View all", allevent_path %> 
+					<% end %>
 					</div>
 			</div>
 		</div>
 		<div class="panel">
 			<div class="panel-wrapper">
 				<div class = "free round">
-				  	  	<%= render 'shared/feed' %>
-			<!--	 <%= link_to "View all", "#" %> -->
+				  	  	<%= render 'shared/feed2' %>
+
 				</div>
 			</div>
 		</div>
 		<div class="panel">
 			<div class="panel-wrapper">
 				<div class = "free round">
-				  	  	<%= render 'shared/feed' %>
-			<!--	 <%= link_to "View all", "#" %> -->
+				  	  	<%= render 'shared/feed3' %>
+	
 				</div>
 			</div>
 		</div>
 		<div class="panel">
 			<div class="panel-wrapper">
 				<div class = "free round">
-				  	  	<%= render 'shared/feed' %>
-			<!--	 <%= link_to "View all", "#" %> -->
+				  	  	<%= render 'shared/feed4' %>
+
 				</div>
 			</div>
 		</div>

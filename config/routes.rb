@@ -6,7 +6,7 @@ Sample::Application.routes.draw do
   get "events/new"
 
   match '/addevent', :to => 'events#new'
-
+  match '/allevent', :to => 'events#allevent'
   
   match '/signup', :to => 'users#new'
   match '/signin', :to => 'sessions#new'
