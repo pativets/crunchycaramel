@@ -9,6 +9,10 @@ class EventsController < ApplicationController
 			redirect_to root_path
 		else
 			@feed_items = []
+			@feed_item1 = []
+			@feed_item2 = []
+			@feed_item3 = []
+			@feed_item4 = []
 			render 'events/new'
 		end
 	end

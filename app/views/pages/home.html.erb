@@ -16,31 +16,60 @@
 		<div class="panel">
 			<div class="panel-wrapper">
 				<div class = "free round">
-<!-- put here render 'shared/feed' -->
-					<% unless @feed_items.empty? %>
-						<%= link_to "View all", allevent_path %> 
-					<% end %>
+			       <%= link_to @feed_item1.event_title, "#" %> </br>
+				   <%= @feed_item1.event_type %> </br>
+			       <%= link_to @feed_item1.user.name, @feed_item1.user %> </br>
+			       <%= @feed_item1.startdate.strftime("%b %d, %Y at") %>
+			   	   <%= @feed_item1.starttime.strftime("%I:%M %p") %> </br>
+		      	   <%= @feed_item1.occurence %> </br>
+		           <%= @feed_item1.location %> </br>
+		           <%= @feed_item1.description %> </br>
+				   <%= link_to gravatar_for(@feed_item1.user), @feed_item1.user %>
 				</div>
 			</div>
 		</div>
 		<div class="panel">
 			<div class="panel-wrapper">
 				<div class = "free round">
-
+					 <%= link_to @feed_item2.event_title, "#" %> </br>
+					   <%= @feed_item2.event_type %> </br>
+				       <%= link_to @feed_item2.user.name, @feed_item2.user %> </br>
+				       <%= @feed_item2.startdate.strftime("%b %d, %Y at") %>
+				   	   <%= @feed_item2.starttime.strftime("%I:%M %p") %> </br>
+			      	   <%= @feed_item2.occurence %> </br>
+			           <%= @feed_item2.location %> </br>
+			           <%= @feed_item2.description %> </br>
+					   <%= link_to gravatar_for(@feed_item2.user), @feed_item1.user %>
 				</div>
 			</div>
 		</div>
 		<div class="panel">
 			<div class="panel-wrapper">
 				<div class = "free round">
-
+					 <%= link_to @feed_item3.event_title, "#" %> </br>
+					   <%= @feed_item3.event_type %> </br>
+				       <%= link_to @feed_item3.user.name, @feed_item3.user %> </br>
+				       <%= @feed_item3.startdate.strftime("%b %d, %Y at") %>
+				   	   <%= @feed_item3.starttime.strftime("%I:%M %p") %> </br>
+			      	   <%= @feed_item3.occurence %> </br>
+			           <%= @feed_item3.location %> </br>
+			           <%= @feed_item3.description %> </br>
+					   <%= link_to gravatar_for(@feed_item3.user), @feed_item1.user %>
 				</div>
 			</div>
 		</div>
 		<div class="panel">
 			<div class="panel-wrapper">
 				<div class = "free round">
-
+					 <%= link_to @feed_item4.event_title, "#" %> </br>
+					   <%= @feed_item4.event_type %> </br>
+				       <%= link_to @feed_item4.user.name, @feed_item4.user %> </br>
+				       <%= @feed_item4.startdate.strftime("%b %d, %Y at") %>
+				   	   <%= @feed_item4.starttime.strftime("%I:%M %p") %> </br>
+			      	   <%= @feed_item4.occurence %> </br>
+			           <%= @feed_item4.location %> </br>
+			           <%= @feed_item4.description %> </br>
+					   <%= link_to gravatar_for(@feed_item4.user), @feed_item4.user %>
 				</div>
 			</div>
 		</div>
@@ -48,3 +77,5 @@
 </div>
 
 <h1><strong>cheap</strong></h1>
+
+

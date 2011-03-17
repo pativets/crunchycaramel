@@ -1,8 +1,6 @@
-<% unless @feed_items.empty? %>
+
   <table class="events" summary="User events">
-    <%= render :partial => 'shared/feed_item_home', :collection => @feed_items %>
+    <%= render :partial => 'shared/feed_item_home', :collection => @feed_item1 %>
   </table>
-  <%= will_paginate @feed_items %>
-<% else %>
-	There are currently no events to show
-<% end %>
+
+
