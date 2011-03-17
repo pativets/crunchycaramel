@@ -35489,3 +35489,72 @@ Rendered layouts/_header.html.erb (52.4ms)
 Rendered layouts/_footer.html.erb (1.2ms)
 Rendered pages/home.html.erb within layouts/application (101.7ms)
 Completed 200 OK in 268ms (Views: 196.5ms | ActiveRecord: 18.3ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Mar 17 15:57:42 -0400 2011
+  Processing by PagesController#home as HTML
+  [1m[36mEvent Load (0.6ms)[0m  [1mSELECT "events".* FROM "events"[0m
+Rendered layouts/_stylesheets.html.erb (2.2ms)
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1
+Rendered layouts/_header.html.erb (19.6ms)
+Rendered layouts/_footer.html.erb (1.3ms)
+Rendered pages/home.html.erb within layouts/application (31.8ms)
+Completed 200 OK in 51ms (Views: 37.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Mar 17 15:58:06 -0400 2011
+  Processing by PagesController#home as HTML
+  [1m[36mEvent Load (0.5ms)[0m  [1mSELECT "events".* FROM "events"[0m
+Rendered layouts/_stylesheets.html.erb (2.1ms)
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+Rendered layouts/_header.html.erb (19.2ms)
+Rendered layouts/_footer.html.erb (1.2ms)
+Rendered pages/home.html.erb within layouts/application (30.6ms)
+Completed 200 OK in 48ms (Views: 36.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Mar 17 16:00:48 -0400 2011
+  Processing by PagesController#home as HTML
+  [1m[35mEvent Load (0.5ms)[0m  SELECT "events".* FROM "events"
+Rendered layouts/_stylesheets.html.erb (1.8ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1
+Rendered layouts/_header.html.erb (74.9ms)
+Rendered layouts/_footer.html.erb (1.1ms)
+Rendered pages/home.html.erb within layouts/application (85.1ms)
+Completed 200 OK in 103ms (Views: 90.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/allevent" for 127.0.0.1 at Thu Mar 17 16:00:58 -0400 2011
+  Processing by EventsController#allevent as HTML
+  [1m[36mEvent Load (0.6ms)[0m  [1mSELECT "events".* FROM "events"[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+Rendered shared/_feed_item.html.erb (182.3ms)
+Rendered shared/_feed_allevent.html.erb (184.2ms)
+Rendered layouts/_stylesheets.html.erb (2.0ms)
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+Rendered layouts/_header.html.erb (3.2ms)
+Rendered layouts/_footer.html.erb (1.2ms)
+Rendered events/allevent.html.erb within layouts/application (199.4ms)
+Completed 200 OK in 217ms (Views: 204.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at Thu Mar 17 16:01:01 -0400 2011
+  Processing by PagesController#home as HTML
+  [1m[35mEvent Load (0.5ms)[0m  SELECT "events".* FROM "events"
+Rendered layouts/_stylesheets.html.erb (2.0ms)
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" IS NULL) LIMIT 1
+Rendered layouts/_header.html.erb (15.5ms)
+Rendered layouts/_footer.html.erb (1.3ms)
+Rendered pages/home.html.erb within layouts/application (26.4ms)
+Completed 200 OK in 43ms (Views: 31.3ms | ActiveRecord: 0.7ms)
