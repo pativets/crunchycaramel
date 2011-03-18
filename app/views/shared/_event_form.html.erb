@@ -1,42 +1,57 @@
 <%= form_for @event do |f| %>
   <%= render 'shared/error_messages', :object => f.object %>
-    <div class="field">
-      <%= f.label :event_type %>
-      <%= f.select :event_type, Event::EVENT_TYPE %>
-    </div>
-    <div class="field" style="width:20px">
-      <%= f.label :Title %>
-      <%= f.text_field :event_title %>
-    </div>
-    <div class="field">
-      <%= f.label :start_Date %>
-      <%= f.text_field :startdate %>
-    </div>
-    <div class="field">
-      <%= f.label :start_time %>
-      <%= f.time_select :starttime, :minute_step => 15 %>
-    </div>
-    <div class="field">
-      <%= f.label :end_Date %>
-      <%= f.text_field :enddate %>
-    </div>
-    <div class="field">
-      <%= f.label :end_Time %>
-      <%= f.time_select :endtime, :minute_step => 15 %>
-    </div>
-    <div class="field">
-      <%= f.label :occurence %>
-      <%= f.select :occurence, Event::OCCURENCE %>
-    </div>
-    <div class="field">
-      <%= f.label :location %>
-      <%= f.text_field :location %>
-    </div>
-    <div class="field">
-      <%= f.label :description %>
-      <%= f.text_area :description %>
-    </div>
-    <div class="actions">
-      <%= f.submit "Post!" %>
-    </div>
+  
+ <div class="field">
+	<%= f.label :Event_type %>
+    <%= f.select :event_type, Event::EVENT_TYPE %>
+  </div>
+
+  <div class="field" style="width:20px">
+	<%= f.label :Title %>
+    <%= f.text_field :event_title %>
+  </div>
+
+  <div class="field">
+	<%= f.label :start_Date %>
+    <%= f.text_field :startdate %>
+  </div>
+
+	<div class="field">
+		<%= f.label :start_time %>
+	    <%= f.time_select :starttime, :minute_step => 15 %>
+	</div>
+
+
+	<div class="field">
+		<%= f.label :end_Date %>
+	    <%= f.text_field :enddate %>
+	</div>
+	
+	<div class="field">
+		<%= f.label :end_Time %>
+	    <%= f.time_select :endtime, :minute_step => 15 %>
+	</div>
+
+	<div class="field">
+		<%= f.label :occurence %>
+	    <%= f.select :occurence, Event::OCCURENCE %>
+	</div>
+
+	<div class="field">
+		<%= f.label :location %>
+	    <%= f.text_field :location %>
+	</div>
+	
+
+  <div class="field">
+	<%= f.label :description %>
+    <%= f.text_area :description %>
+  </div>
+
+  
+<div class="actions">
+    <%= f.submit "Post!" %>
+  </div>
 <% end %>
+
+
