@@ -4,6 +4,8 @@ class Event < ActiveRecord::Base
 	
 	belongs_to:user
 	
+	validates :description, :presence => true, :length => {:maximum => 140}
+	validates :user_id, :presence => true
 	validates :event_title, :presence => true, :length => {:maximum => 50}
 	validates :event_type, :presence => true
 	validates :occurence, :presence => true
@@ -13,10 +15,9 @@ class Event < ActiveRecord::Base
 	validates :enddate, :presence => true
 	validates :endtime, :presence => true
 	validates :location, :presence => true
-	validates :description, :presence => true, :length => {:maximum => 140}
-	validates :user_id, :presence => true
 
-OCCURENCE = ['One-Time', 'Daily', 'Weekly', 'Monthly', 'Annual']
+
+OCCURENCE = ['One-Time', 'Daily', 'Weekly', 'Montly', 'Annual']
 EVENT_TYPE = ['Free', 'Cheap']
 
 end

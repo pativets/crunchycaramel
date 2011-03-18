@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(:version => 20110222195224) do
     t.integer  "user_id"
     t.string   "event_type"
     t.integer  "price"
+    t.string   "occurence"
     t.date     "startdate"
     t.time     "starttime"
     t.date     "enddate"
@@ -25,7 +26,6 @@ ActiveRecord::Schema.define(:version => 20110222195224) do
     t.string   "location"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "occurence"
   end
 
   add_index "events", ["user_id"], :name => "index_events_on_user_id"
