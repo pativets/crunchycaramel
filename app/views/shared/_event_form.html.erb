@@ -1,53 +1,42 @@
 <%= form_for @event do |f| %>
   <%= render 'shared/error_messages', :object => f.object %>
-  <table class="event_form">
-    <tbody>
-      <tr>
-        <th>Type</th>
-        <td><%= f.select :event_type, Event::EVENT_TYPE %></td>
-      </tr>
-      <tr>
-        <th>Title</th>
-        <td><%= f.text_field :event_title %></td>
-      </tr>
-      <tr>
-        <th>When?</th>
-        <td>
-          <table>
-            <tr>
-              <td width="1px"><%= f.text_field :startdate %></td>
-              <td><%= f.time_select :starttime, :minute_step => 15 %></td>
-            </tr>
-          </table>
-        </td>
-      </tr>
-      <tr>
-        <th>End time</th>
-        <td>
-          <table>
-            <tr>
-              <td width="1px"><%= f.text_field :enddate %></td>
-              <td><%= f.time_select :endtime, :minute_step => 15 %></td>
-            </tr>
-          </table>
-        </td>
-      </tr>
-      <tr>
-        <th>Occurrence</th>
-        <td><%= f.select :occurence, Event::OCCURENCE %></td>
-      </tr>
-      <tr>
-        <th>Location</th>
-        <td><%= f.text_field :location %></td>
-      </tr>
-      <tr>
-        <th>Description</th>
-        <td><%= f.text_area :description %></td>
-      </tr>
-      <tr>
-        <td></td>
-        <td><%= f.submit "Create event!" %></td>
-      </tr>
-    </tbody>
-  </table>
+    <div class="field">
+      <%= f.label :event_type %>
+      <%= f.select :event_type, Event::EVENT_TYPE %>
+    </div>
+    <div class="field" style="width:20px">
+      <%= f.label :Title %>
+      <%= f.text_field :event_title %>
+    </div>
+    <div class="field">
+      <%= f.label :start_Date %>
+      <%= f.text_field :startdate %>
+    </div>
+    <div class="field">
+      <%= f.label :start_time %>
+      <%= f.time_select :starttime, :minute_step => 15 %>
+    </div>
+    <div class="field">
+      <%= f.label :end_Date %>
+      <%= f.text_field :enddate %>
+    </div>
+    <div class="field">
+      <%= f.label :end_Time %>
+      <%= f.time_select :endtime, :minute_step => 15 %>
+    </div>
+    <div class="field">
+      <%= f.label :occurence %>
+      <%= f.select :occurence, Event::OCCURENCE %>
+    </div>
+    <div class="field">
+      <%= f.label :location %>
+      <%= f.text_field :location %>
+    </div>
+    <div class="field">
+      <%= f.label :description %>
+      <%= f.text_area :description %>
+    </div>
+    <div class="actions">
+      <%= f.submit "Post!" %>
+    </div>
 <% end %>
