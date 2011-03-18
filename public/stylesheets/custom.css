@@ -2,9 +2,13 @@
   width: 750px;
 }
 
-.events {
-	background-color: #fff ; 
+.eventshome {
+	background-color: #eee ; 
+	-moz-border-radius:    10px;
+  -webkit-border-radius: 10px;
+  border-radius:         10px;
 }
+
 
 body {
 
@@ -268,7 +272,7 @@ table.events tr td.gravatar {
 }
 
 table.events tr td.event {
- /* border-top: 1px solid #000; */
+  border-top: 1px solid #000; 
   vertical-align: top;
   padding-top: 10px;
 }

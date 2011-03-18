@@ -1,11 +1,11 @@
 class UserMailer < ActionMailer::Base
-  default :from => "pativets@gmail.com"
+  default :from => "pativet@crunchycaramel.com"
   
   def welcome_email(user)
     @user = user
-    @url  = "http://localhost:3000/signin"
+    @url  = "http://www.crunchycaramel.com/signin"
     mail(:to => user.email,
-         :subject => "Welcome to TimeLine Subscriber's Squad")
+         :subject => "Welcome to crunchycaramel Subscriber's Squad")
   end
   
 end

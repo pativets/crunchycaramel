@@ -25,7 +25,10 @@ class EventsController < ApplicationController
 	def new
 	  if signed_in?
   		@event = Event.new
+  	else
+  	  deny_access
   	end
+  	
 	end
 	
 	def destroy
@@ -39,6 +42,7 @@ class EventsController < ApplicationController
       @event = Event.find(params[:id])
       redirect_to root_path unless current_user?(@event.user)
     end
+    
 	
 
 end
