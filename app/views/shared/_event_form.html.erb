@@ -4,37 +4,37 @@
     <tbody>
       <tr>
         <th>Type</th>
-        <td><%= f.select :event_type, Event::EVENT_TYPE, :include_blank => 'Pick one!' %></td>
-      </tr>
-      <tr id="price_field" class="hidden_elem">
-        <th>Price</th>
-        <td><%= f.text_field :price %> CAD</td>
-      </tr>
-      <tr>
-        <th>Title</th>
-        <td><%= f.text_field :event_title %></td>
-      </tr>
-      <tr>
-        <th>Start</th>
-        <td>
-          <%= f.text_field :startdate %>
-          <%= f.time_select :starttime, :minute_step => 15 %>
-        </td>
-      </tr>
-      <tr>
-        <th>End</th>
-        <td>
-          <%= f.text_field :enddate %>
-          <%= f.time_select :endtime, :minute_step => 15 %>
-        </td>
+        <td><%= f.select :event_type, Event::EVENT_TYPE %></td>
       </tr>
       <tr>
         <th>Occurrence</th>
         <td><%= f.select :occurence, Event::OCCURENCE %></td>
       </tr>
       <tr>
+        <th>Start</th>
+        <td>
+          <%= f.text_field :startdate, :size => 10 %>
+          <%= f.time_select :starttime, :minute_step => 15 %>
+        </td>
+      </tr>
+      <tr>
+        <th>End</th>
+        <td>
+          <%= f.text_field :enddate, :size => 10   %>
+          <%= f.time_select :endtime, :minute_step => 15 %>
+        </td>
+      </tr>
+      <tr>
+        <th>Title</th>
+        <td><%= f.text_field :event_title, :size => "57" %></td>
+      </tr>
+      <tr>
         <th>Location</th>
-        <td><%= f.text_field :location %></td>
+        <td><%= f.text_field :location, :size => "57" %></td>
+      </tr>
+      <tr id="price_field" class="hidden_elem">
+        <th>Price</th>
+        <td><%= f.text_field :price, :size => "57" %> CAD</td>
       </tr>
       <tr>
         <th>Description</th>
