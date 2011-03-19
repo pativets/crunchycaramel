@@ -380,3 +380,11 @@ table.event_form th {
 table.event_form td {
 /*  border: 1px solid gray;*/
 }
+
+.data_row {
+/*  Placeholder needed for javascript, do not delete*/
+}
+
+.hidden_elem {
+  display: none;
+}

@@ -4,7 +4,11 @@
     <tbody>
       <tr>
         <th>Type</th>
-        <td><%= f.select :event_type, Event::EVENT_TYPE %></td>
+        <td><%= f.select :event_type, Event::EVENT_TYPE, :include_blank => 'Pick one!' %></td>
+      </tr>
+      <tr id="price_field" class="hidden_elem">
+        <th>Price</th>
+        <td><%= f.text_field :price %></td>
       </tr>
       <tr>
         <th>Title</th>
@@ -43,3 +47,4 @@
     </tbody>
   </table>
 <% end %>
+<%= javascript_tag "price_toggle()" %>
