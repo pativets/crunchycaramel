@@ -16,7 +16,7 @@
 		<div class="panel">
 			<div class="panel-wrapper">
 				<div class = "free round">
-					<div class = "events">
+					<div class = "eventshome">
 			      <%= link_to @feed_item1.event_title, "#" %> </br>
 								   <%= @feed_item1.event_type %> </br>
 							       <%= link_to @feed_item1.user.name, @feed_item1.user %> </br>
@@ -33,7 +33,7 @@
 		<div class="panel">
 			<div class="panel-wrapper">
 				<div class = "free round">
-					<div class = "events">
+					<div class = "eventshome">
 					<%= link_to @feed_item2.event_title, "#" %> </br>
 										   <%= @feed_item2.event_type %> </br>
 									       <%= link_to @feed_item2.user.name, @feed_item2.user %> </br>
@@ -50,8 +50,10 @@
 		<div class="panel">
 			<div class="panel-wrapper">
 				<div class = "free round">
-					<div class = "events">
-					<%= link_to @feed_item3.event_title, "#" %> </br>
+					<div class = "eventshome">
+						<span class = "eventtitle">
+							<%= link_to @feed_item3.event_title, "#" %> </br>
+						</span>
 										   <%= @feed_item3.event_type %> </br>
 									       <%= link_to @feed_item3.user.name, @feed_item3.user %> </br>
 									       <%= @feed_item3.startdate.strftime("%b %d, %Y at") %>
@@ -68,7 +70,7 @@
 		<div class="panel">
 			<div class="panel-wrapper">
 				<div class = "free round">
-					<div class = "events">
+					<div class = "eventshome">
 					<%= link_to @feed_item4.event_title, "#" %> </br>
 										   <%= @feed_item4.event_type %> </br>
 									       <%= link_to @feed_item4.user.name, @feed_item4.user %> </br>
