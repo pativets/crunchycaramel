@@ -1,3 +1,18 @@
+# == Schema Information
+# Schema version: 20110222195224
+#
+# Table name: users
+#
+#  id                 :integer         primary key
+#  name               :string(255)
+#  email              :string(255)
+#  created_at         :timestamp
+#  updated_at         :timestamp
+#  encrypted_password :string(255)
+#  salt               :string(255)
+#  admin              :boolean
+#
+
 class User < ActiveRecord::Base
 	attr_accessor :password
 	attr_accessible :name, :email, :password, :password_confirmation
@@ -15,10 +30,7 @@ class User < ActiveRecord::Base
 	validates :password, :presence => true,
 				  	:confirmation => true,
 						:length => {:within => 6..40 }
-						 
-
-	
-						 
+						 						 
 	before_save :encrypt_password
 	
 	def has_password?(submitted_password)
