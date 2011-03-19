@@ -367,3 +367,16 @@ div.map_container {
   min-height: 0px;
 /*  border: 1px dotted gray;*/
 }
+
+table.event_form {
+/*  border: 1px solid gray;*/
+}
+
+table.event_form th {
+/*  border: 1px solid gray;*/
+  width: 1%;
+}
+
+table.event_form td {
+/*  border: 1px solid gray;*/
+}
