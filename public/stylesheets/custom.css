@@ -66,6 +66,10 @@ section h3 {
   margin-bottom: 8px;
 }
 
+h1.home {
+  font-weight: 300;
+}
+
 b {
 	font-size: 105%;
 }
