@@ -35,7 +35,7 @@ class Event < ActiveRecord::Base
 	validates :event_title, :presence => true,
 	                        :length => {:maximum => 50}
 	validates :event_type,  :presence => true
-	validates :occurence,   :presence => true
+  # validates :occurence,   :presence => true
 	validates :event_type,  :presence => true
 	validates :startdate,   :presence => true
 	validates :starttime,   :presence => true
