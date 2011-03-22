@@ -5,7 +5,7 @@ class EventsController < ApplicationController
 	def create
 		@event = current_user.events.build(params[:event])
 		if @event.save
-			flash[:success] = "Your even has been created!"
+			flash[:success] = "Your event has been created!"
 			redirect_to root_path
 		else
 			@feed_items = []
