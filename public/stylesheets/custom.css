@@ -3,17 +3,14 @@
 }
 
 .eventshome {
-	background-color: #eee ; 
+	background-color:      #eee; 
 	-moz-border-radius:    10px;
-  -webkit-border-radius: 10px;
-  border-radius:         10px;
+  -webkit-border-radius:   10px;
+  border-radius:           10px;
 }
 
-
 body {
-
-  background-color: #fff; 
-  
+  background-color: #fff;  
   background-repeat: repeat-x;
   background-position: top;
 /*f9d549   background-image:  url(/images/background.jpg); */
@@ -136,14 +133,14 @@ footer nav {
   float: none;
 }
 
-/* Navigation */
+/* Navigation (top bar) */ 
 
 nav {
   float: right;
 }
 
 nav {
-  background-color: #FFFFFF;  
+  background-color: #fff;  
   padding: 0 0.7em;
   white-space: nowrap;
 }
@@ -165,8 +162,9 @@ nav ul li a {
 }
 
 nav ul li a:visited {
-  color: #09c;
+  color: #191970;
 }
+
 
 nav ul li a:hover {
   text-decoration: underline;

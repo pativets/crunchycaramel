@@ -23,7 +23,7 @@ Sample::Application.configure do
   :address              => "smtp.gmail.com",
   :port                 => 587,
   :domain               => 'localhost:3000',
-  :user_name            => 'pativets@gmail.com',
+  :user_name            => 'pativet@crunchycaramel.com',
   :password             => 'GyW53bzz',
   :authentication       => 'plain',
   :enable_starttls_auto => true  }
