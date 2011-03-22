@@ -5,7 +5,7 @@ class UserMailer < ActionMailer::Base
     @user = user
     @url  = "http://www.crunchycaramel.com/signin"
     mail(:to => user.email,
-         :subject => "Welcome to crunchycaramel Subscriber's Squad")
+         :subject => "Welcome to the Subscriber's Squad at CrunchyCaramel")
   end
   
 end

@@ -1,17 +1,41 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
-  </head>
-  <body>
-    <h1>Welcome to crunchycaramel, <%= @user.name %></h1>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+
+
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <style type="text/css" media="screen">
+      h3 { color: #f00; }
+      ul { list-style: none; }
+	
+	  section {
+	  margin-top: 1em;
+	  font-size: 120%;
+	  padding: 20px;
+	  background: #ffa904;
+   	  }
+
+	  .round {
+		  -moz-border-radius:    10px;
+		  -webkit-border-radius: 10px;
+		  border-radius:         10px;
+	  }
+    </style>
+</head>
+<body>
+
+<section class="round">
+    <h1>Welcome to crunchycaramel, <%= @user.name %>!</h1>
     <p>
-      You have successfully signed up to subscribe on TimeLine,
-      your username is your e-mail.<br/>
+      You can now log on to subscribe events on crunchycaramel,
+      your username is <%= @user.email %>.<br/>
     </p>
     <p>
-      To login to the site, just follow this link: <%= @url %>.
+      To log on and start subscribing, simply follow this link: <%= @url %>.
     </p>
-    <p>Thanks for joining and have a great day!</p>
-  </body>
+    <p>We hope you enjoy your crunchycaramel!</p>
+</section>
+
+</body>
 </html>

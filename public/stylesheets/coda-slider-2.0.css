@@ -18,10 +18,10 @@
 	.coda-slider-wrapper.arrows .coda-slider { margin: 0 10px }
 	
 	/* Arrow styling */
-	.coda-nav-left a, .coda-nav-right a { color: #39c; padding: 0px; width: 8px }
+	.coda-nav-left a, .coda-nav-right a { color: #eee; padding: 0px; width: 8px }
 	
 	/* Tab nav */
-	.coda-nav ul li a.current { background: #39c }  /* colour of active tab */
+	.coda-nav ul li a.current { background: #eee }  /* colour of active tab */
 	
 	/* Panel padding */
 	.coda-slider .panel-wrapper { padding: 20px }
