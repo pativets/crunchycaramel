@@ -1,27 +1,29 @@
 <tr>  
   <td class="event">
     <span class="user">
-      <%= link_to feed_item.event_title, "#" %>
+      <%= link_to feed_item.event_title, "#" %> | <%= feed_item.event_type %>
     </span>
-  	<span class="general">
+    <!-- <span class="general">
       <%= feed_item.event_type %>
-    </span>
-  	<span class="general">
-      <%= link_to feed_item.user.name, feed_item.user %>
-    </span>
-  	<span class="general">
+    </span> -->
+    <span class="general">
       <%= feed_item.startdate.strftime("%b %d, %Y at") %>
    	  <%= feed_item.starttime.strftime("%I:%M %p") %>
   	</span>
   	<span class="general">
-      <%= feed_item.occurence %>
+      <%= link_to feed_item.user.name, feed_item.user %>
     </span>
+    <span class="general">
+      @ <%= feed_item.location %>
+    </span>
+
+    <!-- <span class="general">
+      <%= feed_item.occurence %>
+    </span> -->
   	<span class="general">
       <%= feed_item.description %>
     </span>
-  	<span class="general">
-      <%= feed_item.location %>
-    </span>
+
     <span class="timestamp">
       Posted <%= time_ago_in_words(feed_item.created_at) %> ago.
     </span>

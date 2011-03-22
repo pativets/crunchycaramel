@@ -12,7 +12,9 @@ class SessionsController < ApplicationController
       render 'new'
     else
 	  sign_in user
-      redirect_back_or user
+      # redirect_back_or user
+      redirect_to root_path 
+      #After signing in, user should be directed to the home page. 
     end
   end
   

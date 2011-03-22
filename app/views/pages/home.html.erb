@@ -9,6 +9,11 @@
     </div>
 </noscript>
 -->
+<% if signed_in? %>
 <h1>See what events are happening around you...</h1>
 <%= render 'shared/feed' %>
 <!-- <%= render 'shared/slider' %> -->
+<% else %>
+<h1>Welcome! Please sign in</h1>
+<p>Once you sign in, you will be able to see events happening near University of Waterloo.</p>
+<% end %>
