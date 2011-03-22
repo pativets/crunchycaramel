@@ -26,6 +26,9 @@ class Event < ActiveRecord::Base
 	
 	belongs_to:user
 	
+	# in descending order from newest to oldest.
+  default_scope :order => 'events.created_at DESC'
+	
 	validates :description, :presence => true,
 	                        :length => {:maximum => 140}
 	validates :user_id,     :presence => true
