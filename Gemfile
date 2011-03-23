@@ -13,6 +13,7 @@ gem 'gravatar_image_tag', '1.0.0.pre2'
 gem 'faker', '0.3.1'
 gem 'will_paginate', '3.0.pre2'
 gem 'taps'
+gem 'date_validator'
 
 group :development do
   gem 'rspec-rails', '2.5.0'
