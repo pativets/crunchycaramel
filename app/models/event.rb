@@ -1,34 +1,38 @@
 # == Schema Information
-# Schema version: 20110222195224
+# Schema version: 20110324042310
 #
 # Table name: events
 #
-#  id          :integer         primary key
+#  id          :integer         not null, primary key
 #  description :text
 #  event_title :string(255)
 #  user_id     :integer
 #  event_type  :string(255)
-#  price       :integer
+#  price       :integer         default(0)
 #  occurence   :string(255)
 #  startdate   :date
 #  starttime   :time
 #  enddate     :date
 #  endtime     :time
 #  location    :string(255)
-#  created_at  :timestamp
-#  updated_at  :timestamp
+#  created_at  :datetime
+#  updated_at  :datetime
+#  order       :string(255)
 #
 
 class Event < ActiveRecord::Base
 
-	attr_accessible :description, :event_title, :event_type, :occurence, 
+	attr_accessible :description, :event_title, :event_type, :price, :occurence, 
 	                :startdate, :starttime, :location, :enddate, :endtime
 	
-	belongs_to:user
+	belongs_to :user
 	
-	# in descending order from newest to oldest.
-  default_scope :order => 'events.created_at DESC'
-	
+	# Most recently created
+  default_scope :order => 'created_at DESC'
+  
+  scope :free_only, where(:event_type => 'Free')
+  scope :cheap_only, where(:event_type => 'Cheap') 
+  
 	validates :description, :presence => true,
 	                        :length => {:maximum => 140}
 	validates :user_id,     :presence => true
@@ -42,7 +46,29 @@ class Event < ActiveRecord::Base
 	validates :endtime,     :presence => true
 	validates :location,    :presence => true
 
-  OCCURENCE = ['One-Time', 'Daily', 'Weekly', 'Monthly', 'Annual']
-  EVENT_TYPE = ['Free', 'Cheap']
-
+  # OCCURENCE = [
+  #   'One-Time', 
+  #   'Daily', 
+  #   'Weekly', 
+  #   'Monthly', 
+  #   'Annual'
+  #   ]
+  
+  EVENT_TYPE = [
+    'Free',
+    'Cheap'
+    ]
+  
+  ORDERS = {
+    'most recently created' => 1, 
+    'happening soon' => 2, 
+    'cheapest' => 3    
+  }
+  
+  FILTERS = {
+    'free only' => 1,
+    'cheap only' => 2,
+    'both' => 3
+  }
+  
 end
