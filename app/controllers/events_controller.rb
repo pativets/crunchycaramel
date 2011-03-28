@@ -2,6 +2,11 @@ class EventsController < ApplicationController
 	before_filter :authenticate, :only => [:create, :destroy]
 	before_filter :authorized_user, :only => :destroy
 
+	def index
+    # @title = "All Posts"
+    # @events = Event.all.paginate(:page => params[:page])
+  end
+	
 	def create
 		@event = current_user.events.build(params[:event])
 		if @event.save
