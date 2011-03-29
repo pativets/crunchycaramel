@@ -1,7 +1,7 @@
 <tr>  
   <td class="event">
     <span class="user">
-      <%= link_to feed_item.event_title, "#" %> | <%= feed_item.event_type %>
+      <%= link_to feed_item.event_title, fullitem_path, :rel => "facebox" %> | <%= feed_item.event_type %>
     </span>
     <!-- <span class="general">
       <%= feed_item.event_type %>
@@ -39,6 +39,7 @@
   </td>
   <% end %>
 </tr>
+
 <!-- <%= feed_item.created_at.strftime("%b %d, %Y at %l:%m %p") %> -->
 <!--   <span class="content"><%= feed_item.description %></span> -->
 <!-- <%= link_to feed_item.user.name, feed_item.user %> -->

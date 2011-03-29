@@ -5,6 +5,7 @@ Sample::Application.routes.draw do
 
   get "events/new"
 
+  match '/fullitem', :to => 'events#full_item'
   match '/addevent', :to => 'events#new'
   match '/allevent', :to => 'events#allevent'
   

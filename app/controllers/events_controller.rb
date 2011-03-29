@@ -9,10 +9,6 @@ class EventsController < ApplicationController
 			redirect_to root_path
 		else
 			@feed_items = []
-			@feed_item1 = []
-			@feed_item2 = []
-			@feed_item3 = []
-			@feed_item4 = []
 			render 'events/new'
 		end
 	end
@@ -21,6 +17,12 @@ class EventsController < ApplicationController
 	    @title = "All Posts"
       @feed_items = Event.all.paginate(:page => params[:page])
   end
+  
+  def full_item
+    render :layout => "full_item_layout"
+    @feed_items = Event.all.paginate(:page => params[:page])
+  end
+	
 	
 	def new
 	  if signed_in?
