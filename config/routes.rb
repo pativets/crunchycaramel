@@ -1,5 +1,6 @@
 Sample::Application.routes.draw do
 
+  match '/fullitem',  :to => 'events#full_item'
   match '/addevent',  :to => 'events#new'
   match '/signup',    :to => 'users#new'
   match '/signin',    :to => 'sessions#new'
@@ -9,25 +10,6 @@ Sample::Application.routes.draw do
   match '/help',      :to => 'pages#help'
   match '/careers',   :to => 'pages#careers'
 
-<<<<<<< HEAD
-=======
-  get "events/new"
-
-  match '/fullitem', :to => 'events#full_item'
-  match '/addevent', :to => 'events#new'
-  match '/allevent', :to => 'events#allevent'
-  
-  match '/signup', :to => 'users#new'
-  match '/signin', :to => 'sessions#new'
-  match '/signout', :to => 'sessions#destroy'
-  
-  match '/contact', :to => 'pages#contact'
-  match '/about',   :to => 'pages#about'
-  match '/help',    :to => 'pages#help'
-  match '/careers', :to => 'pages#careers'
-
-  
->>>>>>> facebox
   resources :users
   resources :sessions, :only => [:new, :create, :destroy]
   resources :events, :only => [:index, :create, :destroy]
