@@ -11,10 +11,8 @@ class SessionsController < ApplicationController
       @title = "Sign in"
       render 'new'
     else
-	  sign_in user
-      # redirect_back_or user
+	    sign_in user
       redirect_to root_path 
-      #After signing in, user should be directed to the home page. 
     end
   end
   
