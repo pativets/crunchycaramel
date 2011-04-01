@@ -71,4 +71,8 @@ class Event < ActiveRecord::Base
     'both' => 3
   }
   
+  def filter_by_cheap_only
+    default_scope :order => 'created_at DESC'
+  end
+  
 end

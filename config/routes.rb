@@ -1,26 +1,17 @@
 Sample::Application.routes.draw do
-  get "sessions/new"
 
-  get "users/new"
+  match '/addevent',  :to => 'events#new'
+  match '/signup',    :to => 'users#new'
+  match '/signin',    :to => 'sessions#new'
+  match '/signout',   :to => 'sessions#destroy'
+  match '/contact',   :to => 'pages#contact'
+  match '/about',     :to => 'pages#about'
+  match '/help',      :to => 'pages#help'
+  match '/careers',   :to => 'pages#careers'
 
-  get "events/new"
-
-  match '/addevent', :to => 'events#new'
-  match '/allevent', :to => 'events#allevent'
-  
-  match '/signup', :to => 'users#new'
-  match '/signin', :to => 'sessions#new'
-  match '/signout', :to => 'sessions#destroy'
-  
-  match '/contact', :to => 'pages#contact'
-  match '/about',   :to => 'pages#about'
-  match '/help',    :to => 'pages#help'
-  match '/careers', :to => 'pages#careers'
-
-  
   resources :users
   resources :sessions, :only => [:new, :create, :destroy]
-  resources :events, :only => [:create, :destroy]
+  resources :events, :only => [:index, :create, :destroy]
   
   root :to => 'pages#home'
 
