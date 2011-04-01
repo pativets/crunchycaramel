@@ -13,10 +13,28 @@ class EventsController < ApplicationController
 			flash[:success] = "Your event has been created!"
 			redirect_to root_path
 		else
+<<<<<<< HEAD
+=======
+			@feed_items = []
+>>>>>>> facebox
 			render 'events/new'
 		end
 	end
 	
+<<<<<<< HEAD
+=======
+	def allevent
+	    @title = "All Posts"
+      @feed_items = Event.all.paginate(:page => params[:page])
+  end
+  
+  def full_item
+    render :layout => "full_item_layout"
+    @feed_items = Event.all.paginate(:page => params[:page])
+  end
+	
+	
+>>>>>>> facebox
 	def new
 	  if signed_in?
   		@event = Event.new
