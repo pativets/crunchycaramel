@@ -114,6 +114,7 @@ DEPENDENCIES
   faker (= 0.3.1)
   formtastic
   gravatar_image_tag (= 1.0.0.pre2)
+  rack
   rails (= 3.0.3)
   rspec-rails (= 2.5.0)
   sqlite3-ruby (= 1.3.2)

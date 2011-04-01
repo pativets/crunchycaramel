@@ -14,6 +14,7 @@ gem 'faker', '0.3.1'
 gem 'will_paginate', '3.0.pre2'
 gem 'taps'
 gem 'date_validator'
+gem 'rack'
 
 group :development do
   gem 'rspec-rails', '2.5.0'
