@@ -9,10 +9,14 @@ Sample::Application.routes.draw do
   match '/about',     :to => 'pages#about'
   match '/help',      :to => 'pages#help'
   match '/careers',   :to => 'pages#careers'
-
+  
+  # temp
+  match '/free',     :to => 'events#free'
+  match '/cheap',     :to => 'events#cheap'
+  
   resources :users
   resources :sessions, :only => [:new, :create, :destroy]
-  resources :events, :only => [:index, :create, :destroy]
+  resources :events, :only => [:index, :new, :create, :destroy]
   
   root :to => 'pages#home'
 

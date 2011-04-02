@@ -1,10 +1,18 @@
 class EventsController < ApplicationController
+  
 	before_filter :authenticate, :only => [:create, :destroy]
 	before_filter :authorized_user, :only => :destroy
 
 	def index
-    @title = "All Posts"
-    @events = Event.all.paginate(:page => params[:page])
+    @feed_items = Event.all
+  end
+	
+	def free
+    @feed_items = Event.where(:event_type => 'Free')
+  end
+	
+	def cheap
+    @feed_items = Event.where(:event_type => 'Cheap')
   end
 	
 	def create
