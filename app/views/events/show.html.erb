@@ -1,0 +1,28 @@
+<table class="profile" summary="Event Detail">
+  <tr>
+    <td class="main">
+  		<h1>
+  			<%= gravatar_for @event.user %>
+  			<%= @event.event_title %> @ <%= @event.location %>
+  		</h1>
+  		<h2>
+  		  Starting in <%= @event.startdate.strftime("%B %d, %Y") %>,
+        <%= @event.starttime.strftime("%I:%M %p") %> to
+        <%= @event.endtime.strftime("%I:%M %p") %>.<br />
+      </h2>
+      <h3>        
+      	<% if cheap_event? %>
+          This is a cheap event that costs <%= @event.price %> dollars.
+        <% else %>
+          This is a free event.
+        <% end %><br />
+      </h3>
+      <h3>
+        <p>
+          <%= @event.user.name %> wrote...<br />
+          <i>"<%= @event.description %>"</i>
+        </p>
+      </h3>
+  	</td>
+  </tr>
+</table>

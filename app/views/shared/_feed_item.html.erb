@@ -1,7 +1,8 @@
 <tr>  
   <td class="event">
     <span class="user">
-      <%= link_to feed_item.event_title, fullitem_path, :rel => "facebox" %> | <%= feed_item.event_type %>
+      <%= link_to feed_item.event_title, event_path(feed_item) %> | 
+      <%= feed_item.event_type %>
     </span>
     <!-- <span class="general">
       <%= feed_item.event_type %>

@@ -16,7 +16,7 @@ Sample::Application.routes.draw do
   
   resources :users
   resources :sessions, :only => [:new, :create, :destroy]
-  resources :events, :only => [:index, :new, :create, :destroy]
+  resources :events, :only => [:index, :new, :create, :show, :destroy]
   
   root :to => 'pages#home'
 

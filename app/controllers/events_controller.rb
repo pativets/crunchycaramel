@@ -26,11 +26,10 @@ class EventsController < ApplicationController
 		end
 	end
   
-  def full_item
-    render :layout => "full_item_layout"
-    @feed_items = Event.all.paginate(:page => params[:page])
+  def show
+    @event = Event.find(params[:id])
   end
-	
+  
 	def new
 	  if signed_in?
   		@event = Event.new

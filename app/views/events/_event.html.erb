@@ -7,9 +7,9 @@
   </td>
   <% if current_user?(event.user) %>
   <td>
-    <%= link_to "X", event,          :method => :delete,
-                                     :confirm => "Are you sure?",
-                                     :title => event.description %>
+    <%= link_to "X", event, :method => :delete,
+                            :confirm => "Are you sure?",
+                            :title => event.description %>
   </td>
   <% end %>
 </tr>
