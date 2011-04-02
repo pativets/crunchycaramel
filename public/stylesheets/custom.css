@@ -3,17 +3,17 @@
 }
 
 .eventshome {
-	background-color:      #eee; 
-	-moz-border-radius:    10px;
-  -webkit-border-radius:   10px;
-  border-radius:           10px;
+	background-color:       #eee; 
+	-moz-border-radius:     10px;
+  -webkit-border-radius:  10px;
+  border-radius:          10px;
 }
 
 body {
-  background-color: #fff;  
-  background-repeat: repeat-x;
-  background-position: top;
-/*f9d549   background-image:  url(/images/background.jpg); */
+  background-color:       #fff;  
+  background-repeat:      repeat-x;
+  background-position:    top;
+/*  background-image:  url(/images/background.jpg); */
 }
 
 header {
@@ -49,9 +49,9 @@ section {
 }
 
 section h1 {
-	font-size: 210%;
-	font-weight: 300;
-	letter-spacing: -0.5px;
+	font-size: 240%;
+	font-weight: 100;
+	letter-spacing: -1.0px;
 	margin-bottom: 20px;
 }
 
@@ -267,6 +267,10 @@ table.events tr {
   height: 70px;
 }
 
+table.events tr td {
+  border-top: 1px solid #000; 
+}
+
 table.events tr td.gravatar {
 /*  border-top: 1px solid #000; */
   vertical-align: top;
@@ -274,9 +278,13 @@ table.events tr td.gravatar {
 }
 
 table.events tr td.event {
-  border-top: 1px solid #000; 
+/*  border-top: 1px solid #000; */
   vertical-align: top;
   padding-top: 10px;
+}
+
+table.events tr td.delete {
+/*  border-top: 1px solid #000; */
 }
 
 table.events tr td.event span.timestamp {
@@ -389,4 +397,8 @@ table.event_form td {
 
 .hidden_elem {
   display: none;
+}
+
+div.links {
+  text-align: center;
 }

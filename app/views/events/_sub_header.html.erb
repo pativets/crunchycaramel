@@ -1,7 +1,9 @@
-<h1>See what events are happening around you...</h1>
-<% if signed_in? %>
-  <%= link_to "Add Event", addevent_path %> | 
-<% end %>
-<%= link_to "All Events", events_path %> | 
-<%= link_to "Free Events", free_path %> | 
-<%= link_to "Cheap Events", cheap_path %>
+<div class="links">
+  <h1>See what events are happening around you...</h1>
+  <% if signed_in? %>
+    <%= link_to "Add Event", addevent_path %> | 
+  <% end %>
+  <%= link_to "All Events", events_path %> | 
+  <%= link_to "Free Events", free_path %> | 
+  <%= link_to "Cheap Events", cheap_path %>
+</div>

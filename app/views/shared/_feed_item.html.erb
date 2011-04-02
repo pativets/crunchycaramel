@@ -1,46 +1,27 @@
 <tr>  
-  <td class="event">
-    <span class="user">
-      <%= link_to feed_item.event_title, event_path(feed_item) %> | 
-      <%= feed_item.event_type %>
-    </span>
-    <!-- <span class="general">
-      <%= feed_item.event_type %>
-    </span> -->
-    <span class="general">
-      <%= feed_item.startdate.strftime("%b %d, %Y at") %>
-   	  <%= feed_item.starttime.strftime("%I:%M %p") %>
-  	</span>
-  	<span class="general">
-      <%= link_to feed_item.user.name, feed_item.user %>
-    </span>
-    <span class="general">
-      @ <%= feed_item.location %>
-    </span>
-
-    <!-- <span class="general">
-      <%= feed_item.occurence %>
-    </span> -->
-  	<span class="general">
-      <%= feed_item.description %>
-    </span>
-
-    <span class="timestamp">
-      Posted <%= time_ago_in_words(feed_item.created_at) %> ago.
-    </span>
-  </td>
   <td class="gravatar">
     <%= link_to gravatar_for(feed_item.user), feed_item.user %>
   </td>
-  <% if current_user?(feed_item.user) %>
-  <td>
-    <%= link_to "x", feed_item,      :method => :delete,
-                                     :confirm => "Are you sure?",
-                                     :title => feed_item.description %>
+  <td class="event">
+    <span class="user">
+      <%= feed_item.event_type %> | 
+      <%= link_to feed_item.event_title, event_path(feed_item) %> @ 
+      <%= feed_item.location %>
+    </span>
+    <span class="general">
+      <%= feed_item.startdate.strftime("%b %d, %Y at") %>
+   	  <%= feed_item.starttime.strftime("%I:%M %p") %>
+   	</span>
+    <span class="timestamp">
+      Posted <%= time_ago_in_words(feed_item.created_at) %> ago by
+      <%= link_to feed_item.user.name, feed_item.user %>.
+    </span>
   </td>
-  <% end %>
+  <td class="delete">
+    <% if current_user?(feed_item.user) %>
+        <%= link_to "x", feed_item, :method => :delete,
+                                    :confirm => "Are you sure?",
+                                    :title => feed_item.description %>
+    <% end %>
+  </td>
 </tr>
-
-<!-- <%= feed_item.created_at.strftime("%b %d, %Y at %l:%m %p") %> -->
-<!--   <span class="content"><%= feed_item.description %></span> -->
-<!-- <%= link_to feed_item.user.name, feed_item.user %> -->
