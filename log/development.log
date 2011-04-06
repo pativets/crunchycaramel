@@ -66022,3 +66022,33 @@ SQLite3::SQLException: no such column: events.conditions: SELECT  "events"."id" 
   [1m[36mAREL (0.2ms)[0m  [1mUPDATE "users" SET "name" = 'Jason Chow', "updated_at" = '2011-04-06 15:53:57.461211' WHERE ("users"."id" = 6)[0m
   [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" INNER JOIN "events" ON "events"."user_id" = "users"."id"
   [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "events" ON "events"."user_id" = "users"."id"[0m
+  [1m[36mSQL (0.8ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mEvent Load (0.6ms)[0m  SELECT "events".* FROM "events" ORDER BY created_at ASC LIMIT 1
+  [1m[36mEvent Load (0.6ms)[0m  [1mSELECT "events".* FROM "events" ORDER BY created_at DESC LIMIT 1[0m
+  [1m[35mEvent Load (0.7ms)[0m  SELECT "events".* FROM "events" WHERE ("events"."title" = 'Beach Volleyball') ORDER BY created_at DESC LIMIT 1
+  [1m[36mSQL (0.8ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mEvent Load (24.9ms)[0m  SELECT "events".* FROM "events" WHERE ("events"."title" = 'Beach Volleyball') ORDER BY created_at DESC LIMIT 1
+  [1m[36mSQL (0.8ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mEvent Load (24.8ms)[0m  SELECT "events".* FROM "events" WHERE ("events"."title" = 'Beach Volleyball') ORDER BY created_at DESC LIMIT 1
+  [1m[36mSQL (0.8ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[36mSQL (0.8ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mEvent Load (1.9ms)[0m  SELECT "events".* FROM "events" ORDER BY created_at DESC
