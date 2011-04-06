@@ -4,25 +4,25 @@
     <tbody>
       <tr>
         <th>Type</th>
-        <td><%= f.select :event_type, Event::EVENT_TYPE %></td>
+        <td><%= f.select :category, Event::EVENT_TYPE %></td>
       </tr>
       <tr>
         <th>Start</th>
         <td>
-          <%= f.text_field :startdate, :size => 10 %>
-          <%= f.time_select :starttime, :minute_step => 15 %>
+          <%= f.text_field :start_date, :size => 10 %>
+          <%= f.time_select :start_time, :minute_step => 15 %>
         </td>
       </tr>
       <tr>
         <th>End</th>
         <td>
-          <%= f.text_field :enddate, :size => 10   %>
-          <%= f.time_select :endtime, :minute_step => 15 %>
+          <%= f.text_field :end_date, :size => 10   %>
+          <%= f.time_select :end_time, :minute_step => 15 %>
         </td>
       </tr>
       <tr>
         <th>Title</th>
-        <td><%= f.text_field :event_title, :size => "57" %></td>
+        <td><%= f.text_field :title, :size => "57" %></td>
       </tr>
       <tr>
         <th>Location</th>

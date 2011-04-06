@@ -1,19 +1,19 @@
 # == Schema Information
-# Schema version: 20110324042310
+# Schema version: 20110405165534
 #
 # Table name: events
 #
 #  id          :integer         not null, primary key
 #  description :text
-#  event_title :string(255)
+#  title       :string(255)
 #  user_id     :integer
-#  event_type  :string(255)
+#  category    :string(255)
 #  price       :integer         default(0)
-#  occurence   :string(255)
-#  startdate   :date
-#  starttime   :time
-#  enddate     :date
-#  endtime     :time
+#  occurrence  :string(255)
+#  start_date  :date
+#  start_time  :time
+#  end_date    :date
+#  end_time    :time
 #  location    :string(255)
 #  created_at  :datetime
 #  updated_at  :datetime
@@ -22,28 +22,28 @@
 
 class Event < ActiveRecord::Base
 
-	attr_accessible :description, :event_title, :event_type, :price, :occurence, 
-	                :startdate, :starttime, :location, :enddate, :endtime
+	attr_accessible :description, :title, :category, :price, :occurrence, 
+	                :start_date, :start_time, :location, :end_date, :end_time
 	
 	belongs_to :user
 	
 	# Most recently created
   default_scope :order => 'created_at DESC'
   
-  scope :free_only, where(:event_type => 'Free')
-  scope :cheap_only, where(:event_type => 'Cheap') 
+  scope :free_only, where(:category => 'Free')
+  scope :cheap_only, where(:category => 'Cheap') 
   
 	validates :description, :presence => true,
 	                        :length => {:maximum => 140}
 	validates :user_id,     :presence => true
-	validates :event_title, :presence => true,
+	validates :title, :presence => true,
 	                        :length => {:maximum => 50}
-  # validates :occurence,   :presence => true
-	validates :event_type,  :presence => true
-	validates :startdate,   :presence => true
-	validates :starttime,   :presence => true
-	validates :enddate,     :presence => true
-	validates :endtime,     :presence => true
+  # validates :occurrence,   :presence => true
+	validates :category,    :presence => true
+	validates :start_date,  :presence => true
+	validates :start_time,  :presence => true
+	validates :end_date,    :presence => true
+	validates :end_time,    :presence => true
 	validates :location,    :presence => true
 
   # OCCURENCE = [

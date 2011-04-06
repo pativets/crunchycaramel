@@ -3,12 +3,12 @@
     <td class="main">
   		<h1>
   			<%= gravatar_for @event.user %>
-  			<%= @event.event_title %> @ <%= @event.location %>
+  			<%= @event.title %> @ <%= @event.location %>
   		</h1>
   		<h2>
-  		  Starting in <%= @event.startdate.strftime("%B %d, %Y") %>,
-        <%= @event.starttime.strftime("%I:%M %p") %> to
-        <%= @event.endtime.strftime("%I:%M %p") %>.<br />
+  		  Starting in <%= @event.start_date.strftime("%B %d, %Y") %>,
+        <%= @event.start_time.strftime("%I:%M %p") %> to
+        <%= @event.end_time.strftime("%I:%M %p") %>.<br />
       </h2>
       <h3>        
       	<% if cheap_event? %>

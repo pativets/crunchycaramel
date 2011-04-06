@@ -1,5 +1,5 @@
 module EventsHelper
   def cheap_event?
-    @event.event_type == "Cheap"
+    @event.category == "Cheap"
   end
 end

@@ -10,19 +10,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110324042310) do
+ActiveRecord::Schema.define(:version => 20110405165534) do
 
   create_table "events", :force => true do |t|
     t.text     "description"
-    t.string   "event_title"
+    t.string   "title"
     t.integer  "user_id"
-    t.string   "event_type"
+    t.string   "category"
     t.integer  "price",       :default => 0
-    t.string   "occurence"
-    t.date     "startdate"
-    t.time     "starttime"
-    t.date     "enddate"
-    t.time     "endtime"
+    t.string   "occurrence"
+    t.date     "start_date"
+    t.time     "start_time"
+    t.date     "end_date"
+    t.time     "end_time"
     t.string   "location"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -32,13 +32,13 @@ ActiveRecord::Schema.define(:version => 20110324042310) do
   add_index "events", ["user_id"], :name => "index_events_on_user_id"
 
   create_table "users", :force => true do |t|
-    t.string   "name"
-    t.string   "email"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.string   "encrypted_password"
-    t.string   "salt"
-    t.boolean  "admin",              :default => false
+    t.string    "name"
+    t.string    "email"
+    t.timestamp "created_at"
+    t.timestamp "updated_at"
+    t.string    "encrypted_password"
+    t.string    "salt"
+    t.boolean   "admin",              :default => false
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true

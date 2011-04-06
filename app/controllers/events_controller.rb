@@ -8,11 +8,11 @@ class EventsController < ApplicationController
   end
 	
 	def free
-    @feed_items = Event.where(:event_type => 'Free')
+    @feed_items = Event.where(:category => 'Free')
   end
 	
 	def cheap
-    @feed_items = Event.where(:event_type => 'Cheap')
+    @feed_items = Event.where(:category => 'Cheap')
   end
 	
 	def create

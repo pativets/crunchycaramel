@@ -65709,3 +65709,316 @@ Migrating to AddDefaultValueToPrice (20110324042310)
   [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_events_on_user_id')
   [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("users")[0m
   [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_users_on_email')
+  [1m[36mSQL (0.7ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[36mSQL (0.7ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[36mSQL (0.7ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateUsers (20110215203207)
+Migrating to AddEmailUniquenessIndex (20110215231553)
+Migrating to AddPasswordToUsers (20110216173352)
+Migrating to AddSaltToUsers (20110216174147)
+Migrating to AddAdminToUsers (20110216225447)
+Migrating to CreateEvents (20110222195224)
+Migrating to AddOrderToEvents (20110324035916)
+Migrating to AddDefaultValueToPrice (20110324042310)
+Migrating to ChangeEventTable (20110405165534)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.8ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateUsers (20110215203207)
+Migrating to AddEmailUniquenessIndex (20110215231553)
+Migrating to AddPasswordToUsers (20110216173352)
+Migrating to AddSaltToUsers (20110216174147)
+Migrating to AddAdminToUsers (20110216225447)
+Migrating to CreateEvents (20110222195224)
+Migrating to AddOrderToEvents (20110324035916)
+Migrating to AddDefaultValueToPrice (20110324042310)
+Migrating to ChangeEventTable (20110405165534)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.7ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateUsers (20110215203207)
+Migrating to AddEmailUniquenessIndex (20110215231553)
+Migrating to AddPasswordToUsers (20110216173352)
+Migrating to AddSaltToUsers (20110216174147)
+Migrating to AddAdminToUsers (20110216225447)
+Migrating to CreateEvents (20110222195224)
+Migrating to AddOrderToEvents (20110324035916)
+Migrating to AddDefaultValueToPrice (20110324042310)
+Migrating to ChangeEventTable (20110405165534)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.8ms)[0m  [1mCREATE TEMPORARY TABLE "altered_events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "description" text, "title" varchar(255), "user_id" integer, "event_type" varchar(255), "price" integer DEFAULT 0, "occurence" varchar(255), "startdate" date, "starttime" time, "enddate" date, "endtime" time, "location" varchar(255), "created_at" datetime, "updated_at" datetime, "order" varchar(255)) [0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("events")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_info('index_events_on_user_id')[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("altered_events")
+  [1m[36mSQL (0.2ms)[0m  [1mCREATE INDEX "temp_index_altered_events_on_user_id" ON "altered_events" ("user_id")[0m
+  [1m[35mSQL (0.5ms)[0m  DROP TABLE "events"
+  [1m[36mSQL (0.2ms)[0m  [1mCREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "description" text, "title" varchar(255), "user_id" integer, "event_type" varchar(255), "price" integer DEFAULT 0, "occurence" varchar(255), "startdate" date, "starttime" time, "enddate" date, "endtime" time, "location" varchar(255), "created_at" datetime, "updated_at" datetime, "order" varchar(255)) [0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("altered_events")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('temp_index_altered_events_on_user_id')[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("events")
+  [1m[36mSQL (0.1ms)[0m  [1mCREATE INDEX "index_events_on_user_id" ON "events" ("user_id")[0m
+  [1m[35mSQL (0.5ms)[0m  DROP TABLE "altered_events"
+  [1m[36mSQL (0.2ms)[0m  [1mCREATE TEMPORARY TABLE "altered_events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "description" text, "title" varchar(255), "user_id" integer, "category" varchar(255), "price" integer DEFAULT 0, "occurence" varchar(255), "startdate" date, "starttime" time, "enddate" date, "endtime" time, "location" varchar(255), "created_at" datetime, "updated_at" datetime, "order" varchar(255)) [0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("events")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_events_on_user_id')[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("altered_events")
+  [1m[36mSQL (0.2ms)[0m  [1mCREATE INDEX "temp_index_altered_events_on_user_id" ON "altered_events" ("user_id")[0m
+  [1m[35mSQL (0.5ms)[0m  DROP TABLE "events"
+  [1m[36mSQL (0.2ms)[0m  [1mCREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "description" text, "title" varchar(255), "user_id" integer, "category" varchar(255), "price" integer DEFAULT 0, "occurence" varchar(255), "startdate" date, "starttime" time, "enddate" date, "endtime" time, "location" varchar(255), "created_at" datetime, "updated_at" datetime, "order" varchar(255)) [0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("altered_events")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_info('temp_index_altered_events_on_user_id')[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("events")
+  [1m[36mSQL (0.2ms)[0m  [1mCREATE INDEX "index_events_on_user_id" ON "events" ("user_id")[0m
+  [1m[35mSQL (0.2ms)[0m  DROP TABLE "altered_events"
+  [1m[36mSQL (0.8ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+Migrating to CreateUsers (20110215203207)
+Migrating to AddEmailUniquenessIndex (20110215231553)
+Migrating to AddPasswordToUsers (20110216173352)
+Migrating to AddSaltToUsers (20110216174147)
+Migrating to AddAdminToUsers (20110216225447)
+Migrating to CreateEvents (20110222195224)
+Migrating to AddOrderToEvents (20110324035916)
+Migrating to AddDefaultValueToPrice (20110324042310)
+Migrating to ChangeEventTable (20110405165534)
+  [1m[35mSQL (0.1ms)[0m  select sqlite_version(*)
+  [1m[36mSQL (0.8ms)[0m  [1mCREATE TEMPORARY TABLE "altered_events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "description" text, "title" varchar(255), "user_id" integer, "event_type" varchar(255), "price" integer DEFAULT 0, "occurence" varchar(255), "startdate" date, "starttime" time, "enddate" date, "endtime" time, "location" varchar(255), "created_at" datetime, "updated_at" datetime, "order" varchar(255)) [0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("events")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_info('index_events_on_user_id')[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("altered_events")
+  [1m[36mSQL (0.2ms)[0m  [1mCREATE INDEX "temp_index_altered_events_on_user_id" ON "altered_events" ("user_id")[0m
+  [1m[35mSQL (0.5ms)[0m  DROP TABLE "events"
+  [1m[36mSQL (0.2ms)[0m  [1mCREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "description" text, "title" varchar(255), "user_id" integer, "event_type" varchar(255), "price" integer DEFAULT 0, "occurence" varchar(255), "startdate" date, "starttime" time, "enddate" date, "endtime" time, "location" varchar(255), "created_at" datetime, "updated_at" datetime, "order" varchar(255)) [0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("altered_events")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('temp_index_altered_events_on_user_id')[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("events")
+  [1m[36mSQL (0.1ms)[0m  [1mCREATE INDEX "index_events_on_user_id" ON "events" ("user_id")[0m
+  [1m[35mSQL (0.5ms)[0m  DROP TABLE "altered_events"
+  [1m[36mSQL (0.2ms)[0m  [1mCREATE TEMPORARY TABLE "altered_events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "description" text, "title" varchar(255), "user_id" integer, "category" varchar(255), "price" integer DEFAULT 0, "occurence" varchar(255), "startdate" date, "starttime" time, "enddate" date, "endtime" time, "location" varchar(255), "created_at" datetime, "updated_at" datetime, "order" varchar(255)) [0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("events")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_info('index_events_on_user_id')[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("altered_events")
+  [1m[36mSQL (0.1ms)[0m  [1mCREATE INDEX "temp_index_altered_events_on_user_id" ON "altered_events" ("user_id")[0m
+  [1m[35mSQL (0.5ms)[0m  DROP TABLE "events"
+  [1m[36mSQL (0.2ms)[0m  [1mCREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "description" text, "title" varchar(255), "user_id" integer, "category" varchar(255), "price" integer DEFAULT 0, "occurence" varchar(255), "startdate" date, "starttime" time, "enddate" date, "endtime" time, "location" varchar(255), "created_at" datetime, "updated_at" datetime, "order" varchar(255)) [0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("altered_events")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('temp_index_altered_events_on_user_id')[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("events")
+  [1m[36mSQL (0.1ms)[0m  [1mCREATE INDEX "index_events_on_user_id" ON "events" ("user_id")[0m
+  [1m[35mSQL (0.2ms)[0m  DROP TABLE "altered_events"
+  [1m[36mSQL (0.2ms)[0m  [1mCREATE TEMPORARY TABLE "altered_events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "description" text, "title" varchar(255), "user_id" integer, "category" varchar(255), "price" integer DEFAULT 0, "occurrence" varchar(255), "startdate" date, "starttime" time, "enddate" date, "endtime" time, "location" varchar(255), "created_at" datetime, "updated_at" datetime, "order" varchar(255)) [0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("events")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_info('index_events_on_user_id')[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("altered_events")
+  [1m[36mSQL (0.2ms)[0m  [1mCREATE INDEX "temp_index_altered_events_on_user_id" ON "altered_events" ("user_id")[0m
+  [1m[35mSQL (0.2ms)[0m  DROP TABLE "events"
+  [1m[36mSQL (0.2ms)[0m  [1mCREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "description" text, "title" varchar(255), "user_id" integer, "category" varchar(255), "price" integer DEFAULT 0, "occurrence" varchar(255), "startdate" date, "starttime" time, "enddate" date, "endtime" time, "location" varchar(255), "created_at" datetime, "updated_at" datetime, "order" varchar(255)) [0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("altered_events")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('temp_index_altered_events_on_user_id')[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("events")
+  [1m[36mSQL (0.1ms)[0m  [1mCREATE INDEX "index_events_on_user_id" ON "events" ("user_id")[0m
+  [1m[35mSQL (0.2ms)[0m  DROP TABLE "altered_events"
+  [1m[36mSQL (0.2ms)[0m  [1mCREATE TEMPORARY TABLE "altered_events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "description" text, "title" varchar(255), "user_id" integer, "category" varchar(255), "price" integer DEFAULT 0, "occurrence" varchar(255), "start_date" date, "starttime" time, "enddate" date, "endtime" time, "location" varchar(255), "created_at" datetime, "updated_at" datetime, "order" varchar(255)) [0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("events")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_events_on_user_id')[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("altered_events")
+  [1m[36mSQL (0.1ms)[0m  [1mCREATE INDEX "temp_index_altered_events_on_user_id" ON "altered_events" ("user_id")[0m
+  [1m[35mSQL (0.2ms)[0m  DROP TABLE "events"
+  [1m[36mSQL (0.2ms)[0m  [1mCREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "description" text, "title" varchar(255), "user_id" integer, "category" varchar(255), "price" integer DEFAULT 0, "occurrence" varchar(255), "start_date" date, "starttime" time, "enddate" date, "endtime" time, "location" varchar(255), "created_at" datetime, "updated_at" datetime, "order" varchar(255)) [0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("altered_events")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('temp_index_altered_events_on_user_id')[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("events")
+  [1m[36mSQL (0.1ms)[0m  [1mCREATE INDEX "index_events_on_user_id" ON "events" ("user_id")[0m
+  [1m[35mSQL (0.2ms)[0m  DROP TABLE "altered_events"
+  [1m[36mSQL (0.2ms)[0m  [1mCREATE TEMPORARY TABLE "altered_events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "description" text, "title" varchar(255), "user_id" integer, "category" varchar(255), "price" integer DEFAULT 0, "occurrence" varchar(255), "start_date" date, "starttime" time, "end_date" date, "endtime" time, "location" varchar(255), "created_at" datetime, "updated_at" datetime, "order" varchar(255)) [0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("events")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_info('index_events_on_user_id')[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("altered_events")
+  [1m[36mSQL (0.1ms)[0m  [1mCREATE INDEX "temp_index_altered_events_on_user_id" ON "altered_events" ("user_id")[0m
+  [1m[35mSQL (0.2ms)[0m  DROP TABLE "events"
+  [1m[36mSQL (0.2ms)[0m  [1mCREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "description" text, "title" varchar(255), "user_id" integer, "category" varchar(255), "price" integer DEFAULT 0, "occurrence" varchar(255), "start_date" date, "starttime" time, "end_date" date, "endtime" time, "location" varchar(255), "created_at" datetime, "updated_at" datetime, "order" varchar(255)) [0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("altered_events")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_info('temp_index_altered_events_on_user_id')[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("events")
+  [1m[36mSQL (0.1ms)[0m  [1mCREATE INDEX "index_events_on_user_id" ON "events" ("user_id")[0m
+  [1m[35mSQL (0.2ms)[0m  DROP TABLE "altered_events"
+  [1m[36mSQL (0.2ms)[0m  [1mCREATE TEMPORARY TABLE "altered_events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "description" text, "title" varchar(255), "user_id" integer, "category" varchar(255), "price" integer DEFAULT 0, "occurrence" varchar(255), "start_date" date, "start_time" time, "end_date" date, "endtime" time, "location" varchar(255), "created_at" datetime, "updated_at" datetime, "order" varchar(255)) [0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("events")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_events_on_user_id')[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("altered_events")
+  [1m[36mSQL (0.2ms)[0m  [1mCREATE INDEX "temp_index_altered_events_on_user_id" ON "altered_events" ("user_id")[0m
+  [1m[35mSQL (0.2ms)[0m  DROP TABLE "events"
+  [1m[36mSQL (0.2ms)[0m  [1mCREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "description" text, "title" varchar(255), "user_id" integer, "category" varchar(255), "price" integer DEFAULT 0, "occurrence" varchar(255), "start_date" date, "start_time" time, "end_date" date, "endtime" time, "location" varchar(255), "created_at" datetime, "updated_at" datetime, "order" varchar(255)) [0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("altered_events")
+  [1m[36mSQL (0.0ms)[0m  [1mPRAGMA index_info('temp_index_altered_events_on_user_id')[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("events")
+  [1m[36mSQL (0.2ms)[0m  [1mCREATE INDEX "index_events_on_user_id" ON "events" ("user_id")[0m
+  [1m[35mSQL (0.2ms)[0m  DROP TABLE "altered_events"
+  [1m[36mSQL (0.2ms)[0m  [1mCREATE TEMPORARY TABLE "altered_events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "description" text, "title" varchar(255), "user_id" integer, "category" varchar(255), "price" integer DEFAULT 0, "occurrence" varchar(255), "start_date" date, "start_time" time, "end_date" date, "end_time" time, "location" varchar(255), "created_at" datetime, "updated_at" datetime, "order" varchar(255)) [0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("events")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('index_events_on_user_id')[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("altered_events")
+  [1m[36mSQL (0.2ms)[0m  [1mCREATE INDEX "temp_index_altered_events_on_user_id" ON "altered_events" ("user_id")[0m
+  [1m[35mSQL (0.2ms)[0m  DROP TABLE "events"
+  [1m[36mSQL (0.2ms)[0m  [1mCREATE TABLE "events" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "description" text, "title" varchar(255), "user_id" integer, "category" varchar(255), "price" integer DEFAULT 0, "occurrence" varchar(255), "start_date" date, "start_time" time, "end_date" date, "end_time" time, "location" varchar(255), "created_at" datetime, "updated_at" datetime, "order" varchar(255)) [0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_list("altered_events")
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_info('temp_index_altered_events_on_user_id')[0m
+  [1m[35mSQL (0.0ms)[0m  PRAGMA index_list("events")
+  [1m[36mSQL (0.2ms)[0m  [1mCREATE INDEX "index_events_on_user_id" ON "events" ("user_id")[0m
+  [1m[35mSQL (0.2ms)[0m  DROP TABLE "altered_events"
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES ('20110405165534')[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("events")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_events_on_user_id')
+  [1m[36mSQL (0.1ms)[0m  [1mPRAGMA index_list("users")[0m
+  [1m[35mSQL (0.1ms)[0m  PRAGMA index_info('index_users_on_email')
+  [1m[36mSQL (0.7ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mSQL (0.1ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mSQL (0.2ms)[0m  [1mSELECT "schema_migrations"."version" FROM "schema_migrations"[0m
+  [1m[36mSQL (0.8ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mEvent Load (0.3ms)[0m  SELECT "events".* FROM "events" WHERE ("events"."category" IS NULL) ORDER BY created_at DESC
+  [1m[36mEvent Load (0.3ms)[0m  [1mSELECT "events".* FROM "events" WHERE ("events"."category" = 'true') ORDER BY created_at DESC[0m
+  [1m[35mEvent Load (0.4ms)[0m  SELECT "events".* FROM "events" WHERE ("events"."category" = 't') ORDER BY created_at DESC
+  [1m[36mEvent Load (0.9ms)[0m  [1mSELECT "events".* FROM "events" WHERE ("events"."user_id" = 1) ORDER BY created_at DESC LIMIT 1[0m
+  [1m[35mEvent Load (0.4ms)[0m  SELECT "events".* FROM "events" WHERE ("events"."category" = 't') ORDER BY created_at DESC LIMIT 1
+  [1m[36mEvent Load (0.7ms)[0m  [1mSELECT "events".* FROM "events" WHERE ("events"."category" = 'Free') ORDER BY created_at DESC LIMIT 1[0m
+  [1m[35mEvent Load (0.8ms)[0m  SELECT "events".* FROM "events" WHERE ("events"."category" = 'Cheap') ORDER BY created_at DESC LIMIT 1
+  [1m[36mEvent Load (0.5ms)[0m  [1mSELECT "events".* FROM "events" WHERE ("events"."category" = 'Free') ORDER BY created_at DESC LIMIT 1[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 1[0m
+  [1m[35mEvent Load (0.3ms)[0m  SELECT "events".id FROM "events" WHERE ("events".user_id = 1) ORDER BY created_at DESC
+  [1m[36mSQL (0.3ms)[0m  [1mSELECT COUNT(*) FROM "events" WHERE ("events".user_id = 1)[0m
+  [1m[35mSQL (0.3ms)[0m  SELECT COUNT(*) FROM "events" WHERE ("events".user_id = 1)
+  [1m[36mEvent Load (0.4ms)[0m  [1mSELECT "events".* FROM "events" WHERE ("events".user_id = 1) AND (category = Free) ORDER BY created_at DESC[0m
+SQLite3::SQLException: no such column: Free: SELECT "events".* FROM "events" WHERE ("events".user_id = 1) AND (category = Free) ORDER BY created_at DESC
+  [1m[35mEvent Load (1.6ms)[0m  SELECT "events".* FROM "events" WHERE ("events".user_id = 1) AND (category = 'Free') ORDER BY created_at DESC
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mEvent Load (0.3ms)[0m  SELECT "events"."id" FROM "events" WHERE ("events".user_id = 1) AND ("events"."conditions" = 'category = ''Cheap''') ORDER BY created_at DESC LIMIT 1
+SQLite3::SQLException: no such column: events.conditions: SELECT  "events"."id" FROM "events" WHERE ("events".user_id = 1) AND ("events"."conditions" = 'category = ''Cheap''') ORDER BY created_at DESC LIMIT 1
+  [1m[36mEvent Load (0.4ms)[0m  [1mSELECT "events"."id" FROM "events" WHERE ("events".user_id = 1) AND ("events"."category" = 'Free') ORDER BY created_at DESC LIMIT 1[0m
+  [1m[35mSQL (0.3ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mEvent Load (0.4ms)[0m  [1mSELECT "events"."id" FROM "events" WHERE ("events".user_id = 1) AND ("events"."category" = 'Cheap') ORDER BY created_at DESC LIMIT 1[0m
+  [1m[35mEvent Load (0.3ms)[0m  SELECT "events"."id" FROM "events" WHERE ("events".user_id = 1) AND ("events"."category" = 'Cheap') ORDER BY created_at DESC LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE (email = 'shin.joonha@gmail.com')
+  [1m[36mSQL (0.2ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1
+  [1m[36mEvent Load (1.0ms)[0m  [1mSELECT "events".* FROM "events" WHERE ("events".user_id = 2) ORDER BY created_at DESC[0m
+  [1m[35mEvent Load (1.9ms)[0m  SELECT "events".* FROM "events" WHERE ("events".user_id = 2) ORDER BY created_at DESC
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."email" = 'shin.joonha@gmail.com') LIMIT 1[0m
+  [1m[35mEvent Load (1.2ms)[0m  SELECT "events".* FROM "events" WHERE ("events".user_id = 2) ORDER BY created_at DESC
+  [1m[36mEvent Load (0.4ms)[0m  [1mSELECT "events"."id" FROM "events" WHERE ("events".user_id = 2) AND ("events"."category" = 'Cheap') ORDER BY created_at DESC LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."name" = 'Joonha Shin') LIMIT 1
+  [1m[36mEvent Load (0.4ms)[0m  [1mSELECT "events"."id" FROM "events" WHERE ("events".user_id = 2) AND ("events"."category" = 'Free') ORDER BY created_at DESC LIMIT 1[0m
+  [1m[35mEvent Load (1.0ms)[0m  SELECT "events".* FROM "events" WHERE ("events".user_id = 2) AND (category='Free') ORDER BY created_at DESC
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users"[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" >= 0) ORDER BY users.id ASC LIMIT 1000[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" >= 0) ORDER BY users.id ASC LIMIT 1000[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users"
+  [1m[36mEvent Load (2.5ms)[0m  [1mSELECT "events".* FROM "events" WHERE (category = 'Free') ORDER BY created_at DESC[0m
+  [1m[35mEvent Load (2.0ms)[0m  SELECT "events".* FROM "events" WHERE (category = 'Free' AND start_date <= '2011-04-06 15:26:16.667589') ORDER BY created_at DESC
+  [1m[36mEvent Load (0.4ms)[0m  [1mSELECT "events".* FROM "events" WHERE (category = 'Free' AND start_date >= '2011-04-06 15:26:27.067884') ORDER BY created_at DESC[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" IN (1, 3, 5))
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" BETWEEN 1 AND 5)[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" >= 1 AND "users"."id" < 3)
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT email FROM "users"[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT id, email FROM "users"
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT DISTINCT(name) FROM "users"[0m
+  [1m[35mSQL (0.2ms)[0m   SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" LIMIT 5[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" LIMIT 5 OFFSET 2
+  [1m[36mUser Load (61.9ms)[0m  [1mSELECT "users".* FROM "users" GROUP BY date(created_at)[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT "users".* FROM "users" GROUP BY date(created_at)
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users".* FROM "users" WHERE ("users"."id" = 1) LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users".* FROM "users" WHERE ("users"."id" = 2) LIMIT 1[0m
+  [1m[35mUser Load (0.2ms)[0m  SELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('pativets@gmail.com')) AND ("users".id <> 1) LIMIT 1
+  [1m[36mSQL (0.3ms)[0m  [1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [1m[35mUser Load (0.1ms)[0m  SELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('jchow@uwaterloo.ca')) LIMIT 1
+  [1m[36mAREL (0.5ms)[0m  [1mINSERT INTO "users" ("name", "email", "created_at", "updated_at", "encrypted_password", "salt", "admin") VALUES ('Jacob Chow', 'jchow@uwaterloo.ca', '2011-04-06 15:52:48.023097', '2011-04-06 15:52:48.023097', 'b3c48b29641f4deada446bf5f4d4ac274c23d778e954906a57abb1ca7ae93cff', '49991819fb2bfe2daec06193078b823b8b8383bbefddb5bc6c3eaf88206295be', 'f')[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" ORDER BY users.id DESC LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT "users".* FROM "users" ORDER BY users.id DESC LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users".* FROM "users" ORDER BY users.id DESC LIMIT 1
+  [1m[36mUser Load (0.2ms)[0m  [1mSELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('jchow@uwaterloo.ca')) AND ("users".id <> 6) LIMIT 1[0m
+  [1m[35mUser Load (0.3ms)[0m  SELECT "users"."id" FROM "users" WHERE (LOWER("users"."email") = LOWER('jchow@uwaterloo.ca')) AND ("users".id <> 6) LIMIT 1
+  [1m[36mAREL (0.2ms)[0m  [1mUPDATE "users" SET "name" = 'Jason Chow', "updated_at" = '2011-04-06 15:53:57.461211' WHERE ("users"."id" = 6)[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT "users".* FROM "users" INNER JOIN "events" ON "events"."user_id" = "users"."id"
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT "users".* FROM "users" INNER JOIN "events" ON "events"."user_id" = "users"."id"[0m

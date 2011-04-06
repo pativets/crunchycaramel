@@ -4,13 +4,13 @@
   </td>
   <td class="event">
     <span class="user">
-      <%= feed_item.event_type %> | 
-      <%= link_to feed_item.event_title, event_path(feed_item) %> @ 
+      <%= feed_item.category %> | 
+      <%= link_to feed_item.title, event_path(feed_item) %> @ 
       <%= feed_item.location %>
     </span>
     <span class="general">
-      <%= feed_item.startdate.strftime("%b %d, %Y at") %>
-   	  <%= feed_item.starttime.strftime("%I:%M %p") %>
+      <%= feed_item.start_date.strftime("%b %d, %Y at") %>
+   	  <%= feed_item.start_time.strftime("%I:%M %p") %>
    	</span>
     <span class="timestamp">
       Posted <%= time_ago_in_words(feed_item.created_at) %> ago by
