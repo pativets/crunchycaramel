@@ -2,10 +2,10 @@
   <tr>
     <td class="main">
   		<h1>
-  			<%= gravatar_for @event.user %>
-  			<%= @event.title %> @ <%= @event.location %>
+  			<%= @event.title %>
   		</h1>
   		<h2>
+  		  Location: <%= @event.location %><br />
   		  Starting in <%= @event.start_date.strftime("%B %d, %Y") %>,
         <%= @event.start_time.strftime("%I:%M %p") %> to
         <%= @event.end_time.strftime("%I:%M %p") %>.<br />
