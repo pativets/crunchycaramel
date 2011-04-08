@@ -4,7 +4,13 @@ class EventsController < ApplicationController
 	before_filter :authorized_user, :only => :destroy
 
 	def index
-    @feed_items = Event.all
+    @filter = params[:filter]
+    @order = params[:order]
+    if (@filter == "All")
+      @feed_items = Event.order(@order)
+    else
+      @feed_items = Event.where(:category => @filter).order(@order)
+    end
   end
 	
 	def free
@@ -13,6 +19,10 @@ class EventsController < ApplicationController
 	
 	def cheap
     @feed_items = Event.where(:category => 'Cheap')
+  end
+  
+  def happening_soon
+    @feed_items = Event.order("start_date ASC")
   end
 	
 	def create
@@ -52,3 +62,4 @@ class EventsController < ApplicationController
     end
     
 end
+

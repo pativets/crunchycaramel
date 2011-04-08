@@ -25,11 +25,8 @@ class Event < ActiveRecord::Base
 	attr_accessible :description, :title, :category, :price, :occurrence, 
 	                :start_date, :start_time, :location, :end_date, :end_time
 	
-	belongs_to :user
-	
-	# Most recently created
-  default_scope :order => 'created_at DESC'
-  
+	belongs_to :user	
+
   scope :free_only, where(:category => 'Free')
   scope :cheap_only, where(:category => 'Cheap') 
   
@@ -70,9 +67,5 @@ class Event < ActiveRecord::Base
     'cheap only' => 2,
     'both' => 3
   }
-  
-  def filter_by_cheap_only
-    default_scope :order => 'created_at DESC'
-  end
-  
+
 end

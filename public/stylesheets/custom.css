@@ -399,6 +399,6 @@ table.event_form td {
   display: none;
 }
 
-div.links {
-  text-align: center;
+.float_left {
+  float: left;
 }

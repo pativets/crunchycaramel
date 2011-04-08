@@ -11,13 +11,14 @@ Sample::Application.routes.draw do
   match '/careers',   :to => 'pages#careers'
   
   # temp
-  match '/free',     :to => 'events#free'
-  match '/cheap',     :to => 'events#cheap'
+  match '/free',      :to      => 'events#free'
+  match '/cheap',     :to      => 'events#cheap'
+  match '/happening_soon', :to => 'events#happening_soon'
   
   resources :users
+  resources :events
   resources :sessions, :only => [:new, :create, :destroy]
-  resources :events, :only => [:index, :new, :create, :show, :destroy]
-  
+    
   root :to => 'pages#home'
 
   # The priority is based upon order of creation:
