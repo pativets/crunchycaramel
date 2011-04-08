@@ -25,31 +25,21 @@ class Event < ActiveRecord::Base
 	attr_accessible :description, :title, :category, :price, :occurrence, 
 	                :start_date, :start_time, :location, :end_date, :end_time
 	
-	belongs_to :user	
+	belongs_to :user
 
-  scope :free_only, where(:category => 'Free')
-  scope :cheap_only, where(:category => 'Cheap') 
-  
 	validates :description, :presence => true,
 	                        :length => {:maximum => 140}
 	validates :user_id,     :presence => true
 	validates :title, :presence => true,
 	                        :length => {:maximum => 100}
-  # validates :occurrence,   :presence => true
 	validates :category,    :presence => true
+	validates :price,       :presence => true, :if => :cheap_event?
 	validates :start_date,  :presence => true
 	validates :start_time,  :presence => true
 	validates :end_date,    :presence => true
 	validates :end_time,    :presence => true
 	validates :location,    :presence => true
-
-  # OCCURENCE = [
-  #   'One-Time', 
-  #   'Daily', 
-  #   'Weekly', 
-  #   'Monthly', 
-  #   'Annual'
-  #   ]
+  # validates_presence_of :price, :if => :cheap_event?
   
   EVENT_TYPE = [
     'Free',
@@ -67,5 +57,9 @@ class Event < ActiveRecord::Base
     'cheap only' => 2,
     'both' => 3
   }
-
+  
+  def cheap_event?
+    category == "Cheap"
+  end
+  
 end

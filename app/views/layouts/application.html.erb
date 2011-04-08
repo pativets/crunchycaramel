@@ -44,15 +44,21 @@
 	
 </head>
 <body>
-    <div class="container">
-      <%= render 'layouts/header' %>
-      <section class="round">
-		<% flash.each do |key, value| %>
-            <%= content_tag(:div, value, :class => "flash #{key}") %>
-        <% end %>
-        <%= yield %>
-      </section>
-      <%= render 'layouts/footer' %>
+  <div class="container">
+    <%= render 'layouts/header' %>
+    <div class="sidebar" id="left">
+      This is a left sidebar.
     </div>
+    <section class="round">
+      <% flash.each do |key, value| %>
+        <%= content_tag(:div, value, :class => "flash #{key}") %>
+      <% end %>
+      <%= yield %>
+    </section>
+    <div class="sidebar" id="right">
+      This is a right sidebar.
+    </div>
+  <%= render 'layouts/footer' %>
+  </div>
 </body>
 </html>

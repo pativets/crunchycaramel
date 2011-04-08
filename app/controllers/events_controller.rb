@@ -13,18 +13,6 @@ class EventsController < ApplicationController
     end
   end
 	
-	def free
-    @feed_items = Event.where(:category => 'Free')
-  end
-	
-	def cheap
-    @feed_items = Event.where(:category => 'Cheap')
-  end
-  
-  def happening_soon
-    @feed_items = Event.order("start_date ASC")
-  end
-	
 	def create
 		@event = current_user.events.build(params[:event])
 		if @event.save
