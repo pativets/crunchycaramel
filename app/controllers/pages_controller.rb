@@ -1,6 +1,6 @@
 class PagesController < ApplicationController
   def home
-    @feed_items = Event.all.paginate #must include .paginate
+    @feed_items = Event.limit(25)
   end
 
   def contact

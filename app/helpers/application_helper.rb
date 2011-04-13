@@ -24,6 +24,6 @@ module ApplicationHelper
   end
 	
 	def logo
-		image_tag("logo.png", :height => 70, :width => 250, :alt => "CrunchyCaramel Logo", :class => "round")
+		image_tag("logo.png", :height => 50, :width => 178, :alt => "CrunchyCaramel Logo")
 	end
 end

@@ -14,51 +14,57 @@
   <%= javascript_include_tag 'jquery.easing.1.3.js' %>
   <%= javascript_include_tag 'jquery.lightbox-0.5.js' %>
   <%= javascript_include_tag 'facebox.js' %>
-
  	<script type="text/javascript">
 		$().ready(function() {
 			$('#coda-slider-1').codaSlider();
 		});
 	</script>
-	
-	 <script type="text/javascript">
-		$(document).ready(function() {
-    		$('#event_start_date').datepicker();
-  		});
-	 </script>
-	
-	<script type="text/javascript">
-		$(document).ready(function() {
-    		$('#event_end_date').datepicker();
-  		});
-	 </script>
-	
-	 <script type="text/javascript">
-	    $(document).ready(function() {
-	      $('a[rel*=facebox]').facebox({
-	        loadingImage : 'images/loading.gif',
-	        closeImage   : 'images/closelabel.png'
-	      })
-	    })
-	  </script>
-	
+  <script type="text/javascript">
+  $(document).ready(function() {
+  		$('#event_start_date').datepicker();
+  	});
+  </script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+    	$('#event_end_date').datepicker();
+    });
+  </script>
+  <script type="text/javascript">
+    $(document).ready(function() {
+      $('a[rel*=facebox]').facebox({
+        loadingImage : 'images/loading.gif',
+        closeImage   : 'images/closelabel.png'
+      })
+    })
+  </script>
 </head>
 <body>
-  <div class="container">
-    <%= render 'layouts/header' %>
-    <div class="sidebar" id="left">
-      This is a left sidebar.
+  <div id="doc" class="route_home">
+    <div id="top_stuff">
+      <div id="top_bar_outer">
+        <div id="top_bar_bg"></div>
+        <div id="top_bar">
+          <%= render "layouts/header" %>
+        </div>
+      </div>
     </div>
-    <section class="round">
-      <% flash.each do |key, value| %>
-        <%= content_tag(:div, value, :class => "flash #{key}") %>
-      <% end %>
-      <%= yield %>
-    </section>
-    <div class="sidebar" id="right">
-      This is a right sidebar.
+    <div id="page_outer">
+      <div id="page_container" class="home_container" style>
+        <div id="left_col">
+          <%= render "layouts/left_sidebar" %>
+        </div>
+        <div id="content_area">
+          <% flash.each do |key, value| %>
+            <%= content_tag(:div, value, :class => "flash #{key}") %>
+          <% end %>
+          <%= yield %>
+        </div>
+        <div id="right_col">
+          <%= render "layouts/right_sidebar" %>
+        </div>
+      </div>
     </div>
-  <%= render 'layouts/footer' %>
+    <div id="bottom_stuff"></div>
   </div>
 </body>
 </html>

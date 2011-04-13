@@ -7,9 +7,9 @@ class EventsController < ApplicationController
     @filter = params[:filter]
     @order = params[:order]
     if (@filter == "All")
-      @feed_items = Event.order(@order)
+      @feed_items = Event.order(@order).limit(25)
     else
-      @feed_items = Event.where(:category => @filter).order(@order)
+      @feed_items = Event.where(:category => @filter).order(@order).limit(25)
     end
   end
 	
