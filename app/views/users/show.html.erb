@@ -1,31 +1,34 @@
-<table class="profile" summary="User Profile">
-  <tr>
-    <td class="main">
-  		<h1>
-  			<%= gravatar_for @user %>
-  			<%= @user.name %>
-  		</h1>
-      <% unless @user.events.empty? %>
-        <table class="events" summary="User Events">
-          <%= render @events %>
-        </table>
-        <%= will_paginate @events %>
-      <% end %>
-  	</td>
-  	<td class="sidebar round">
-  	  <% if current_user.admin? %>
-  		<strong>Name:</strong> <%= @user.name %><br />
-  		<strong>Title:</strong><br />
-  		<strong>Employee Since:</strong>
-  		<strong>Subscribed Events:</strong> <%= @user.events.count %>
-  	  <% else %>
-  		<strong>Name:</strong> <%= @user.name %><br />
-        <strong>Business Title:</strong><br /> 
-  		<strong>Subscribed Events:</strong> <%= @user.events.count %>
-  	  <% end %>
-  	  <div>
-  	    <%= link_to "Add an Event", addevent_path, :class => "add_button1" %>
-  	  </div>
-    </td>	
-  </tr>
-</table>
+<div class="page_header profile_header">
+  <div class="user_image">
+    <%= gravatar_for @user %>
+  </div>
+  <h1>
+    <%= @user.name %>
+  </h1>
+</div>
+<% unless @user.events.empty? %>
+  <%= render @events %>
+  <%= will_paginate @events %>
+<% end %>  
+<% content_for :right_column do %>
+  <table class="profile" summary="User Profile">
+    <tr>
+    	<td class="sidebar round">
+    	  <% if current_user.admin? %>
+      		<strong>Name:</strong> <%= @user.name %><br />
+      		<strong>Title:</strong><br />
+      		<strong>Employee Since:</strong>
+      		<strong>Subscribed Events:</strong> <%= @user.events.count %>
+    	  <% else %>
+      		<strong>Name:</strong> <%= @user.name %><br />
+            <strong>Business Title:</strong><br /> 
+      		<strong>Subscribed Events:</strong> <%= @user.events.count %>
+    	  <% end %>
+    	  <div>
+    	    <%= link_to "Add an Event", addevent_path, 
+    	      :class => "add_button1" %>
+    	  </div>
+      </td>
+    </tr>
+  </table>
+<% end %>

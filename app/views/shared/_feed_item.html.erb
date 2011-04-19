@@ -1,27 +1,46 @@
-<tr>  
-  <td class="gravatar">
-    <%= link_to gravatar_for(feed_item.user), feed_item.user %>
-  </td>
-  <td class="event">
-    <span class="user">
-      <%= feed_item.category %> | 
-      <%= link_to feed_item.title, event_path(feed_item) %> @ 
-      <%= feed_item.location %>
-    </span>
-    <span class="general">
-      <%= feed_item.start_date.strftime("%b %d, %Y at") %>
-   	  <%= feed_item.start_time.strftime("%I:%M %p") %>
-   	</span>
-    <span class="timestamp">
-      Posted <%= time_ago_in_words(feed_item.created_at) %> ago by
-      <%= link_to feed_item.user.name, feed_item.user %>.
-    </span>
-  </td>
-  <td class="delete">
-    <% if current_user?(feed_item.user) %>
-        <%= link_to "x", feed_item, :method => :delete,
-                                    :confirm => "Are you sure?",
-                                    :title => feed_item.description %>
-    <% end %>
-  </td>
-</tr>
+<div class="stream_item">
+  <div class="stream_item_content">
+    <div class="event_image">
+      <%= link_to gravatar_for(feed_item.user), feed_item.user %>
+    </div>
+    <div class="event_content">
+      <div class="dismiss">
+        <% if current_user?(feed_item.user) %>
+          <%= link_to "×", feed_item, :method => :delete,
+                                      :confirm => "Are you sure?",
+                                      :title => feed_item.description %>
+        <% end %>
+      </div>
+      <div class="event_info" style="margin-right: 10px; ">
+        <div class="event_row">
+          <span class="event_title">
+            <%= link_to feed_item.title, event_path(feed_item) %>
+          </span>
+          <span class="event_category">
+            <%= feed_item.category %>
+          </span>
+        </div>
+        <div class="event_row">
+          <span class="event_time">
+            <%= feed_item.start_date.strftime("%b %d") %> at
+            <%= feed_item.start_time.strftime("%H:%M") %>
+          </span>
+        </div>
+        <div class="event_row">
+          <span class="event_location">
+            <%= feed_item.location %>
+          </span>
+        </div>
+        <div class="event_row">
+          <span class="event_timestamp">
+            <%= time_ago_in_words(feed_item.created_at) %> ago by
+          </span>
+          <span class="event_user_name">
+            <%= link_to feed_item.user.name, feed_item.user %>
+          </span>
+        </div>
+        <div class="event_row"></div>
+      </div>
+    </div>
+  </div>
+</div>

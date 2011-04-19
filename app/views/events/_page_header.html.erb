@@ -1,0 +1,26 @@
+<div class="page_header home_header">
+  <h2>New Events</h2>
+  <% if signed_in? %>
+    <%= link_to "Add an event", addevent_path %>
+  <% end %>
+  <%= form_tag(events_path, :method => "get") do %>
+    I want to see
+    <%= select_tag(:filter, 
+      options_for_select([
+        ['all', 'All'],
+        ['free', 'Free'],
+        ['cheap', 'Cheap']
+        ])) %> events,
+      sorted by
+      <%= select_tag(:order, 
+        options_for_select([
+          ['happening soon', 'start_date ASC'],
+          ['recently created', 'created_at DESC']
+          ])) %>.
+    <%= submit_tag("Go!") %>
+  <% end %>
+  <% if @filter and @order != nil %>
+    <div>You are viewing <%= @filter %> events, ordered by <%= @order %>.</div>
+  <% end %>
+</div>
+<%= javascript_tag "redirect()" %>

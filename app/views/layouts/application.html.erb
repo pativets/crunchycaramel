@@ -50,17 +50,18 @@
     </div>
     <div id="page_outer">
       <div id="page_container" class="home_container" style>
-        <div id="left_col">
-          <%= render "layouts/left_sidebar" %>
+        <div id="left_column">
+          <%= render "layouts/left_column" %>
         </div>
-        <div id="content_area">
+        <div id="main_content" style="min-height: 590px; ">
           <% flash.each do |key, value| %>
             <%= content_tag(:div, value, :class => "flash #{key}") %>
           <% end %>
           <%= yield %>
         </div>
-        <div id="right_col">
-          <%= render "layouts/right_sidebar" %>
+        <div id="right_column">
+          <%# render "layouts/right_column" %>
+          <%= yield :right_column %>
         </div>
       </div>
     </div>

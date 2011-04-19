@@ -1,15 +1,33 @@
-<tr>
-  <td class="event">
-    <span class="content"><%= event.description %></span>
-    <span class="timestamp">
-      Posted <%= time_ago_in_words(event.created_at) %> ago.
-    </span>
-  </td>
-  <% if current_user?(event.user) %>
-  <td>
-    <%= link_to "X", event, :method => :delete,
-                            :confirm => "Are you sure?",
-                            :title => event.description %>
-  </td>
-  <% end %>
-</tr>
+<div class="stream_item">
+  <div class="stream_item_content">
+    <div class="event_content" style="margin-left: 0; ">
+      <div class="dismiss">
+        <% if current_user?(event.user) %>
+          <%= link_to "×", event, :method => :delete,
+                                  :confirm => "Are you sure?",
+                                  :title => event.description %>
+        <% end %>
+      </div>
+      <div class="event_info" style="margin-right: 10px; ">
+        <div class="event_row">
+          <span class="event_title">
+            <%= link_to event.title, event_path(event) %>
+          </span>
+          <span class="event_category">
+            <%= event.category %>
+          </span>
+        </div>
+        <div class="event_row">
+          <span class="event_description">
+            <%= event.description %>
+          </span>
+        </div>
+        <div class="event_row">
+          <span class="event_timestamp">
+            <%= time_ago_in_words(event.created_at) %> ago
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
