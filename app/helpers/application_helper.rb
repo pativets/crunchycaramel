@@ -1,12 +1,15 @@
 module ApplicationHelper
 
 	def title
-		base_title = "crunchycaramel"
-		if @title.nil?
-			base_title
-		else
-			"#{base_title} | #{@title}"
-		end
+    # Delete these later
+    
+    # base_title = "crunchycaramel"
+    # if @title.nil?
+    #   base_title
+    # else
+    #   "#{base_title} | #{@title}"
+    # end
+    @title
 	end			
 	
 	def light 

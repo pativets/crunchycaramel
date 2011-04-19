@@ -22,8 +22,8 @@ class UsersController < ApplicationController
   
   def show
   	@user = User.find(params[:id])
+  	@title = @user.name + "'s Profile"
   	@events = @user.events.paginate(:page => params[:page])
-  	@title = @user.name
   end
   
   def create
@@ -40,7 +40,7 @@ class UsersController < ApplicationController
   end
   
   def edit
-    @title = "Edit User"
+    @title = "Settings"
   end
   
   def update

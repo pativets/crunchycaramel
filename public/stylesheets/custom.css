@@ -55,7 +55,7 @@ div {
   _position: relative;
   top: 0;
   left: 0;
-  z-index: 12;
+  z-index: 2;
   width: 100%;
 }
 
@@ -202,7 +202,7 @@ div {
   min-height: 100px;
   height: 100%;
   display: inline-block;
-  z-index: 4;
+  z-index: 2;
   position: relative;
   background: #FEFEFE;
   word-wrap: break-word;
@@ -216,7 +216,7 @@ div {
   width: 548px;
   float: left;
   display: inline-block;
-  z-index: 4;
+  z-index: 2;
   position: relative;
   background: white;
   height: 100%;
@@ -232,7 +232,7 @@ div {
   height: 100%;    
   word-wrap: break-word;
   display: inline-block;
-  z-index: 4;
+  z-index: 2;
   position: relative;
   background: #FEFEFE;
   border-radius: 0 5px 0 0;
@@ -476,6 +476,11 @@ td.sidebar {
 
 div.field, div.actions {
   margin-bottom: 10px;
+}
+
+.field label {
+  font-size: 14px;
+  font-weight: 300;
 }
 
 /* For error messages */
@@ -767,9 +772,17 @@ table.event_form td {
   border-top-right-radius: 5px 5px;*/
   padding: 15px 20px 15px 20px;
   position: relative;
-  z-index: 2;
   zoom: 1;
+}
 
+.page_header .user_image {
+  float: left;
+}
+
+.page_content {
+  padding: 0 20px 0 20px;
+  position: relative;
+  zoom: 1;
 }
 
 .dismiss a {
@@ -789,7 +802,18 @@ table.event_form td {
   margin-bottom: 6px;
 }
 
+.page_header h1 {
+  font-size: 22px;
+  font-weight: 300;
+}
+
 .page_header h2 {
   font-size: 16px;
   font-weight: 300;
+}
+
+.settings {
+  padding: 15px 20px 15px 20px;
+  position: relative;
+  zoom: 1;
 }
