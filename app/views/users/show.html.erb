@@ -1,4 +1,4 @@
-<div class="page_header">
+<div class="page_header" style="min-height: 50px">
   <div class="user_image">
     <%= gravatar_for @user %>
   </div>
@@ -11,24 +11,22 @@
   <%= will_paginate @events %>
 <% end %>  
 <% content_for :right_column do %>
-  <table class="profile" summary="User Profile">
-    <tr>
-    	<td class="sidebar round">
-    	  <% if current_user.admin? %>
-      		<strong>Name:</strong> <%= @user.name %><br />
-      		<strong>Title:</strong><br />
-      		<strong>Employee Since:</strong>
+  <div class="page_header">
+    <h2>User Profile</h2>
+  </div>
+  <div class="page_content">
+    <div class="user_profile">
+      <div class="user_profile_content">
+        <div class="content_row">
+          <strong>Name:</strong> <%= @user.name %>
+        </div>
+        <div class="content_row">
       		<strong>Subscribed Events:</strong> <%= @user.events.count %>
-    	  <% else %>
-      		<strong>Name:</strong> <%= @user.name %><br />
-            <strong>Business Title:</strong><br /> 
-      		<strong>Subscribed Events:</strong> <%= @user.events.count %>
-    	  <% end %>
-    	  <div>
-    	    <%= link_to "Add an Event", addevent_path, 
-    	      :class => "add_button1" %>
-    	  </div>
-      </td>
-    </tr>
-  </table>
+        </div>
+        <div class="content_row">
+          <%= link_to "Add an Event", addevent_path %>
+  	    </div>
+      </div>
+    </div>
+  </div>
 <% end %>

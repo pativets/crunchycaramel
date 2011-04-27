@@ -763,7 +763,7 @@ table.event_form td {
 }
 
 .page_header {
-  background: whiteSmoke;
+  background: #EBEBEB;
 /*  border-radius: 5px 5px 0 0;
   -moz-border-radius: 5px 5px 0 0;
   -webkit-border-top-left-radius: 5px;
@@ -780,7 +780,7 @@ table.event_form td {
 }
 
 .page_content {
-  padding: 0 20px 0 20px;
+  padding: 8px 20px 8px 20px;
   position: relative;
   zoom: 1;
 }
