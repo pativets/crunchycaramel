@@ -817,3 +817,24 @@ table.event_form td {
   position: relative;
   zoom: 1;
 }
+
+#footer_container {
+  margin-top: 5px;
+}
+
+.page_container {
+  background: #FFFFFF;
+  padding: 15px 20px 15px 20px;
+  position: relative;
+  zoom: 1;
+}
+
+.page_container h1 {
+  font-size: 22px;
+  font-weight: 300;
+}
+
+.page_container h2 {
+  font-size: 16px;
+  font-weight: 300;
+}
